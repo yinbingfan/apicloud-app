@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/wiki_content.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+    <div class="title-bar">
+        <img class="back" src="../../../res/img/back@3x.png" alt="" @click="back"  >
+        <p class="title">{{title|setString(30)}}</p>
+    </div>
+    <div class="top-nav-placeholder"></div>
+    <!--列表-->
+    <div class="wiki-content">
+        <div class="wiki-news">
+            <div id="view-lists" class="wiki-news-lists" v-for="(item,index) in newsLists">
+                <div    @click="storeUrl(item.storeUrl,item.id,item.adFlag,item.isFavorite)" class="wiki-news-ul">
+                    <div class="wiki-left-boder" :style="{backgroundColor:item.BorderColor}"></div>
+                    <div class="wiki-news-search-title">
+                        <span class="wiki-news-search-item-topic">{{item.title|setString(120)}}</span>
+                        <span v-show="item.sub" class="wiki-news-search-time-topic">{{item.conermarkTitle}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style= "display:flex;justify-content: center;align-content: center; width:100%;height:1.5rem;color:#999;overflow:hidden;">
+        <p id="loading" v-show="loading"  i18n="no_more" style="line-height:1.5rem;text-align:center"></p>
+        <img id="loading-anim" v-show="loadingAnim" src="../../../res/img/loading.svg" class="loading-anim" style="width: 80px;"/>
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

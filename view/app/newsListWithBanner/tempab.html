@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-col scroll_cont list" style="background-color:#EEF1F6;">
+    <div id="tophint" style="line-height:33px;color:#B4B3B3;font-size:1.3rem;text-align:center;background-color:#ffffff;display:none;">
+    </div>
+    <div class="rect-50 hide" id="slideWrap" style="display:none">
+        <div class="_full" id="banner">
+        </div>
+    </div>
+    <div id="banner-bottom-divider" style="background:#EEF1F6;display:block"></div>
+    <!-- 日推 -->
+    <!--<div class="daily" id="daily-message" onclick="clickDaily()" style="display:none">-->
+        <!--<div class="span-dailyimg">-->
+            <!--<img id="daily-img" style="height:100%"></img>-->
+        <!--</div>-->
+        <!--<div class="span-10">-->
+            <!--<p id="daily-content" class="daily_text"></p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div id="daily-bottom-divider" style="display:none"></div>
+    <div class="banweifu"></div>
+    <div id="view-list" class="new-content" ></div>
+       <script type="html/text" id="main">
+       <%
+         for(var i=0;i<item.length;i++){
+       %>
+      <div id="news-lists" class="<%=item[i].rowstyle%>" data-url="<%=item[i].url%>" data-id="<%=item[i].id%>" index="<%=item[i].index%>" data-big="<%=item[i].big%>"  data-isFavorite="<%=item[i].isFavorite%>" data-isHistory="<%=item[i].isHistory%>" data-adFlag="<%=item[i].adFlag%>">
+           <div id="new-left">
+              <img   class="newsImg" src ="<%=item[i].cover%>" alt="">
+              <img   class="mediaImg" style="display:<%=item[i].displayMedia%>" src="<%=item[i].mutliMedia%>" alt=""/>
+          </div>
+
+          <!-- 左侧 -->
+          <div class="new-right">
+            <!-- 新闻标题 -->
+
+                <p id="title" class="<%=item[i].titleClass%>"><%=item[i].title%></p>
+                <div class="mark-media">
+                    <div>
+                        <span><%=item[i].time%></span> | <span id="media"><%=item[i].media%></span>
+                    </div>
+                     <div class="marks" style="display:<%=item[i].markDisplay%>"><%=item[i].mark%></div>
+                 </div>
+          </div>
+      </div>
+      <%
+        }
+      %>
+     </script>
+    </div>
+
+
+    <div style="width:auto;text-align:center;height:5rem;color:#999;overflow:hidden;">
+        <div id="bottom-loading" style="display:none;">
+            <p id="loading" style="line-height:5rem;"></p>
+            <img id="loading-anim" src="../../../res/img/loading.svg" style="height:4rem;margin-top:0rem;display:inline-block"></img>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript" src="../../../sdk/echo.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/template.js">
+</script>
+
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-col" style="background-color:#f5f5f5">
+    <div class="flex-1 scroll_cont">
+        <!-- 标题栏 -->
+        <div class="title-bar">
+          <div style="position: absolute; top:0;left:0" onclick="api.closeWin()">
+              <img class="back" src="../../../res/img/back@3x.png"  tapmode>
+          </div>
+            <p class="title" i18n="notification">Notification</title>
+        </div>
+        <div id="all-switch" class="card-margin1-0" style="height:7rem;display:none">
+            <div style="float:left">
+                <p class="text1" i18n="push_notification">Push notification</p>
+                <p class="text2" i18n="turn_on_push_notification_go_to_Settings">Turn on push notification, go to Settings</p>
+            </div>
+            <div class="testswitch">
+                <input class="testswitch-checkbox" id="onoffswitch" type="checkbox">
+                <label class="testswitch-label" for="onoffswitch">
+                <span class="testswitch-inner" data-on="ON" data-off="OFF"></span>
+                <span class="testswitch-switch"></span>
+            </label>
+            </div>
+        </div>
+        <div id="switch-brief" class="card-margin1-0" style="height:5rem">
+            <div style="float:left">
+                <p class="text1" i18n="brief">Brief</p>
+            </div>
+            <div class="testswitch" style="margin-top:1.0rem">
+                <input class="testswitch-checkbox" id="onoffswitch_brief" type="checkbox">
+                <label class="testswitch-label" for="onoffswitch_brief">
+                <span class="testswitch-inner" data-on="ON" data-off="OFF"></span>
+                <span class="testswitch-switch"></span>
+            </label>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

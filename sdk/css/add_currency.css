@@ -1,0 +1,1070 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.card-wrap {
+  margin-top: 40px;
+  margin-top: 0.53333rem;
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-bottom: 0.53333rem; }
+  .card-wrap .card-content {
+    width: 630px;
+    width: 8.4rem;
+    height: 300px;
+    height: 4rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -4px 8px 0 rgba(239, 239, 239, 0.1);
+    box-shadow: 0 -0.05333rem 0.10667rem 0 rgba(239, 239, 239, 0.1);
+    padding: 40px;
+    padding: 0.53333rem; }
+    .card-wrap .card-content .card-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .card-wrap .card-content .card-title p {
+        font-size: 30px;
+        font-size: 0.4rem;
+        line-height: 0; }
+      .card-wrap .card-content .card-title img {
+        display: block;
+        width: 40px;
+        width: 0.53333rem;
+        height: 40px;
+        height: 0.53333rem; }
+    .card-wrap .card-content .card-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem;
+      -webkit-box-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: flex; }
+      .card-wrap .card-content .card-amount span {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        line-height: 1; }
+        .card-wrap .card-content .card-amount span:first-child {
+          font-family: PingFangSC-Regular;
+          color: #202020; }
+        .card-wrap .card-content .card-amount span:last-child {
+          color: #E76D42; }
+      .card-wrap .card-content .card-amount b {
+        margin-left: 20px;
+        margin-left: 0.26667rem;
+        margin-right: 37.4px;
+        margin-right: 0.49867rem;
+        font-size: 44px;
+        font-size: 0.58667rem;
+        color: #202020; }
+    .card-wrap .card-content .card-proportion {
+      margin-top: 30px;
+      margin-top: 0.4rem; }
+      .card-wrap .card-content .card-proportion span {
+        font-size: 20px;
+        font-size: 0.26667rem;
+        color: #B4B3B3; }
+        .card-wrap .card-content .card-proportion span:last-of-type {
+          margin-left: 20px;
+          margin-left: 0.26667rem; }
+    .card-wrap .card-content .card-earnings-wrap {
+      position: relative; }
+      .card-wrap .card-content .card-earnings-wrap .card-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 16px;
+        margin-top: 0.21333rem;
+        display: -webkit-box;
+        display: flex; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-cost dl, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-cost dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-loss dl, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-loss dl {
+          margin: 0;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          color: #FFFFFF; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-cost dl dt, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-cost dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-loss dl dt, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-loss dl dt {
+            margin-bottom: 4px;
+            margin-bottom: 0.05333rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-cost dl dd, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-cost dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .currency-loss dl dd, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .currency-loss dl dd {
+            margin-left: 0; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost {
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss {
+          text-align: right;
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-default {
+        background: #6082A5; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-light {
+        background: #D0DFEF; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-dark {
+        background: #1C4873; }
+      .card-wrap .card-content .card-earnings-wrap .card-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        width: 100%; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div {
+          height: 95px;
+          height: 1.26667rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div:first-child {
+            border-top-left-radius: 10px;
+            border-top-left-radius: 0.13333rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-left-radius: 0.13333rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div:last-child {
+            border-top-right-radius: 10px;
+            border-top-right-radius: 0.13333rem;
+            border-bottom-right-radius: 10px;
+            border-bottom-right-radius: 0.13333rem; }
+
+.card-add {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-size: 0.42667rem;
+  color: #B4B3B3; }
+  .card-add span:last-of-type {
+    margin-left: 10px;
+    margin-left: 0.13333rem; }
+
+.card-head-title {
+  margin-left: 36px;
+  margin-left: 0.48rem;
+  font-size: 26px;
+  font-size: 0.34667rem;
+  color: #B4B3B3; }
+
+.currency-wrap {
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+  .currency-wrap .currency-content {
+    margin-top: 20px;
+    margin-top: 0.26667rem;
+    width: 630px;
+    width: 8.4rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -4px 8px 0 rgba(239, 239, 239, 0.1);
+    box-shadow: 0 -0.05333rem 0.10667rem 0 rgba(239, 239, 239, 0.1);
+    padding: 40px;
+    padding: 0.53333rem; }
+    .currency-wrap .currency-content .currency-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .currency-wrap .currency-content .currency-title .currency-amount-left {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .currency-wrap .currency-content .currency-title .currency-amount-left img {
+          display: block;
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          margin-right: 8px;
+          margin-right: 0.10667rem; }
+        .currency-wrap .currency-content .currency-title .currency-amount-left span {
+          line-height: 1; }
+          .currency-wrap .currency-content .currency-title .currency-amount-left span:first-of-type, .currency-wrap .currency-content .currency-title .currency-amount-left span:last-of-type {
+            color: #B4B3B3;
+            font-size: 26px;
+            font-size: 0.34667rem; }
+          .currency-wrap .currency-content .currency-title .currency-amount-left span:nth-of-type(2) {
+            font-size: 8px;
+            font-size: 0.10667rem;
+            color: #FDB438;
+            margin: 0 10px;
+            margin: 0 0.13333rem; }
+      .currency-wrap .currency-content .currency-title .currency-amount-right {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right span {
+          color: #B4B3B3;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          margin-right: 12px;
+          margin-right: 0.16rem; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right .currency-pie svg {
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          background: #8FABC8;
+          border-radius: 50%; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right .currency-pie circle {
+          fill: #8FABC8;
+          stroke: #FFB538;
+          stroke-width: 32; }
+    .currency-wrap .currency-content .currency-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem; }
+      .currency-wrap .currency-content .currency-amount span:first-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #202020; }
+      .currency-wrap .currency-content .currency-amount span:nth-of-type(2) {
+        margin-left: 6px;
+        margin-left: 0.08rem;
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #202020; }
+      .currency-wrap .currency-content .currency-amount span:last-of-type {
+        margin-left: 16px;
+        margin-left: 0.21333rem;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #E76D42; }
+    .currency-wrap .currency-content .currency-earnings-wrap {
+      position: relative; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 26px;
+        margin-top: 0.34667rem;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between; }
+        .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content .currency-gross-amount {
+          height: 48px;
+          height: 0.64rem;
+          display: -webkit-box;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content .currency-gross-amount span {
+            color: #fff;
+            font-size: 26px;
+            font-size: 0.34667rem;
+            line-height: 1;
+            padding: 0 20px;
+            padding: 0 0.26667rem; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-type-default {
+        background: #6082A5; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-type-light {
+        background: #D0DFEF; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        width: 100%; }
+        .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div {
+          height: 45px;
+          height: 0.6rem; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div:first-child {
+            border-top-left-radius: 10px;
+            border-top-left-radius: 0.13333rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-left-radius: 0.13333rem; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div:last-child {
+            border-top-right-radius: 10px;
+            border-top-right-radius: 0.13333rem;
+            border-bottom-right-radius: 10px;
+            border-bottom-right-radius: 0.13333rem; }
+
+.amount-currency-content {
+  margin-top: 20px;
+  margin-top: 0.26667rem;
+  margin-bottom: 20px;
+  margin-bottom: 0.26667rem;
+  width: 750px;
+  width: 10rem; }
+  .amount-currency-content .currency-content {
+    overflow: hidden;
+    background: #fff;
+    padding: 40px;
+    padding: 0.53333rem; }
+    .amount-currency-content .currency-content .currency-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .amount-currency-content .currency-content .currency-title .currency-amount-left {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-left img {
+          display: block;
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          margin-right: 16px;
+          margin-right: 0.21333rem; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-left span {
+          line-height: 1;
+          color: #B4B3B3;
+          font-size: 30px;
+          font-size: 0.4rem; }
+      .amount-currency-content .currency-content .currency-title .currency-amount-right {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right span {
+          color: #B4B3B3;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          margin-right: 12px;
+          margin-right: 0.16rem; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right .currency-pie svg {
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          background: #8FABC8;
+          border-radius: 50%; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right .currency-pie circle {
+          fill: #8FABC8;
+          stroke: #FFB538;
+          stroke-width: 32; }
+    .amount-currency-content .currency-content .currency-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center; }
+      .amount-currency-content .currency-content .currency-amount span:first-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #202020; }
+      .amount-currency-content .currency-content .currency-amount span:nth-of-type(2) {
+        margin-left: 6px;
+        margin-left: 0.08rem;
+        font-size: 44px;
+        font-size: 0.58667rem;
+        line-height: 1;
+        color: #202020; }
+      .amount-currency-content .currency-content .currency-amount span:last-of-type {
+        margin-left: 16px;
+        margin-left: 0.21333rem;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #E76D42; }
+    .amount-currency-content .currency-content .currency-proportion {
+      margin-top: 30px;
+      margin-top: 0.4rem; }
+      .amount-currency-content .currency-content .currency-proportion span {
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #B4B3B3; }
+        .amount-currency-content .currency-content .currency-proportion span:last-of-type {
+          margin-left: 20px;
+          margin-left: 0.26667rem; }
+    .amount-currency-content .currency-content .currency-earnings {
+      margin-top: 16px;
+      margin-top: 0.21333rem;
+      display: -webkit-box;
+      display: flex; }
+      .amount-currency-content .currency-content .currency-earnings .rep dl, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-cost dl, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-loss dl, .amount-currency-content .currency-content .currency-earnings .currency-cost dl, .amount-currency-content .currency-content .currency-earnings .currency-loss dl {
+        margin: 0;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #FFFFFF; }
+        .amount-currency-content .currency-content .currency-earnings .rep dl dt, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-cost dl dt, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-loss dl dt, .amount-currency-content .currency-content .currency-earnings .currency-cost dl dt, .amount-currency-content .currency-content .currency-earnings .currency-loss dl dt {
+          margin-bottom: 4px;
+          margin-bottom: 0.05333rem; }
+        .amount-currency-content .currency-content .currency-earnings .rep dl dd, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-cost dl dd, .amount-currency-content .currency-content .currency-earnings .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .amount-currency-content .currency-content .currency-earnings .card-loss dl dd, .amount-currency-content .currency-content .currency-earnings .currency-cost dl dd, .amount-currency-content .currency-content .currency-earnings .currency-loss dl dd {
+          margin-left: 0; }
+      .amount-currency-content .currency-content .currency-earnings .currency-cost {
+        border-top-left-radius: 10px;
+        border-top-left-radius: 0.13333rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-left-radius: 0.13333rem;
+        padding: 16px 19px;
+        padding: 0.21333rem 0.25333rem; }
+      .amount-currency-content .currency-content .currency-earnings .currency-loss {
+        border-top-right-radius: 10px;
+        border-top-right-radius: 0.13333rem;
+        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 0.13333rem;
+        padding: 16px 19px;
+        padding: 0.21333rem 0.25333rem;
+        background: #6082A5; }
+      .amount-currency-content .currency-content .currency-earnings .currency-type-default {
+        background: #8fabc8; }
+      .amount-currency-content .currency-content .currency-earnings .currency-type-light {
+        background: #cbdced; }
+
+.currency-details-wrap {
+  width: 750px;
+  width: 10rem;
+  overflow-x: auto;
+  overflow-scrolling: auto;
+  border-bottom: 1px solid #B4B3B3;
+  border-bottom: 0.01333rem solid #B4B3B3; }
+  .currency-details-wrap ::-webkit-scrollbar {
+    background-color: transparent; }
+  .currency-details-wrap:last-child {
+    border-bottom: none; }
+  .currency-details-wrap .currency-details-list {
+    background: #fff;
+    display: -webkit-box;
+    display: flex;
+    width: 125%;
+    height: 650px;
+    height: 8.66667rem; }
+    .currency-details-wrap .currency-details-list .currency-details-content {
+      padding: 40px 36px;
+      padding: 0.53333rem 0.48rem;
+      width: 750px;
+      width: 10rem;
+      overflow: hidden;
+      display: -webkit-box;
+      display: flex; }
+      .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg {
+        width: 750px;
+        width: 10rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title {
+          color: #B4B3B3;
+          font-size: 30px;
+          font-size: 0.4rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money {
+          margin-top: 20px;
+          margin-top: 0.26667rem;
+          color: #202020; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:first-of-type, .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:last-of-type {
+            font-size: 30px;
+            font-size: 0.4rem; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:nth-of-type(2) {
+            margin: 0 20px;
+            margin: 0 0.26667rem;
+            font-size: 26px;
+            font-size: 0.34667rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list {
+          margin-top: 40px;
+          margin-top: 0.53333rem; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl {
+            margin: 0;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-bottom: 0.4rem; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl dt {
+              color: #B4B3B3;
+              font-size: 26px;
+              font-size: 0.34667rem; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl dd {
+              color: #202020;
+              font-size: 26px;
+              font-size: 0.34667rem;
+              margin-left: 0; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl .currency-details-note {
+              width: 342px;
+              width: 4.56rem;
+              word-break: break-all;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              line-height: 42px;
+              line-height: 0.56rem; }
+    .currency-details-wrap .currency-details-list .currency-details-btn {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 30px;
+      font-size: 0.4rem;
+      background: #FF3A30;
+      height: 100%;
+      width: 202px;
+      width: 2.69333rem; }
+
+.select-wrap .select-list {
+  width: 750px;
+  width: 10rem;
+  overflow-x: auto;
+  overflow-scrolling: auto;
+  border-bottom: 1px solid #B4B3B3;
+  border-bottom: 0.01333rem solid #B4B3B3; }
+  .select-wrap .select-list ::-webkit-scrollbar {
+    background-color: transparent; }
+  .select-wrap .select-list:last-child {
+    border-bottom: none; }
+  .select-wrap .select-list ul {
+    margin: 0;
+    background: #fff;
+    padding-left: 0; }
+    .select-wrap .select-list ul li {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      height: 100px;
+      height: 1.33333rem;
+      width: 135%;
+      margin-left: 36px;
+      margin-left: 0.48rem;
+      list-style: none; }
+      .select-wrap .select-list ul li .select-left-wrap {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 668px;
+        width: 8.90667rem; }
+        .select-wrap .select-list ul li .select-left-wrap span {
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020; }
+        .select-wrap .select-list ul li .select-left-wrap img {
+          display: block;
+          width: 40px;
+          width: 0.53333rem;
+          height: 28px;
+          height: 0.37333rem; }
+      .select-wrap .select-list ul li .select-right-wrap {
+        display: -webkit-box;
+        display: flex; }
+        .select-wrap .select-list ul li .select-right-wrap div {
+          color: #fff;
+          font-size: 30px;
+          font-size: 0.4rem;
+          text-align: center;
+          height: 100px;
+          height: 1.33333rem;
+          line-height: 104px;
+          line-height: 1.38667rem; }
+          .select-wrap .select-list ul li .select-right-wrap div:first-of-type {
+            background: #C7C7CC;
+            width: 130px;
+            width: 1.73333rem; }
+          .select-wrap .select-list ul li .select-right-wrap div:last-of-type {
+            background: #FF3A30;
+            width: 170px;
+            width: 2.26667rem; }
+
+.search-header {
+  width: 750px;
+  width: 10rem;
+  background: #fff;
+  position: fixed;
+  top: 0; }
+  .search-header .search-header-content {
+    height: 88px;
+    height: 1.17333rem;
+    padding: 0 36px;
+    padding: 0 0.48rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between; }
+    .search-header .search-header-content .search-header-find {
+      display: -webkit-box;
+      display: flex; }
+      .search-header .search-header-content .search-header-find img {
+        display: block;
+        width: 28px;
+        width: 0.37333rem;
+        height: 28px;
+        height: 0.37333rem; }
+      .search-header .search-header-content .search-header-find input {
+        width: 200px;
+        width: 2.66667rem;
+        margin-left: 20px;
+        margin-left: 0.26667rem;
+        border: none;
+        color: #B4B3B3;
+        font-size: 26px;
+        font-size: 0.34667rem; }
+        .search-header .search-header-content .search-header-find input::-webkit-input-placeholder {
+          color: #B4B3B3; }
+  .search-header .search-header-btn {
+    font-size: 32px;
+    font-size: 0.42667rem;
+    color: #FDB438; }
+
+.search-title {
+  color: #B4B3B3;
+  font-size: 26px;
+  font-size: 0.34667rem;
+  margin: 24px 36px;
+  margin: 0.32rem 0.48rem; }
+
+.search-list {
+  width: 750px;
+  width: 10rem;
+  background: #fff; }
+  .search-list .search-list-item {
+    width: 750px;
+    width: 10rem;
+    display: -webkit-box;
+    display: flex;
+    height: 100px;
+    height: 1.33333rem;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 36px;
+    margin-left: 0.48rem;
+    box-shadow: inset 0px -2px 2px -2px #B4B3B3;
+    box-shadow: inset 0 -0.02667rem 0.02667rem -0.02667rem #B4B3B3; }
+    .search-list .search-list-item:last-child {
+      box-shadow: initial; }
+    .search-list .search-list-item img {
+      display: block;
+      width: 44px;
+      width: 0.58667rem;
+      height: 44px;
+      height: 0.58667rem; }
+    .search-list .search-list-item span {
+      margin-left: 40px;
+      margin-left: 0.53333rem;
+      font-size: 30px;
+      font-size: 0.4rem;
+      color: #202020; }
+
+.home-list {
+  width: 750px;
+  width: 10rem;
+  background: #fff; }
+  .home-list .home-list-item {
+    padding: 40px 36px;
+    padding: 0.53333rem 0.48rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    box-shadow: inset 0px -2px 2px -2px #B4B3B3;
+    box-shadow: inset 0 -0.02667rem 0.02667rem -0.02667rem #B4B3B3; }
+    .home-list .home-list-item:last-of-type {
+      box-shadow: initial; }
+    .home-list .home-list-item .home-list-item-letf {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+      width: 440px;
+      width: 5.86667rem; }
+      .home-list .home-list-item .home-list-item-letf .home-list-item-amont dl dt {
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #202020; }
+        .home-list .home-list-item .home-list-item-letf .home-list-item-amont dl dt span:last-of-type, .home-list .home-list-item .home-list-item-letf .home-list-item-amont dl dt span:nth-of-type(2) {
+          color: #B4B3B3;
+          font-size: 22px;
+          font-size: 0.29333rem; }
+      .home-list .home-list-item .home-list-item-letf .home-list-item-amont dl dd {
+        margin-top: 12px;
+        margin-top: 0.16rem;
+        color: #B4B3B3;
+        font-size: 22px;
+        font-size: 0.29333rem;
+        margin-left: 0; }
+    .home-list .home-list-item .home-list-item-right div {
+      font-size: 30px;
+      font-size: 0.4rem;
+      color: #fff;
+      text-align: center;
+      width: 170px;
+      width: 2.26667rem;
+      height: 58px;
+      height: 0.77333rem;
+      line-height: 62px;
+      line-height: 0.82667rem;
+      border-radius: 4px;
+      border-radius: 0.05333rem; }
+  .home-list .home-text-green {
+    color: #00C087 !important; }
+  .home-list .home-text-red {
+    color: #E76D42 !important; }
+  .home-list .home-chunk-green {
+    background: #00C087; }
+  .home-list .home-chunk-red {
+    background: #E76D42; }
+
+.add-btn {
+  position: fixed;
+  bottom: 140px;
+  bottom: 1.86667rem;
+  right: 36px;
+  right: 0.48rem;
+  display: block;
+  width: 90px;
+  width: 1.2rem;
+  height: 90px;
+  height: 1.2rem; }
+
+.top-nav-bar {
+  background: #fff;
+  width: 750px;
+  width: 10rem;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 0.01333rem solid rgba(0, 0, 0, 0.3); }
+  .top-nav-bar .top-nav {
+    height: 88px;
+    height: 1.17333rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 0.42667rem; }
+    .top-nav-bar .top-nav img {
+      display: block;
+      width: 25px;
+      width: 0.33333rem;
+      height: 42px;
+      height: 0.56rem; }
+    .top-nav-bar .top-nav span {
+      color: #202020; }
+      .top-nav-bar .top-nav span:first-of-type {
+        font-size: 32px;
+        font-size: 0.42667rem; }
+      .top-nav-bar .top-nav span:last-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem; }
+
+.top-nav-placeholder {
+  width: 750px;
+  width: 10rem;
+  height: 88px;
+  height: 1.17333rem; }
+
+.add-currency-header {
+  margin: 24px 0 24px 36px;
+  margin: 0.32rem 0 0.32rem 0.48rem;
+  font-size: 26px;
+  font-size: 0.34667rem;
+  color: #B4B3B3; }
+
+.add-currency-wrap {
+  width: 750px;
+  width: 10rem;
+  background: #fff; }
+  .add-currency-wrap .add-currency-content {
+    padding-left: 36px;
+    padding-left: 0.48rem; }
+    .add-currency-wrap .add-currency-content .add-currency-content-item {
+      height: 158px;
+      height: 2.10667rem;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      justify-content: center; }
+      .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-title {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #B4B3B3; }
+      .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-touch {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        margin-top: 22px;
+        margin-top: 0.29333rem; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-touch .add-currency-seletct {
+          font-size: 44px;
+          font-size: 0.58667rem;
+          line-height: 1;
+          color: #D9D7D7; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-touch input {
+          width: 240px;
+          width: 3.2rem;
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020;
+          border: none;
+          outline: none; }
+          .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-touch input::-webkit-input-placeholder {
+            font-size: 30px;
+            font-size: 0.4rem;
+            color: #D9D7D7; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-touch img {
+          padding-right: 30px;
+          padding-right: 0.4rem;
+          display: block;
+          width: 16px;
+          width: 0.21333rem;
+          height: 28px;
+          height: 0.37333rem; }
+      .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input {
+        margin-top: 30px;
+        margin-top: 0.4rem;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .selectTimeBount {
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020;
+          line-height: 1; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input input {
+          width: 240px;
+          width: 3.2rem;
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020;
+          border: none;
+          outline: none;
+          padding-left: 0; }
+          .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input input::-webkit-input-placeholder {
+            font-size: 30px;
+            font-size: 0.4rem;
+            color: #D9D7D7; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-input-price {
+          width: 740px;
+          width: 9.86667rem; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input img {
+          padding-right: 30px;
+          padding-right: 0.4rem;
+          display: block;
+          width: 16px;
+          width: 0.21333rem;
+          height: 28px;
+          height: 0.37333rem; }
+        .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more {
+          display: -webkit-box;
+          display: flex;
+          padding-right: 30px;
+          padding-right: 0.4rem; }
+          .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center; }
+            .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div:first-child span, .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div:last-child span {
+              font-size: 30px;
+              font-size: 0.4rem;
+              line-height: 1;
+              color: #202020; }
+            .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div:first-child img, .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div:last-child img {
+              margin-left: 14px;
+              margin-left: 0.18667rem;
+              display: block;
+              width: 16px;
+              width: 0.21333rem;
+              height: 8px;
+              height: 0.10667rem; }
+            .add-currency-wrap .add-currency-content .add-currency-content-item .add-currency-content-input .add-currency-content-more div:nth-child(2) {
+              width: 2px;
+              width: 0.02667rem;
+              height: 36px;
+              height: 0.48rem;
+              margin: 0 36px;
+              margin: 0 0.48rem;
+              background: #B4B3B3; }
+
+.add-currency-select {
+  background: #fff; }
+  .add-currency-select .add-currency-select-content {
+    padding-left: 36px;
+    padding-left: 0.48rem; }
+    .add-currency-select .add-currency-select-content .add-currency-select-item {
+      height: 100px;
+      height: 1.33333rem; }
+      .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-tab {
+        display: -webkit-box;
+        display: flex; }
+        .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-tab div {
+          height: 100px;
+          height: 1.33333rem;
+          display: -webkit-box;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center; }
+          .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-tab div:last-child {
+            margin-left: 60px;
+            margin-left: 0.8rem; }
+          .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-tab div span {
+            font-size: 26px;
+            font-size: 0.34667rem;
+            color: #271E07; }
+          .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-tab div img {
+            margin-right: 20px;
+            margin-right: 0.26667rem;
+            display: block;
+            width: 28px;
+            width: 0.37333rem;
+            height: 28px;
+            height: 0.37333rem; }
+      .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input {
+        height: 100px;
+        height: 1.33333rem;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between; }
+        .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input input {
+          width: 560px;
+          width: 7.46667rem;
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020;
+          border: none;
+          outline: none; }
+          .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input input::-webkit-input-placeholder {
+            font-size: 26px;
+            font-size: 0.34667rem;
+            color: #D9D7D7; }
+        .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input div {
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #D9D7D7; }
+        .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input img {
+          padding-right: 30px;
+          padding-right: 0.4rem;
+          display: block;
+          width: 16px;
+          width: 0.21333rem;
+          height: 28px;
+          height: 0.37333rem; }
+        .add-currency-select .add-currency-select-content .add-currency-select-item .add-currency-select-input .erweima {
+          padding-right: 30px;
+          padding-right: 0.4rem;
+          display: block;
+          width: 32px;
+          width: 0.42667rem;
+          height: 32px;
+          height: 0.42667rem; }
+
+.add-currency-note {
+  background: #fff;
+  width: 750px;
+  width: 10rem;
+  height: 200px;
+  height: 2.66667rem; }
+  .add-currency-note textarea {
+    width: 678px;
+    width: 9.04rem;
+    padding: 30px 36px;
+    padding: 0.4rem 0.48rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 26px;
+    font-size: 0.34667rem;
+    color: #202020; }
+    .add-currency-note textarea::-webkit-input-placeholder {
+      font-size: 26px;
+      font-size: 0.34667rem;
+      color: #D9D7D7; }
+
+.add-currency-line {
+  position: relative;
+  border: none; }
+  .add-currency-line:after {
+    position: absolute;
+    bottom: -1px;
+    bottom: -0.01333rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    height: 0.02667rem;
+    -webkit-transform: scale(1, 0.5);
+    transform: scale(1, 0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    content: '';
+    background-color: #B4B3B3; }
+
+.Wallet-select {
+  width: 100%; }

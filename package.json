@@ -1,0 +1,24 @@
+{
+  "name": "pomelo",
+  "version": "1.0.0",
+  "scripts": {
+    "up": "node config/updateUrl.js",
+    "config": "node config/updateConfig.js",
+    "version": "node config/updateVersion.js"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "5.0.0",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-postcss": "7.0.1",
+    "gulp-rev-css-url": "0.1.0",
+    "gulp-sass": "4.0.1",
+    "format-json-pretty": "^1.0.1",
+    "postcss-px2rem": "0.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "mysql": "^2.16.0",
+    "postcss-pxtorem": "^4.0.1"
+  }
+}

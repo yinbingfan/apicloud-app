@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/assets.css" rel="stylesheet">
+</head>
+
+<body>
+<div id='app' v-cloak>
+    <div class="card-wrap">
+        <div class="card-content">
+
+            <div class="card-title">
+                <p>{{this.card_data.name}}</p>
+                <img src="../../../res/img/icon_switch@3x.png" @click="jump_add()"/>
+            </div>
+
+            <div class="card-amount">
+                <span>≈</span>
+                <b>{{this.gold}}{{this.card_data.value | money}}</b>
+                <template v-if="card_data.totalColor">
+                    <span :class="[card_data.totalColor? 'card-text-green':'card-text-red']">+{{this.card_data.totalIncrease}}%</span>
+                </template>
+                <template v-else>
+                    <span :class="[card_data.totalColor? 'card-text-green':'card-text-red']">{{this.card_data.totalIncrease}}%</span>
+                </template>
+            </div>
+
+            <div class="card-proportion">
+                <span i18n="Profit&Loss">Profit&Loss</span>
+                <span>{{this.card_data.totalProfitAndCostRatio}}%</span>
+            </div>
+
+            <div class="card-earnings-wrap">
+                <div class="card-earnings-content">
+                    <div class="card-cost">
+                        <dl>
+                            <dt i18n="Cost">Cost</dt>
+                            <dd>{{this.gold}}{{this.card_data.cost | money}}</dd>
+                        </dl>
+                    </div>
+                    <div class="card-loss">
+                        <dl>
+                            <dt i18n="Profit&Loss">Profit&Loss</dt>
+                            <dd>{{this.gold}}{{this.card_data.totalProfit | money}}</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <section class="card-earnings-progress">
+                    <div :style="{ width: this.card_box_minus }" class="card-type-default"></div>
+                    <div
+                            :class="[card_box_type? 'card-type-light':'card-type-dark']"
+                            :style="{ width: this.card_box_plus }"></div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <div i18n="currency list" class="card-head-title" v-if="!this.add_show">
+        currency list
+    </div>
+
+    <div class="currency-wrap">
+        <div class="currency-content" v-for="(item,index) in this.card_list" @click="jump_data(item,index)">
+            <div class="currency-title">
+                <div class="currency-amount-left">
+                    <img  :id="'img'+index"  :src="'../../../res/img/coiniconhd/'+item.currencyCode+'.png'"  @error="go(index,item.logo)" />
+                    <span>{{item.amount}}{{item.currencyCode}}</span>
+                    <span>x</span>
+                    <span>{{gold}}{{item.avrgPrice}}</span>
+                </div>
+                <div class="currency-amount-right">
+                    <span>{{item.assetRatio}}%</span>
+                    <div class="currency-pie">
+                        <svg viewBox="0 0 32 32">
+                            <circle r="16" cx="16" cy="16" :style="{'stroke-dasharray': item.percentage}"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="currency-amount">
+                <span>≈</span>
+                <span>{{gold}}{{item.value | money}}</span>
+                <template v-if="item.totalColor">
+                    <span :class="[item.totalColor? 'card-text-green':'card-text-red']">+{{item.totalIncrease}}%</span>
+                </template>
+                <template v-else>
+                    <span :class="[item.totalColor? 'card-text-green':'card-text-red']">{{item.totalIncrease}}%</span>
+                </template>
+            </div>
+            <div class="currency-earnings-wrap">
+                <div class="currency-earnings-content">
+                    <div class="currency-gross-amount">
+                        <span>{{gold}}{{item.cost | money}}</span>
+                    </div>
+                    <div class="currency-gross-amount">
+                        <span>{{gold}}{{item.totalProfit | money}}</span>
+                    </div>
+                </div>
+                <section class="currency-earnings-progress">
+                    <div
+                            :style="{ width: item.progress_minus}"
+                            class="currency-type-default"
+                    ></div>
+                    <div
+                            :style="{ width: item.progress_plus }"
+                            :class="[item.class_type? 'currency-type-light':'currency-type-dark']"
+                    ></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-bottom" v-if="!this.add_show"></div>
+
+    <div class="card-add" @click="NewCurrency" v-if="this.add_show">
+        <span>+</span>
+        <span i18n="New Currency">New Currency</span>
+    </div>
+
+    <img src="../../../res/img/market_add.png" @click="NewCurrency" class="add-btn">
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

@@ -1,0 +1,195 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.title-bar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 94px;
+  height: 1.25333rem;
+  background: #ffffff;
+  z-index: 30;
+  top: 0; }
+  .title-bar .back {
+    padding-top: 0.327rem;
+    padding-right: 0.5rem;
+    width: 25px;
+    width: 0.33333rem;
+    height: 42px;
+    height: 0.56rem;
+    margin-left: 31px;
+    margin-left: 0.41333rem; }
+  .title-bar .title {
+    font-size: 34px;
+    font-size: 0.45333rem;
+    color: #202020;
+    letter-spacing: 0.17px;
+    letter-spacing: 0.00227rem;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center; }
+
+.top-nav-placeholder {
+  width: 100%;
+  height: 108px;
+  height: 1.44rem; }
+
+.content-wrapper {
+  width: 100%;
+  height: 2000px;
+  height: 26.66667rem;
+  position: relative;
+  background: #fefade; }
+  .content-wrapper .obtained-dbit-content {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 140px;
+    top: 1.86667rem;
+    left: 0;
+    right: 0; }
+    .content-wrapper .obtained-dbit-content .airdrop_detail {
+      width: 90%;
+      margin: 0 5%;
+      font-size: 40px;
+      font-size: 0.53333rem;
+      font-family: Helvetica;
+      color: #692C12;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 50px;
+      line-height: 0.66667rem; }
+    .content-wrapper .obtained-dbit-content .dbit-num {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center; }
+    .content-wrapper .obtained-dbit-content .dbit-num span:nth-of-type(1) {
+      font-family: DINMittelschrift;
+      font-weight: bold;
+      font-size: 80px;
+      font-size: 1.06667rem;
+      color: #5F2810;
+      letter-spacing: 0;
+      text-align: center;
+      margin-right: 6px;
+      margin-right: 0.08rem; }
+    .content-wrapper .obtained-dbit-content .dbit-num span:nth-of-type(2) {
+      font-family: DINMittelschrift;
+      font-weight: bold;
+      font-size: 50px;
+      font-size: 0.66667rem;
+      color: #672B10;
+      letter-spacing: 0;
+      text-align: center; }
+  .content-wrapper .rule-award {
+    margin: 0 6%;
+    height: 920px;
+    height: 12.26667rem;
+    background: #ffffff;
+    border-radius: 7px;
+    border-radius: 0.09333rem;
+    position: absolute;
+    top: 850px;
+    top: 11.33333rem;
+    overflow-y: scroll;
+    width: 88%;
+    -webkit-overflow-scrolling: touch; }
+    .content-wrapper .rule-award h3 {
+      font-family: Helvetica-Bold;
+      font-size: 30px;
+      font-size: 0.4rem;
+      color: #333333;
+      line-height: 44px;
+      line-height: 0.58667rem;
+      text-align: center; }
+    .content-wrapper .rule-award .rule-cont {
+      margin: 0 9px 0 16px;
+      margin: 0 0.12rem 0 0.21333rem; }
+      .content-wrapper .rule-award .rule-cont p {
+        font-family: Helvetica;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: rgba(51, 51, 51, 0.5);
+        line-height: 40px;
+        line-height: 0.53333rem;
+        padding-top: 24px;
+        padding-top: 0.32rem;
+        border-top: 2px solid rgba(228, 231, 240, 0.4);
+        border-top: 0.02667rem solid rgba(228, 231, 240, 0.4); }
+        .content-wrapper .rule-award .rule-cont p img {
+          width: 32px;
+          width: 0.42667rem;
+          height: 18px;
+          height: 0.24rem; }
+        .content-wrapper .rule-award .rule-cont p span {
+          display: inline-block;
+          height: 20px;
+          height: 0.26667rem;
+          background: #EA4A43;
+          border-radius: 5px;
+          border-radius: 0.06667rem;
+          line-height: 22px;
+          line-height: 0.29333rem;
+          color: rgba(255, 255, 255, 0.8);
+          padding: 3px;
+          padding: 0.04rem;
+          font-size: 22px;
+          font-size: 0.29333rem; }

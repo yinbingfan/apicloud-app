@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="../../../sdk/css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../../sdk/css/aui.css" /> -->
+	<style>
+    html,body{
+      background-color: #fff;
+    }
+		#con{
+			/*margin: 10px;*/
+			font-size: 24px;
+		}
+		ul{
+		  margin:20px 0;
+      display: flex;
+      justify-content:space-around;
+      padding-left:0
+		}
+		ul li{
+			word-wrap: break-word;
+      list-style: none;
+      text-align: center;
+
+
+		}
+    .aui-col-xs-4 img{
+      display: inline-block;
+      margin:0 auto;
+        width: 40px;
+        height: 40px;
+    }
+    #sys-info{
+      width:100%;
+      background-color:white;
+      position: absolute;
+      bottom:0;
+      left:0;
+    }
+    .scroll{
+        width:100%;
+        overflow-x: auto;
+        background: #F5F5F5;
+        box-shadow: 0 -5px 10px 0 rgba(169,169,169,0.23);
+        border-top:1px solid rgba(169,169,169,0.23)
+    }
+    .title{
+      font-family: Helvetica;
+      font-size: 15px;
+      color: #202020;
+      text-align: center;
+      height:50px;
+      line-height: 50px;
+    }
+    .aui-grid .aui-iconfont{
+      width:40px;
+      height:40px;
+      display: inline-block;
+    }
+    .home{
+      background: url("../../../res/img/smile_pre@3x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .gear{
+      background: url("../../../res/img/smile_pre@3x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .map{
+      background: url("../../../res/img/smile_pre@3x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .aui-row .aui-grid-label{
+      margin-top:10px;
+      font-family: Helvetica;
+      font-size: 11px;
+      color: #020202;
+      letter-spacing: 0.11px;
+      text-align: center;
+    }
+    .aui-iconfont{
+      border-radius: 50%
+    }
+	</style>
+</head>
+<body>
+    <div id='sys-info'>
+        <div  class="scroll">
+          <ul class="aui-row">
+              <li class="aui-col-xs-4"  onclick="share('twitter')">
+                  <img src="../../../res/img/icon_twitter.png" alt="">
+                  <div class="aui-grid-label">twitter</div>
+              </li>
+              <!-- <li class="aui-col-xs-4"  onclick="share('facebook')">
+                  <img src="../../../res/img/icon_facebook.png" alt="">
+                  <div class="aui-grid-label">facebook</div>
+              </li> -->
+              <li class="aui-col-xs-4"  onclick="share('save')">
+                  <img src="../../../res/img/icon_save.png" alt="">
+                  <div class="aui-grid-label" i18n="Save"></div>
+              </li>
+          </ul>
+        </div>
+        <div class="title"  i18n="cancel" onclick="api.closeWin();">Cancel</div>
+    </div>
+
+
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

@@ -1,0 +1,89 @@
+@charset "utf-8";
+//底层样式框架
+@import "basic/variables";
+@import "basic/mixins";
+@import "basic/default";
+
+.title-bar{
+  display:flex;
+  align-items: center;
+  position: fixed;
+  width: 375*2px;
+  height: 47*2px;
+  background: #ffffff;
+  z-index: 30;
+  //background: #F9E650;
+  top: 0;
+  .back{
+    width: 12.5*2px;
+    height: 21*2px;
+    margin-left: 15.5*2px;
+
+  }
+  .title{
+    font-size: 17*2px;
+    color: #202020;
+    letter-spacing: 0.17px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.top-nav-placeholder {
+  width: 375*2px;
+  height: 54*2px;
+
+}
+.wiki-content{
+  width: 375*2px;
+  .wiki-news{
+    width:375*2px;
+    .wiki-news-lists{
+      width: 375*2px;
+      .wiki-news-ul{
+        display: block;
+        height: 65*2px;
+        margin: 5*2px 10*2px ;
+        background: #FFFFFF;
+        border-radius: 8px;
+        position: relative;
+        .wiki-left-boder{
+          position: absolute;
+          left: 0;
+          top:0;
+          width: 8px;
+          height: 65*2px;
+          border-radius: 8px;
+        }
+
+        .wiki-news-search-title{
+          padding: 15*2px;
+          height: 35*2px;
+          font-size: 13*2px;
+          color: #202020;
+          letter-spacing: 0.16px;
+          line-height: 20*2px;
+          border-radius: 8px;
+          @include text-truncate(2);
+          position: relative;
+          .wiki-news-search-time-topic{
+            background: #FCFCFC;
+            border: 1*2px solid #E9E9E9;
+            border-radius: 12*2px;
+            font-size: 11*2px;
+            color: #666666;
+            letter-spacing: 0.14px;
+            padding:0 4*2px;
+            position: absolute;
+            bottom: 5*2px;
+            right: 15*2px;
+          }
+        }
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+.icon-right {
+    position: relative;
+    height: 1.6rem;
+    width: 1.6rem;
+    padding: 1.4rem 1rem;
+    display: inline-block;
+}
+
+/*.title-bar .title {
+    position: relative;
+    line-height: 4.4rem;
+    font-size: 1.6rem;
+    font-family: Helvetica;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    width: 10rem;
+    z-index: 1;
+    color: #202020;
+    letter-spacing: 0.13px;
+    text-align: center;
+    background-color: #f00;
+}*/

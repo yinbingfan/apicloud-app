@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- 标题栏 -->
+<div class="title-bar">
+    <div style="position: absolute; top:0;left:0" onclick="api.closeWin()">
+        <img class="back" src="../../../res/img/back@3x.png"  tapmode>
+    </div>
+    <p class="title" i18n="user_center">111</p>
+</div>
+<div class="content" style="height:80px;padding-top:20px;padding-bottom:20px;padding-left:48px;text-align: center;">
+    <span class="avatar" style="height:80px;border:0px;">
+      <img id="avatar" class="avatar" src="../../../res/img/me_icon_select@3x.png"  onerror="this.src='../../../res/img/me_icon_select@3x.png'" onclick="fnClickPic()">
+      <img style="width:22px;height:22px;position:relative;bottom:0px;top:55px;left:-25px"
+           src="../../../res/img/icon_change_avatar@3x.png">
+    </span>
+
+</div>
+<div class="content-bottom" style="margin-top:10px">
+
+    <!-- 昵称 -->
+    <div class="line" id="nickname">
+        <left i18n="nickname">nickname</left>
+        <right>
+            <span id="nickname-text">nickname-text</span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </right>
+    </div>
+    <!-- 性别 -->
+    <div class="line-gender" id="gender">
+        <left i18n="gender">gender</left>
+        <right>
+            <span id="male" class="sex" style="border-radius: 4px 0 0px 4px;" onclick="fnClickMale()"
+                  i18n="male"></span><span id="female" class="sex" style="border-radius:0 4px 4px 0;margin-left:-2px"
+                                           onclick="fnClickFemale()" i18n="female"></span>
+        </right>
+    </div>
+    <!-- 生日 -->
+    <div class="line" id="birthday" style="border-bottom:0px">
+        <left i18n="birthday">birthday</left>
+        <right>
+            <div id="birthday-point"
+                 style="display:inline-block;width:6px;height:6px;border-radius:6px;background-color:#FEC930;margin-top:0px;margin-right:10px"></div>
+            <span id="birthday-text" i18n="pick"></span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </right>
+    </div>
+    <!-- email -->
+    <!--<div class="line" id="email" style="border-bottom:0px">-->
+    <!--<left i18n="email">email</left>-->
+    <!--<right>-->
+    <!--<span id="email-text" i18n="optional"></span>-->
+    <!--<img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">-->
+    <!--</right>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;第三方登录相关&ndash;&gt;-->
+
+    <div class="placeholder"></div>
+
+    <!--<div class="line" id="twitter">-->
+    <!--<left>Twitter</left>-->
+    <!--<right>-->
+    <!--<span>unbinding</span>-->
+    <!--<img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">-->
+    <!--</right>-->
+    <!--</div>-->
+    <!--<div class="line" id="facebook">-->
+    <!--<left>Facebook</left>-->
+    <!--<right>-->
+    <!--<span>unbinding</span>-->
+    <!--<img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">-->
+    <!--</right>-->
+    <!--</div>-->
+    <div class="line email-bind" style="border-bottom:0px">
+        <left i18n="email">Email</left>
+        <right>
+            <span class="email-text"></span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </right>
+        <div class="email-text-bind" i18n="unverified">unverified</div>
+    </div>
+    <div class="line email-unbind" style="border-bottom:0px;display: none">
+        <left i18n="email">Email</left>
+        <right>
+            <span class="email-text"></span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </right>
+    </div>
+
+    <div class="placeholder"></div>
+
+    <div style="padding-top: 80px;background:#f5f5f5 !important; margin-left: -2rem !important;"></div>
+
+    <div class="logout" id="logout" onclick="fnClickLogout()" tapmode>
+        <div i18n="logout"></div>
+    </div>
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+
+</html>

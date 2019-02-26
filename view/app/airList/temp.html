@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+    <div style="margin-top:13px">
+        <!-- 注册 -->
+        <div class="register au-list">
+          <div class="register-left au-l">
+            <p i18n="Register">Register</p>
+            <span i18n="Register as member to get 1999 DTT">Register as member to get 1999 DTT</span>
+          </div>
+          <div class="register-right au-r">
+              <!--<i @click="opentoast()" v-if="isBind"></i>-->
+              <img class="tanhao" src="../../../res/img/icon_tanhao.png" @click="opentoast()"  v-if="isBind" alt="">
+              <div class="btn hasRegist"  i18n="Registerd" v-if="isLogin">Registered</div>
+              <div class="btn noRegist" i18n="register" v-else @click="fnLogin">Register</div>
+          </div>
+        </div>
+        <div class="driver"></div>
+        <!-- 签到 -->
+        <div class="sign au-list">
+          <div class="register-left au-l">
+            <p i18n="Sign in">Sign in</p>
+            <span i18n="Sign in daily to get 90 DTT">Sign in daily to get 90 DTT</span>
+          </div>
+          <div class="register-right au-r">
+            <div class="btn hasRegist"  i18n='Signed' v-if="isSign">Signed</div>
+            <div class="btn noRegist"  i18n='Sign in' @click = "fnSign()" v-else>Sign in</div>
+          </div>
+        </div>
+        <div class="driver"></div>
+        <!-- 分享给朋友 -->
+        <div class="share au-list">
+          <div class="register-left au-l">
+            <div>
+              <p style="display:inline-block" i18n='Share to Friends'>Share to friends</p>
+              <div class="detail" style="display:inline-block;position:relative">
+                  <span class="detail-title"  i18n='Detail' v-if="isLogin" @click="openAirdropDetail">Detail</span>
+                  <img class="mark"  src="../../../res/img/icon_wenhao.png" v-else @click="fnGetMore('share')" alt="">
+                  <i v-if="new_detail"></i>
+              </div>
+            </div>
+            <span  i18n='Invite friends to register, get unlimited DTT'>Invite friends to register, get unlimited DTT</span>
+          </div>
+          <div class="register-right au-r">
+            <div class="btn hasRegist" i18n="shared" v-if="shareFriends">To share</div>
+            <div class="btn noRegist" i18n="Share to" @click = "shareToFriends"  v-else>To share</div>
+          </div>
+        </div>
+        <div class="driver"></div>
+        <!-- 使用即挖矿 -->
+        <div class="share au-list">
+          <div class="register-left au-l">
+            <div>
+              <p style="display:inline-block" i18n="Mining by use">Use the mining</p>
+              <div class="detail" style="display:inline-block;position:relative">
+                  <span class="detail-title" v-if="isLogin" @click="openAirdropUse" i18n="Detail">Detail</span>
+                  <img class="mark" v-else src="../../../res/img/icon_wenhao.png" @click="fnGetMore('use')" alt="">
+                  <i v-if="new_use"></i>
+              </div>
+            </div>
+            <span i18n="Use the app to earn DTT">Use the app to earn DTT</span>
+          </div>
+          <div class="register-right au-r" style="padding:0 0 10px 10px;display:inline-block;float:right" @click="openList()">
+              <img class="arrows" style="" src="../../../res/img/icon_up.png" alt="">
+          </div>
+        </div>
+        <div class="driver"></div>
+        <!-- /////////////-   折叠部分     //////////////- -->
+        <transition name = "fade">
+        <div class="list-wrapper" v-if="show">
+          <!-- 1  阅读新闻详情 -->
+          <div class="read au-list">
+            <div class=" w-l">
+              <p i18n="Read news">Reading news</p><p style="margin-left:4px"><h v-text="readNum"></h>/3</p>
+              <span i18n="Up to 90 DTT per day">Achieved it to</span>
+            </div>
+            <div class="use-right">
+              <div class="finish" v-if="readNum==3" i18n="Done">Done</div>
+              <div class="do"  @click="goToDo('news')" v-else>
+                 <div class="do-text" i18n='To do'>To do</div>
+                 <div class="do-line " :id="'type'+readNum"><i class="line-1"></i><i class="line-2"></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- 2  分享新闻详情 -->
+          <div class="news au-list">
+            <div class=" w-l">
+              <p i18n="Share news or briefs">Share news</p><p style="margin-left:4px"><h v-text="shareNum"></h>/1</p>
+              <span i18n="Up to 60 DTT per day">Achieved it to</span>
+            </div>
+            <div class="use-right">
+              <div class="finish" i18n="Done" v-if="shareNum==1">Done</div>
+              <div class="do" @click="goToDo('brief')"  v-else>
+                 <div class="do-text" i18n='To do' >To do</div>
+              </div>
+            </div>
+          </div>
+          <!-- 3  快讯投票详情 -->
+          <div class="voting au-list">
+            <div class=" w-l">
+              <p i18n="Brief like or dislike">Newsletter voting</p><p style="margin-left:4px"><h v-text="voteNum"></h>/3</p>
+              <span  i18n="Up to 60 DTT per day">Achieved it to</span>
+            </div>
+            <div class="use-right">
+              <div class="finish" v-if="voteNum==3" i18n="Done">Done</div>
+              <div class="do" @click="goToDo('brief')"  v-else>
+                 <div class="do-text" i18n='To do' >To do</div>
+                 <div class="do-line " :id="'type'+voteNum"><i class="line-1"></i><i class="line-2"></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </transition>
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

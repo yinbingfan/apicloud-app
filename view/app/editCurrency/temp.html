@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/edit_currency.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+    <div class="top-nav-bar" style="border: none">
+        <div class="top-nav">
+            <img src="../../../res/img/back@3x.png" onclick="api.closeWin()" tapmode>
+            <span i18n="Edit Currency">Edit Currency</span>
+            <span i18n="Save" @click="saveList">Save</span>
+        </div>
+    </div>
+
+    <div class="top-nav-placeholder"></div>
+    <div class="add-currency-header" i18n="Currenct Info">
+        Currenct Info
+    </div>
+    <div class="add-currency-wrap">
+        <div class="add-currency-content">
+            <div class="add-currency-content-item">
+                <div class="add-currency-content-title" i18n="Pick a Currency">Pick a Currency</div>
+                <!--<div class="add-currency-content-touch" @click="enterCurrency">-->
+                    <!--<span id="currencytitle" class="add-currency-seletct">{{currencytitle}}</span>-->
+                    <!--<img src="../../../res/img/icon_more_right@2x.png"/>-->
+                <!--</div>-->
+
+                <div class="add-currency-content-input" @click="enterCurrency">
+                    <input  id="currencytitles" v-model="currencytitle" i18n="Pick a Currency" placeholder="Pick a Currency">
+                    <!--<div v-if="currencyName==''" >{{currencytitle}}</div>-->
+                    <!--<div else="" id="currencytitles"></div>-->
+                    <img src="../../../res/img/icon_more_right@2x.png"/>
+                </div>
+            </div>
+            <div class="add-currency-line"></div>
+            <div class="add-currency-content-item">
+                <div class="add-currency-content-title" i18n="Amount">Amount</div>
+                <div class="add-currency-content-input">
+                    <input class="add-currency-content-input-price"  type="number" id="amount" v-model.number="amount" @blur="isAmount"  i18n="Amount" placeholder="Amount" maxlength="20">
+                </div>
+            </div>
+            <div class="add-currency-line"></div>
+            <div class="add-currency-content-item">
+                <div class="add-currency-content-title" i18n="Buy price">Buy price</div>
+                <div class="add-currency-content-input">
+                    <input type="number" id="price" v-model.number="price" i18n="Buy price" @blur="isPrice" placeholder="Buy price">
+                    <div class="add-currency-content-more">
+                        <div @click="cnys">
+                            <span >{{CNY}}</span>
+                            <img src="../../../res/img/sort_down_sel.png"/>
+                        </div>
+                        <div></div>
+                        <div @click="totalValue">
+                            <span class="Total">{{totalOrPer}}</span>
+                            <img src="../../../res/img/sort_down_sel.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-currency-line"></div>
+            <div class="add-currency-content-item">
+                <div class="add-currency-content-title" i18n="Bount on">Bount on</div>
+                <div class="add-currency-content-input" @click="selectTime">
+                    <div class="selectTimeBount">
+                        {{bount}}
+                    </div>
+                    <!--<input type="text" v-model="bount" placeholder="Click to enter" maxlength="20">-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="add-currency-header" i18n="Stored/Kept In">
+        Stored/Kept In
+    </div>
+    <div class="add-currency-select">
+        <div class="add-currency-select-content">
+            <div class="add-currency-select-item">
+                <section class="add-currency-select-tab">
+                    <div @click="switchingExchangeColor">
+                        <img v-show="Exchangegrey" src="../../../res/img/check_box_grey@2x.png"/>
+                        <img v-show="Exchangeyellow" src="../../../res/img/check_box_yellow@2x.png"/>
+                        <span i18n="Exchange">Exchange</span>
+                    </div>
+                    <div @click="switchingWalletColor">
+                        <img v-show="Walletyellow" src="../../../res/img/check_box_yellow@2x.png"/>
+                        <img  v-show="Walletgrey" src="../../../res/img/check_box_grey@2x.png"/>
+
+                        <span i18n="Wallet">Wallet</span>
+                    </div>
+                </section>
+            </div>
+            <div class="add-currency-line"></div>
+            <div class="add-currency-select-item" v-show="selectsExchange">
+                <section class="add-currency-select-input" @click="selectExchange">
+                    <input  id="exchangetitle"  v-model="exchangeCode" i18n="Pick an Exchange" placeholder="Pick an Exchange">
+                    <img src="../../../res/img/icon_more_right@2x.png"/>
+                </section>
+            </div>
+            <div class="add-currency-select-item" v-show="selectWallet">
+                <section class="add-currency-select-input">
+                    <input type="text" v-model="WalletInput"  placeholder="Enter wallet address" maxlength="200">
+                    <img class="erweima" @click="erWeiMa" src="../../../res/img/icon_scancode@3x.png"/>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="add-currency-header" i18n="Note">
+        Note
+    </div>
+    <div class="add-currency-note">
+            <textarea v-model="note"  @input="textCounter" i18n="Optional,Limited to 200 characters" placeholder="Optional,Limited to 200 characters" maxlength="200">
+
+            </textarea>
+    </div>
+</div>
+</body>
+</html>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+

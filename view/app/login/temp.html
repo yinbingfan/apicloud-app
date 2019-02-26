@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="z-index:999">
+    <!-- 标题栏 -->
+    <!-- <div class="title-bar">
+        <img class="titlebar-back" src="../../../res/img/back@3x.png" alt="返回" onclick="fnClickBack()">
+        <p class="titlebar-title" i18n="login">Login</title>
+    </div> -->
+    <div class="title-bar-login">
+        <img class="back" src="../../../res/img/ic_close.png" >
+    </div>
+    <p class="title" i18n="Login_with_SMS_Captcha_create_an_account_automatically">
+    </p>
+
+    <div class="content" style="z-index:999">
+        <!-- 昵称 -->
+        <!-- <input id="nickname" class="line" placeholder="NickName"></input> -->
+        <!-- 性别 -->
+        <!-- <div id="gender" class="line-hint" onclick="fnClickGender()">Gender</div> -->
+        <!-- 生日 -->
+        <!-- <div id="birthday" class="line-hint" placeholder="Birthday" onclick="fnClickBirthday()">Birthday</div> -->
+        <!-- Email -->
+        <!-- <input id="email" class="line" placeholder="Email(optional)"></input> -->
+        <!-- 手机号 -->
+        <div class="line">
+            <!-- <span class="phone-code" id="phone-code" onclick="fnClickPhoneCode()">+86</span> -->
+            <span>+</span><span id="country-code" class="phone-code" name="" onclick="clickPhoneCode()">
+            </span>
+            <input id="phone"  class="phone" autofocus placeholder="Phone Number" i18n="phone_number" type="tel" oninput="check(event)" onporpertychange="check(event)" value="" tapmode></input>
+        </div>
+        <!-- 验证码 -->
+        <div class="line yanzhengma">
+         <input id="sms-code" class="sms-captcha" placeholder="SMS Captcha" tapmode i18n="SMS_Captcha" type="tel" oninput="check(event)" onporpertychange="check(event)" value=""></input>
+            <span class="request-code" id="request-code" onclick="fnClickRequest()" tapmode i18n="request">request</span>
+
+        </div>
+        <!-- 去注册 -->
+        <!--<div style="margin-top:-1.5rem;margin-bottom:4rem;">-->
+            <!--<span id="gotoRegister" onclick="fnClickRegister()" tapmode style="font-family: Helvetica;font-size: 1.6rem;color: #5D9BEF;letter-spacing: 0.16px;" i18n="register">Register</span>-->
+        <!--</div>-->
+        <!-- 完成按钮 -->
+        <button id="complete" class="button" onclick="fnClickComplete()" i18n="login" tapmode>Login</button>
+        <!-- <p class="goto-login" id="goto-login" onclick="">Login with Captcha</p> -->
+
+    </div>
+    <!-- <div id="loading-anim" style="position:fixed;width:13.0rem;height:11.8rem;top:50%;left:50%;margin-top:-5.9rem;margin-left:-6.5rem;background-color:#F7F6E6;border-radius:3px;text-align:center;z-index:0;display:none;">
+            <img src="../../../res/img/Eclipse-1s-200px.svg" style="width:5rem;height:5rem;margin-top:3rem" alt="">
+            <div>
+                <span i18n="loading"></span><span>...</span>
+            </div>
+        </div> -->
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

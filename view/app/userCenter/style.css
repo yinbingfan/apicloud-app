@@ -1,0 +1,193 @@
+body{
+  background-color: #f5f5f5;
+}
+.content {
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: #fff;
+    color: #202020;
+    font-family: Helvetica;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+}
+
+.content-bottom {
+    padding-left: 18px;
+    background-color: #fff;
+    color: #202020;
+    font-family: Helvetica;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 1px solid #FFF7E2;
+}
+
+.line-hint {
+    height: 34px;
+    width: 100%;
+    border-bottom: 1px solid #B4B3B3;
+    margin-bottom: 30px;
+    color: #b4b3b3;
+}
+
+.line-phone {
+    height: 34px;
+    width: 100%;
+    border-bottom: 1px solid #B4B3B3;
+    margin-bottom: 30px;
+}
+
+.phone-code {
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #202020;
+    letter-spacing: 0.16px;
+    text-align: center;
+    padding-right: 10px;
+    border-right: 1px solid #d9d9d9;
+}
+
+.phone {
+    display: inline-block;
+    margin-left: 5px;
+    width: 150px;
+}
+
+.request-code {
+    position: absolute;
+    margin-right: 50px;
+    right: 0px;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #B4B3B3;
+    letter-spacing: 0.16px;
+    text-align: center;
+    padding-left: 10px;
+    border-left: 1px solid #d9d9d9;
+}
+
+.button {
+    background: #FFEAAD;
+    width: 100%;
+    height: 50px;
+    color: #FFFFFF;
+    letter-spacing: 0.13px;
+    border-radius: 3px;
+}
+
+.button.enable {
+    background: #FFEAAD;
+    width: 100%;
+    height: 50px;
+    color: #202020;
+    letter-spacing: 0.13px;
+    border-radius: 3px;
+}
+
+.goto-login {
+    font-family: Helvetica;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #5D9BEF;
+    letter-spacing: 0.16px;
+    text-align: center;
+}
+
+.line {
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 18px;
+    width: 100%;
+    letter-spacing: 0.13px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 0.5px solid #d9d9d9;
+    position: relative;
+}
+
+.line-gender {
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+    letter-spacing: 0.13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #d9d9d9;
+}
+
+left {
+    color: #202020;
+    text-align: center;
+}
+
+right {
+    float: right;
+    color: #B4B3B3;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-right: 18px;
+}
+
+.arrow_right {
+    display: inline-block;
+    width: 0.9rem;
+    margin-top: 0rem;
+    margin-left: 1rem;
+    height: 1.6rem;
+}
+
+.sex {
+    display: inline-block;
+    font-family: Helvetica-Bold;
+    width: 64px;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #007AFF;
+    background-color: #FFFFFF;
+    letter-spacing: -0.08px;
+    border: 1px solid #007AFF;
+}
+
+.sex.selected {
+    color: #FFFFFF;
+    background-color: #007AFF;
+}
+
+.placeholder {
+    margin-left: -2rem;
+    height: 2rem;
+    width: 105%;
+    background: #f5f5f5;
+}
+
+.logout {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout div {
+    font-family: SFCompactText-Regular;
+    font-size: 1.6rem;
+    color: #E76D42;
+    letter-spacing: 0.26px;
+    text-align: center;
+}
+.email-text-bind {
+    font-size: 1.6rem;
+    color: #E76D42;
+    letter-spacing: 0.29px;
+    position: absolute;
+    top: 3rem;
+    right: 4.1rem;
+    display: none;
+}

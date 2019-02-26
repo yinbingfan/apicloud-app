@@ -1,0 +1,158 @@
+<!-- <html style="font-size: 62.5%"> -->
+<html style="font-size: 62.5%">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="http://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+	<link href="../../../sdk/ui.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<style>
+		body {
+			padding: 0 0;
+			margin: 0 0;
+		}
+
+		.container-wrap {
+			border-top: 0.1rem solid rgba(0,0,0,0.3);
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			overflow-x: scroll;
+			/* 1 */
+			-webkit-backface-visibility: hidden;
+			-webkit-perspective: 1000;
+			-webkit-overflow-scrolling: touch;
+			/* 2 */
+			text-align: justify;
+			/* 3 */
+			::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		.container {
+			position: relative;
+			font-size: 0rem;
+		}
+
+		.tab-item {
+			display: inline-block;
+			font-size: 1.6rem;
+			color: #B4B3B3;
+			/*background-color: rgba(0, 255, 0, 0.1);*/
+			margin: 0 0;
+			padding: 0 1.5rem;
+			position: relative;
+			line-height: 4.4rem;
+			text-align: center;
+			box-sizing: border-box;
+		}
+
+		.selected {
+			color: #202020;
+			/*background-color: rgba(0, 255, 0, 0.2);*/
+		}
+
+		.indicator {
+			width: 2rem;
+			height: 0.4rem;
+			background-color: #FEC930;
+			display: none;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -1rem;
+		}
+
+		.selected>.indicator {
+			display: inline-block;
+		}
+		.pop-wrapper{
+			display:inline-block;
+			z-index:100; position:absolute;right:0;
+
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 顶部导航 -->
+	<div style="position:relative">
+		<div style="display:inline-block;width:100%;background-color:#fff" class="container-wrap">
+			<div class="container">
+				<!-- 举个例子 -->
+				<!--<div class="tab-item selected" index="0">-->
+					<!--Optional-->
+					<!--<div class="indicator">-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div >
+		<div class="pop-wrapper" id="market_tab_more_nor" tapmode>
+				<img  style="display:inline-block;width:1.9rem;height:1.9rem;padding:1.2rem;border-top: 0.1rem solid rgba(0,0,0,0.3);"  src="../../../res/img/market_tab_more_nor.png" alt="" tapmode>
+		</div>
+
+	</div>
+  <div id="noNet" style=";line-height:33px;color:#FDB438;font-size:1.4rem;text-align:center;background-color:#FFF7E2;display:none" i18n="network_error"></div>
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+
+<script type="text/javascript">
+	var headNode = document.getElementsByTagName('head')[0];
+	var confNode = document.createElement('script');
+	var coreNode = document.createElement('script');
+	var selfPath = window.location.href;
+	var widgetPath = "widget://";
+	var pathMatch = selfPath.match(/\/view(.+)$/);
+	if (pathMatch[1]) {
+		selfPath = pathMatch[1];
+		var index = -1;
+		var pathDeep = 0;
+		do {
+			index = selfPath.indexOf("/", index + 1);
+			if (index != -1) {
+				pathDeep++;
+			}
+		} while (index != -1);
+		if (pathDeep) {
+			widgetPath = "";
+			for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+				widgetPath += "../";
+			}
+		}
+	}
+
+	confNode.type = "text/javascript";
+	confNode.src = widgetPath + "config.js";
+	coreNode.type = "text/javascript";
+
+	if (coreNode.addEventListener) {
+		coreNode.addEventListener("load", scriptOnload, false);
+	} else if (coreNode.readyState) {
+		coreNode.onreadystatechange = function() {
+			if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+				coreNode.onreadystatechange = null;
+				scriptOnload();
+			}
+		};
+	} else {
+		coreNode.onload = scriptOnload;
+	}
+	coreNode.src = widgetPath + "sdk/core.js";
+	coreNode.onerror = function(e) {
+		console.log(JSON.stringify(e));
+	};
+	apiready = function() {
+		headNode.appendChild(confNode);
+		headNode.appendChild(coreNode);
+	};
+
+	function scriptOnload() {
+		seajs.use("./script");
+	}
+</script>
+
+</html>

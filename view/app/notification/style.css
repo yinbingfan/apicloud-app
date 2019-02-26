@@ -1,0 +1,103 @@
+.text1 {
+    font-family: Helvetica;
+    font-size: 1.6rem;
+    color: #202020;
+    line-height: 1.9rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.13px;
+}
+
+.text2 {
+    font-family: Helvetica;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    line-height: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #B4B3B3;
+    letter-spacing: 0.11px;
+}
+
+.testswitch {
+    position: relative;
+    float: right;
+    width: 5.1rem;
+    height: 3.1rem;
+    margin-top: 2.0rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.testswitch-checkbox {
+    display: none;
+    float: right;
+    checked:true;
+}
+
+.testswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 4rem;
+}
+
+.testswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.1s ease-in 0s;
+}
+
+.testswitch-inner::before, .testswitch-inner::after {
+    display: block;
+    float: right;
+    width: 50%;
+    padding: 0;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.testswitch-inner::after {
+    content: attr(data-on);
+    padding-left: 1rem;
+    background-color: #fec930;
+    color: #fec930;
+}
+
+.testswitch-inner::before {
+    content: attr(data-off);
+    padding-right: 1rem;
+    background-color: #fff;
+    color: #fff;
+    text-align: right;
+}
+
+.testswitch-switch {
+    position: absolute;
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0.15rem;
+    background: #fff;
+    top: 0;
+    bottom: 0;
+    right: 2rem;
+    border: 0 solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.02), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4rem;
+    transition: all 0.1s ease-in 0s;
+}
+
+.testswitch-checkbox:checked+.testswitch-label .testswitch-inner {
+    margin-left: 0;
+}
+
+.testswitch-checkbox:checked+.testswitch-label .testswitch-switch {
+    right: 0px;
+}

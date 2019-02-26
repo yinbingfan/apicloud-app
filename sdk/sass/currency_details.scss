@@ -1,0 +1,298 @@
+@charset "utf-8";
+//底层样式框架
+@import "basic/variables";
+@import "basic/mixins";
+@import "basic/default";
+
+.top-nav-bar {
+  background: #fff;
+  width: 375*2px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+  .top-nav {
+    height: 44*2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16*2px;
+    img {
+      display: block;
+      width: 12.5*2px;
+      height: 21*2px;
+    }
+    span {
+      color: #202020;
+      &:first-of-type {
+        font-size: 16*2px;
+      }
+      &:last-of-type {
+        font-size: 13*2px;
+      }
+    }
+  }
+}
+
+.top-nav-placeholder {
+  width: 375*2px;
+  height: 44*2px;
+}
+
+.amount-currency-content {
+  margin-top: 10*2px;
+  margin-bottom: 10*2px;
+  width: 375*2px;
+  .currency-content {
+    overflow: hidden;
+    background: #fff;
+    padding: 20*2px;
+    .currency-title {
+      display: flex;
+      justify-content: space-between;
+      .currency-amount-left {
+        display: flex;
+        align-items: center;
+        img {
+          display: block;
+          @include square(20*2px);
+          margin-right: 8*2px;
+        }
+        span {
+          line-height: 1;
+          color: #B4B3B3;
+          font-size: 15*2px;
+        }
+      }
+      .currency-amount-right {
+        display: flex;
+        align-items: center;
+        span {
+          color: #B4B3B3;
+          font-size: 13*2px;
+          margin-right: 6*2px;
+        }
+        .currency-pie {
+          svg {
+            @include square(20*2px);
+            transform: rotate(-90deg);
+            background: #8FABC8;
+            border-radius: 50%;
+          }
+          circle {
+            fill: #8FABC8;
+            stroke: #FFB538;
+            stroke-width: 32;
+          }
+        }
+      }
+    }
+    .currency-amount {
+      margin-top: 10*2px;
+      display: flex;
+      align-items: center;
+      span {
+        &:first-of-type {
+          font-size: 13*2px;
+          color: #202020;
+        }
+        &:nth-of-type(2) {
+          margin-left: 3*2px;
+          font-size: 22*2px;
+          line-height: 1;
+          color: #202020;
+        }
+        &:last-of-type {
+          margin-left: 8*2px;
+          font-size: 13*2px;
+        }
+      }
+    }
+    .currency-proportion {
+      margin-top: 15*2px;
+      span {
+        font-size: 15*2px;
+        color: #B4B3B3;
+        &:last-of-type {
+          margin-left: 10*2px;
+        }
+      }
+    }
+    .currency-earnings-wrap {
+      position: relative;
+      .currency-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 8*2px;
+        display: flex;
+        .rep {
+          dl {
+            margin: 0;
+            font-size: 13*2px;
+            color: #FFFFFF;
+            dt {
+              margin-bottom: 2*2px;
+            }
+            dd {
+              margin-left: 0;
+            }
+          }
+        }
+        .currency-cost {
+          width: 50%;
+          padding: 8*2px 9.5*2px;
+          @extend .rep
+        }
+        .currency-loss {
+          text-align: right;
+          width: 50%;
+          padding: 8*2px 9.5*2px;
+          @extend .rep
+        }
+      }
+      .currency-type-default {
+        background: #6082A5;
+      }
+      .currency-type-light {
+        background: #D0DFEF;
+      }
+      .currency-type-dark {
+        background: #1C4873;
+      }
+      .currency-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        div {
+          height: 95px;
+          &:first-child {
+            border-top-left-radius: 5*2px;
+            border-bottom-left-radius: 5*2px;
+          }
+          &:last-child {
+            border-top-right-radius: 5*2px;
+            border-bottom-right-radius: 5*2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.currency-details-wrap {
+  width: 375*2px;
+  overflow: hidden;
+  padding-bottom: 1*2px;
+  &:last-child {
+    padding-bottom: 0;
+  }
+  .currency-details-list {
+    width: 466*2px;
+    background: #fff;
+    display: flex;
+    .currency-details-content {
+      padding: 20*2px 18*2px;
+      overflow: hidden;
+      display: flex;
+      .currency-details-msg {
+        width: 375*2px;
+        .currency-details-title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .currency-details-title-left {
+            color: #B4B3B3;
+            font-size: 15*2px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            max-width: 500px;
+          }
+          .currency-details-title-right {
+            display: flex;
+            align-items: center;
+            span {
+              color: #B4B3B3;
+              font-size: 13*2px;
+            }
+            img {
+              margin-bottom: 4px;
+              margin-left: 10*2px;
+              display: block;
+              width: 6*2px;
+              height: 11*2px;
+            }
+          }
+        }
+        .currency-details-money {
+          margin-top: 10*2px;
+          color: #202020;
+          span {
+            &:first-of-type, &:last-of-type {
+              font-size: 15*2px;
+            }
+            &:nth-of-type(2) {
+              margin: 0 10*2px;
+              font-size: 13*2px;
+            }
+          }
+        }
+        .currency-details-msg-list {
+          margin-top: 20*2px;
+          dl {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15*2px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            dt {
+              color: #B4B3B3;
+              font-size: 13*2px;
+            }
+            dd {
+              color: #202020;
+              font-size: 13*2px;
+              margin-left: 0;
+            }
+            .currency-details-note {
+              text-align: right;
+              width: 171*2px;
+              @include text-truncate(3);
+              line-height: 21*2px;
+            }
+          }
+        }
+      }
+    }
+    .currency-details-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 15*2px;
+      background: #FF3A30;
+      height: 100%;
+      width: 101*2px;
+    }
+  }
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 70*2px;
+  right: 18*2px;
+  display: block;
+  @include square(45*2px)
+}
+
+.card-text-red {
+  color: #E76D42 !important;
+}
+.card-text-green {
+  color: #0f990f !important;
+}

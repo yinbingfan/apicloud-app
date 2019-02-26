@@ -1,0 +1,294 @@
+@charset "utf-8";
+//底层样式框架
+@import "basic/variables";
+@import "basic/mixins";
+@import "basic/default";
+
+.card-wrap {
+  margin-top: 20*2px;
+  width: 375*2px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20*2px;
+  .card-content {
+    width: 315*2px;
+    height: 150*2px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -2*2px 4*2px 0 rgba(239, 239, 239, 0.10);
+    padding: 20*2px;
+    .card-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 15*2px;
+        line-height: 0;
+      }
+      img {
+        display: block;
+        @include square(20*2px)
+      }
+    }
+    .card-amount {
+      margin-top: 10*2px;
+      align-items: center;
+      display: flex;
+      span {
+        font-size: 13*2px;
+        line-height: 1;
+        &:first-child {
+          font-family: PingFangSC-Regular;
+          color: #202020;
+        }
+      }
+      b {
+        margin-left: 10*2px;
+        margin-right: 18.7*2px;
+        font-size: 22*2px;
+        color: #202020;
+      }
+    }
+    .card-proportion {
+      margin-top: 15*2px;
+      span {
+        font-size: 15*2px;
+        color: #B4B3B3;
+        &:last-of-type {
+          margin-left: 10*2px;
+        }
+      }
+    }
+    .card-earnings-wrap {
+      position: relative;
+      .card-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 8*2px;
+        display: flex;
+        .rep {
+          dl {
+            margin: 0;
+            font-size: 13*2px;
+            color: #FFFFFF;
+            dt {
+              margin-bottom: 2*2px;
+            }
+            dd {
+              margin-left: 0;
+            }
+          }
+        }
+        .card-cost {
+          width: 50%;
+          padding: 8*2px 9.5*2px;
+          @extend .rep
+        }
+        .card-loss {
+          text-align: right;
+          width: 50%;
+          padding: 8*2px 9.5*2px;
+          @extend .rep
+        }
+      }
+      .card-type-default {
+        background: #6082A5;
+      }
+      .card-type-light {
+        background: #D0DFEF;
+      }
+      .card-type-dark {
+        background: #1C4873;
+      }
+      .card-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        div {
+          height: 95px;
+          &:first-child {
+            border-top-left-radius: 5*2px;
+            border-bottom-left-radius: 5*2px;
+          }
+          &:last-child {
+            border-top-right-radius: 5*2px;
+            border-bottom-right-radius: 5*2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-head-title {
+  margin-left: 18*2px;
+  font-size: 13*2px;
+  color: #B4B3B3;
+}
+
+.currency-wrap {
+  width: 375*2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .currency-content {
+    margin-top: 10*2px;
+    width: 315*2px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -2*2px 4*2px 0 rgba(239, 239, 239, 0.10);
+    padding: 20*2px;
+    .currency-title {
+      display: flex;
+      justify-content: space-between;
+      .currency-amount-left {
+        display: flex;
+        align-items: center;
+        img {
+          display: block;
+          @include square(20*2px);
+          margin-right: 4*2px;
+        }
+        span {
+          line-height: 1;
+          &:first-of-type, &:last-of-type {
+            color: #B4B3B3;
+            font-size: 13*2px;
+          }
+          &:nth-of-type(2) {
+            font-size: 4*2px;
+            color: #FDB438;
+            margin: 0 5*2px;
+          }
+        }
+      }
+      .currency-amount-right {
+        display: flex;
+        align-items: center;
+        span {
+          color: #B4B3B3;
+          font-size: 13*2px;
+          margin-right: 6*2px;
+        }
+        .currency-pie {
+          svg {
+            @include square(20*2px);
+            transform: rotate(-90deg);
+            background: #8FABC8;
+            border-radius: 50%;
+          }
+          circle {
+            fill: #8FABC8;
+            stroke: #FFB538;
+            stroke-width: 32;
+          }
+        }
+      }
+    }
+    .currency-amount {
+      margin-top: 10*2px;
+      span {
+        &:first-of-type {
+          font-size: 13*2px;
+          color: #202020;
+        }
+        &:nth-of-type(2) {
+          margin-left: 3*2px;
+          font-size: 15*2px;
+          color: #202020;
+        }
+        &:last-of-type {
+          margin-left: 8*2px;
+          font-size: 13*2px;
+          color: #E76D42;
+        }
+      }
+    }
+    .currency-earnings-wrap {
+      position: relative;
+      .currency-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 13*2px;
+        display: flex;
+        justify-content: space-between;
+        .currency-gross-amount {
+          height: 24*2px;
+          display: flex;
+          align-items: center;
+          span {
+            color: #fff;
+            font-size: 13*2px;
+            line-height: 1;
+            padding: 0 10*2px;
+          }
+        }
+      }
+      .currency-type-dark {
+        background: #1C4873;
+      }
+      .currency-type-default {
+        background: #6082A5;
+      }
+      .currency-type-light {
+        background: #D0DFEF;
+      }
+      .currency-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        div {
+          height: 45px;
+          &:first-child {
+            border-top-left-radius: 5*2px;
+            border-bottom-left-radius: 5*2px;
+          }
+          &:last-child {
+            border-top-right-radius: 5*2px;
+            border-bottom-right-radius: 5*2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-add {
+  width: 100%;
+  text-align: center;
+  font-size: 16*2px;
+  color: #B4B3B3;
+  span {
+    &:last-of-type {
+      margin-left: 5*2px;
+    }
+  }
+}
+
+.add-btn {
+  position: fixed;
+  z-index: 9999;
+  bottom: 70*2px;
+  right: 18*2px;
+  display: block;
+  @include square(45*2px)
+}
+
+.card-text-red {
+  color: #E76D42 !important;
+}
+.card-text-green {
+  color: #0f990f !important;
+}
+
+.card-bottom {
+  height: 100px;
+}

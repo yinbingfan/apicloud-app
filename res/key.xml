@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security>
+  <item name="mobSharePlus_sinaWb_apiKey" value="568898243"/>
+  <item name="mobSharePlus_sinaWb_apiSecret" value="38a4f8204cc784f81f9f0daaf31e02e3"/>
+  <item name="mobSharePlus_sinaWb_registUrl" value="http://www.apicloud.com"/>
+
+
+  <item name="mobSharePlus_weChat_apiKey" value=""/>
+  <item name="mobSharePlus_weChat_apiSecret" value=""/>
+
+  <item name="mobSharePlus_wxSession_apiKey" value="wx4868b35061f87885"/>
+  <item name="mobSharePlus_wxSession_apiSecret" value="64020361b8ec4c99936c0e3999a9f249"/>
+
+  <item name="mobSharePlus_facebook_apiKey" value="657457177922628"/>
+  <item name="mobSharePlus_facebook_apiSecret" value="9d4868ce7cafb3a95b872fa7b9031173"/>
+
+  <item name="mobSharePlus_twitter_apiKey" value="jzM5bXGnSj22Cjk499SD1lCzA"/>
+  <item name="mobSharePlus_twitter_apiSecret" value="plDjPwejfl0Rmah6uQgYtNObbI6xE0U0R6wRpypjthYzT1KURU"/>
+  <item name="mobSharePlus_twitter_registUrl" value="https://dailycoin-ccef4.firebaseapp.com/__/auth/handler"/>
+
+  <item name="mobSharePlus_mail_apiKey" value="show"/>
+  <item name="mobSharePlus_sms_apiKey" value="show"/>
+</security>

@@ -1,0 +1,294 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+body {
+  background-color: #f8f8f8 !important; }
+
+.title-bar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 750px;
+  width: 10rem;
+  height: 88px;
+  height: 1.17333rem;
+  background: #FFFFFF;
+  border-bottom: 2px solid #F5F5F5;
+  border-bottom: 0.02667rem solid #F5F5F5; }
+  .title-bar .title {
+    font-size: 32px;
+    font-size: 0.42667rem;
+    color: #202020;
+    letter-spacing: 0.16px;
+    letter-spacing: 0.00213rem;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center; }
+
+.animation-effect {
+  width: 750px;
+  width: 10rem;
+  height: 80px;
+  height: 1.06667rem;
+  top: 0;
+  position: fixed;
+  padding-top: 10px;
+  padding-top: 0.13333rem;
+  background: #FFFFFF;
+  z-index: 20; }
+  .animation-effect .search-header-content {
+    height: 54px;
+    height: 0.72rem;
+    margin: 0 16px 20px;
+    margin: 0 0.21333rem 0.26667rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: #F4F5F8;
+    border-radius: 16px;
+    border-radius: 0.21333rem; }
+    .animation-effect .search-header-content .search-header-find {
+      display: -webkit-box;
+      display: flex; }
+      .animation-effect .search-header-content .search-header-find img {
+        display: block;
+        width: 28px;
+        width: 0.37333rem;
+        height: 28px;
+        height: 0.37333rem;
+        margin: 0 20px 0;
+        margin: 0 0.26667rem 0; }
+      .animation-effect .search-header-content .search-header-find span {
+        font-weight: bold;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #BCBCBD;
+        letter-spacing: 0.16px;
+        letter-spacing: 0.00213rem; }
+
+.search-header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.16rem 0.21333rem 0 0.21333rem;
+  background: #F5F5F5; }
+  .search-header .search-header-content {
+    height: 54px;
+    height: 0.72rem;
+    margin: 20px 16px 0px;
+    margin: 0.26667rem 0.21333rem 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 16px;
+    border-radius: 0.21333rem;
+    border: 2px solid #E9EAED;
+    border: 0.02667rem solid #E9EAED; }
+    .search-header .search-header-content .search-header-find {
+      display: -webkit-box;
+      display: flex; }
+      .search-header .search-header-content .search-header-find img {
+        display: block;
+        width: 28px;
+        width: 0.37333rem;
+        height: 28px;
+        height: 0.37333rem;
+        margin: 0 20px 0;
+        margin: 0 0.26667rem 0; }
+      .search-header .search-header-content .search-header-find span {
+        font-weight: bold;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #BCBCBD;
+        letter-spacing: 0.16px;
+        letter-spacing: 0.00213rem; }
+
+.top-nav-placeholder {
+  width: 750px;
+  width: 10rem;
+  height: 200px;
+  height: 2.66667rem;
+  background: #f8f8f8; }
+
+.wiki-content {
+  width: 750px;
+  width: 10rem;
+  height: 100vh;
+  background: #f5f5f5; }
+  .wiki-content .wiki-news {
+    margin: 0 20px 0;
+    margin: 0 0.26667rem 0;
+    overflow: hidden; }
+    .wiki-content .wiki-news .wiki-news-lists {
+      width: 750px;
+      width: 10rem;
+      height: 100%; }
+      .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul {
+        float: left;
+        width: 306px;
+        width: 4.08rem;
+        height: 134px;
+        height: 1.78667rem;
+        background: #FFFFFF;
+        margin: 20px 20px;
+        margin: 0.26667rem 0.26667rem;
+        padding: 20px;
+        padding: 0.26667rem;
+        border-radius: 8px;
+        border-radius: 0.10667rem;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0.05333rem 0.08rem 0 rgba(0, 0, 0, 0.05);
+        border-top-width: 8px;
+        border-top-width: 0.10667rem;
+        border-top-style: solid; }
+        .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul .wiki-news-content-p {
+          width: 100%;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          color: #202020;
+          letter-spacing: 0.16px;
+          letter-spacing: 0.00213rem;
+          line-height: 40px;
+          line-height: 0.53333rem;
+          height: 80px;
+          height: 1.06667rem;
+          word-break: break-all;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          margin: 5px 0;
+          margin: 0.06667rem 0; }
+        .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul .wiki-news-content-bottom {
+          display: -webkit-box;
+          display: flex; }
+          .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul .wiki-news-content-bottom .wiki-news-content-bottom-topic {
+            max-width: 100%;
+            overflow: hidden;
+            -webkit-text-overflow: ellipsis;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding: 4px 12px;
+            padding: 0.05333rem 0.16rem;
+            font-size: 22px;
+            font-size: 0.29333rem;
+            letter-spacing: 0.28px;
+            letter-spacing: 0.00373rem;
+            border-radius: 20px;
+            border-radius: 0.26667rem;
+            color: #202020;
+            background: #F9F9F9;
+            border: 2px solid #E9E9E9;
+            border: 0.02667rem solid #E9E9E9;
+            border-radius: 10px;
+            border-radius: 0.13333rem; }
+      .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul:nth-of-type(2n+1) {
+        margin-left: 0; }
+      .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul:nth-of-type(2n) {
+        margin-left: 0;
+        margin-bottom: 0; }
+      .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul:nth-of-type(1) {
+        margin-top: 0 !important; }
+      .wiki-content .wiki-news .wiki-news-lists .wiki-news-ul:nth-of-type(2) {
+        margin-top: 0 !important; }
+    .wiki-content .wiki-news .wiki-news-title {
+      width: 100%;
+      height: 70px;
+      height: 0.93333rem;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center; }
+      .wiki-content .wiki-news .wiki-news-title .wiki-news-title-left {
+        font-weight: bold;
+        font-size: 32px;
+        font-size: 0.42667rem;
+        color: #202020;
+        width: 75%;
+        white-space: nowrap;
+        text-overflow: clip;
+        overflow: hidden;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden; }
+      .wiki-content .wiki-news .wiki-news-title .wiki-news-title-more {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center; }
+        .wiki-content .wiki-news .wiki-news-title .wiki-news-title-more span {
+          display: inline-block;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          color: #B4B3B3;
+          letter-spacing: 0.16px;
+          letter-spacing: 0.00213rem; }
+        .wiki-content .wiki-news .wiki-news-title .wiki-news-title-more img {
+          padding: 0 30px;
+          padding: 0 0.4rem;
+          display: block;
+          width: 16px;
+          width: 0.21333rem;
+          height: 28px;
+          height: 0.37333rem; }

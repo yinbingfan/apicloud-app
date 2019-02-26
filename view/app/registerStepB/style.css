@@ -1,0 +1,107 @@
+body {
+    background-color: #fff;
+}
+
+.content {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    color: #202020;
+    font-family: Helvetica;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+}
+
+.line {
+    height: 3.4rem;
+    width: 100%;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 3rem;
+}
+
+.line-hint {
+    height: 34px;
+    width: 100%;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 30px;
+    color: #b4b3b3;
+}
+
+.line-phone {
+    height: 34px;
+    width: 100%;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 30px;
+}
+
+.phone-code {
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #202020;
+    letter-spacing: 0.16px;
+    background-image: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+    background-color: #fff;
+    padding-right: 10px;
+    border-radius: 0;
+    border-right: 1px solid #ececec;
+}
+
+.phone {
+    display: inline-block;
+    margin-left: 5px;
+    width: 130px;
+}
+
+.sms-captcha {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 0px;
+    width: 130px;
+}
+
+.request-code {
+    position: absolute;
+    margin-right: 50px;
+    right: 0px;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #B4B3B3;
+    letter-spacing: 0.16px;
+    text-align: center;
+    padding-left: 10px;
+    border-left: 1px solid #ececec;
+}
+
+.enable {
+    color: #5D9BEF;
+}
+
+.button {
+    background: #FFEAAD;
+    width: 100%;
+    height: 50px;
+    color: #FFFFFF;
+    letter-spacing: 0.13px;
+    border-radius: 3px;
+}
+
+.button.enable {
+    background: #FEC930;
+    width: 100%;
+    height: 50px;
+    letter-spacing: 0.13px;
+    border-radius: 3px;
+}
+
+.goto-login {
+    font-family: Helvetica;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #5D9BEF;
+    letter-spacing: 0.16px;
+    text-align: center;
+}

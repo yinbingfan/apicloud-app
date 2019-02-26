@@ -1,0 +1,166 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.top-nav-bar {
+  background: #fff;
+  width: 750px;
+  width: 10rem;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1Px solid rgba(0, 0, 0, 0.3); }
+  .top-nav-bar .top-nav {
+    height: 88px;
+    height: 1.17333rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 0.42667rem; }
+    .top-nav-bar .top-nav img {
+      display: block;
+      width: 25px;
+      width: 0.33333rem;
+      height: 42px;
+      height: 0.56rem; }
+    .top-nav-bar .top-nav span {
+      color: #202020; }
+      .top-nav-bar .top-nav span:first-of-type {
+        font-size: 32px;
+        font-size: 0.42667rem; }
+      .top-nav-bar .top-nav span:last-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem; }
+
+.top-nav-placeholder {
+  width: 750px;
+  width: 10rem;
+  height: 88px;
+  height: 1.17333rem; }
+
+.login-top-img {
+  margin-top: 70px;
+  margin-top: 0.93333rem;
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center; }
+  .login-top-img img {
+    display: block;
+    width: 193px;
+    width: 2.57333rem;
+    height: 177px;
+    height: 2.36rem; }
+
+.login-button-wrap {
+  margin-top: 220px;
+  margin-top: 2.93333rem;
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center; }
+  .login-button-wrap .login-button {
+    color: #fff;
+    width: 550px;
+    width: 7.33333rem;
+    height: 100px;
+    height: 1.33333rem;
+    border-radius: 6px;
+    border-radius: 0.08rem;
+    margin-bottom: 40px;
+    margin-bottom: 0.53333rem;
+    font-size: 30px;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center; }
+  .login-button-wrap .login-light-blue {
+    background: #54ACEF; }
+  .login-button-wrap .login-dark-blue {
+    background: #3C5A99; }
+  .login-button-wrap .login-yellow {
+    background: #FCB236; }
+  .login-button-wrap .login-empty {
+    color: #B4B3B3 !important;
+    border: 1Px solid #B4B3B3; }
+  .login-button-wrap .login-line-wrap {
+    margin-top: 20px;
+    margin-top: 0.26667rem;
+    margin-bottom: 60px;
+    margin-bottom: 0.8rem;
+    width: 750px;
+    width: 10rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center; }
+    .login-button-wrap .login-line-wrap div:first-of-type, .login-button-wrap .login-line-wrap div:last-of-type {
+      width: 232px;
+      width: 3.09333rem;
+      height: 2px;
+      height: 0.02667rem;
+      background: #dedede; }
+    .login-button-wrap .login-line-wrap div:nth-of-type(2) {
+      font-size: 30px;
+      font-size: 0.4rem;
+      color: #B4B3B3;
+      margin: 0 25px;
+      margin: 0 0.33333rem; }

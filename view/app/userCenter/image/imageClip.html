@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<link rel="stylesheet" href="../css/api.css" type="text/css">
+		<link rel="stylesheet" href="../css/base.css" type="text/css">
+		<style>
+			.bottom-0{
+				line-height: 45px;
+				height:45px;
+				width:100%;
+				position: fixed;
+				bottom: 0;
+				left:0;
+				overflow: hidden;
+			}
+			.btn-left{
+				width: 50%;
+				height:45px;
+				float: left;
+				text-align:center;
+				background:#FCFCFC;
+				color: #666666;
+				display: inline-block;
+			}
+			.btn-right{
+				width: 50%;
+				height:45px;
+				float: left;
+				text-align:center;
+				background:#04B570;
+				color: #ffffff;
+				display: inline-block;
+			}
+			.bg-e5e6e7{
+				background:#e5e6e7;
+			}
+			.op5{
+				opacity:0.5;
+			}
+		</style>
+	</head>
+	<body style="background: #999999;">
+		<div class="bottom-0">
+			<div class="btn-left" tapmode="bg-e5e6e7" i18n="cancel" onclick="closeClip()">
+
+			</div>
+			<div class="btn-right" tapmode="op5" i18n="confirm" onclick="imageSave()">
+
+			</div>
+		</div>
+	</body>
+	<script src="../../../../sdk/jquery-3.3.1.min.js"></script>
+	<script src="../../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+	<script src="../../../../sdk/loader.js"></script>
+	<script>
+	// apiready = function() {
+	// 	imageClip();
+	// }
+//图像剪裁
+// function imageClip() {
+// 	var pars = api.pageParam.pars;
+// 	var FNImageClip = api.require('FNImageClip');
+// 	FNImageClip.open({
+// 		rect : {
+// 			x : pars.x1,
+// 			y : pars.y1,
+// 			w : pars.w1,
+// 			h : pars.h1
+// 		},
+// 		srcPath : pars.srcPath,
+// 		style : {
+// 			mask : 'rgba(0,0,0,.5)',
+// 			clip : {
+// 				w : pars.w2,
+// 				h : pars.h2,
+// 				x : pars.x2,
+// 				y : pars.y2,
+// 				borderColor : '#0f0',
+// 				borderWidth : 1,
+// 				appearance : 'rectangle'
+// 			}
+// 		},
+// 		mode : 'image',
+// 		fixedOn : api.frameName
+// 	}, function(ret, err) {
+// 		if (ret) {
+// 			//					alert(json2str(ret));
+// 		} else {
+// 			console.log(json2str(err));
+// 		}
+// 	});
+// }
+//
+// function imageSave() {
+// 	var FNImageClip = api.require('FNImageClip');
+// 	FNImageClip.save({
+// 		destPath : api.pageParam.pars.srcPath,
+// 		copyToAlbum : false,
+// 		quality : 1
+// 	}, function(ret, err) {
+// 		if (ret) {
+// 			api.execScript({
+// 				name : api.pageParam.pars.wName,
+// 				frameName : api.pageParam.pars.fName,
+// 				script : 'savePic("'+ret.destPath+'");'
+// 			});
+// 			setTimeout(function() {
+// 				closeClip();
+// 			}, 200);
+// 		} else {
+// 			alert(JSON.stringify(err));
+// 		}
+// 	});
+// }
+//
+// function closeClip() {
+// 	var FNImageClip = api.require('FNImageClip');
+// 	FNImageClip.close();
+// 	setTimeout(function() {
+// 		api.closeFrame({
+//
+// 		});
+//
+// 	}, 300);
+// }
+	</script>
+</html>

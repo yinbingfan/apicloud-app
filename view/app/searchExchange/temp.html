@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/search_exchange.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+    <div class="title-bar">
+        <img class="back" src="../../../res/img/back@3x.png" alt="" @click="back">
+        <p class="title" i18n="Pick Exchange" style="">Pick Exchange</p>
+    </div>
+    <div class="search-header">
+        <div class="search-header-content">
+            <div class="search-header-find">
+                <img  class="searchBtn" src="./../../../res/img/icon_search@3x.png">
+                <form  action="javascript:return true">
+                    <input ref="currencyName" @keyup.13="searchBtn" @blur="searchCurrencyBlur"  @focus="searchCurrencyFocus"  v-model="currencyName" i18n="Exchange Name" placeholder="Exchange Name" type="search" maxlength="35"/>
+                </form>
+
+            </div>
+            <div i18n="Cancel" v-show="cancel" @click="cancelInputValue" class="search-header-btn">
+                Cancel
+            </div>
+        </div>
+    </div>
+    <div class="top-nav-placeholder"></div>
+    <!--默认列表-->
+    <div v-show="recommendCurrencyListAndCollectionList">
+        <div i18n="Selected from watchlist" class="search-title" v-if="watchLists!=null&&watchLists!=''">
+            Selected from watchlist
+        </div>
+        <div class="search-list"  v-for="(watchList,index) in watchLists">
+            <div class="search-list-item" @click="watchCurrey(index)">
+                <img :src="watchList.logo"/>
+                <span>{{watchList.code}}</span>
+            </div>
+        </div>
+        <div i18n="Recommend" class="search-title" v-if="RecommendCurrencyLists!=null&&RecommendCurrencyLists!=''">
+            Recommend
+        </div>
+        <div class="search-list" v-for="(RecommendCurrencyList,index) in RecommendCurrencyLists">
+            <div class="search-list-item" @click="Recommendurrey(index)">
+                <img :src="RecommendCurrencyList.logo"/>
+                <span>{{RecommendCurrencyList.code}}</span>
+            </div>
+        </div>
+    </div>
+    <!--搜索币种出现-->
+    <div  v-show="currencyList" class="search-currency-list" v-for="(assetCurrencyList,index) in assetCurrencyLists" >
+        <div class="search-list-item" @click="searchAssetExchange(index)">
+            <img :src="assetCurrencyList.logo"/>
+            <span >{{assetCurrencyList.code}}</span>
+        </div>
+        <!--<div class="search-list-item">-->
+        <!--<img src="./../../../res/img/icon_switch.png">-->
+        <!--<span>BTC(Bitcoin)</span>-->
+        <!--</div>-->
+    </div>
+    <!--无币种时显示-->
+    <div  class="no-results" v-show="Noresults">
+        <div i18n="No Results"  class="center">
+            No Results
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+
+</html>

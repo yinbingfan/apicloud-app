@@ -1,0 +1,49 @@
+body {
+    background-color: #eef1f6;
+}
+
+ul {
+    background-color: #fff;
+    height: 100%;
+    overflow: scroll;
+}
+
+li {
+    position: relative;
+    height: 2rem;
+    line-height: 2rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    border-bottom: 0.05rem solid #ECECEC;
+    padding: 1.5rem 1.8rem;
+}
+
+li>* {
+    display: inline-block;
+}
+
+.image {
+    width: 2rem;
+    height: 2rem;
+}
+
+.name {
+    font-size: 1.6rem;
+    color: #202020;
+    margin-left: 1rem;
+    letter-spacing: -0.39px;
+}
+
+.isMark {
+    position: absolute;
+    right: 1.8rem;
+    width: 2rem;
+    height: 2rem;
+    background: url('../../../res/img/ic_coin_collect_no@3x.png');
+    background-size: contain;
+}
+
+.li-selected>.isMark {
+  background: url('../../../res/img/ic_coin_collect_sel@3x.png');
+  background-size: contain;
+}

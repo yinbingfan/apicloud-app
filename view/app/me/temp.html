@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="background-color:rgb(238,241,246)">
+    <!-- 个人信息 -->
+    <div id="isIphone" style="padding-top:56px;background-color:#ffffff;height:100px" onclick="fnClickLogin()">
+        <div class="avatar-container">
+            <img id="avatar" class="avatar" onerror="this.src='../../../res/img/me_icon_select@3x.png'" src="../../../res/img/me_icon_select@3x.png" alt="">
+        </div>
+        <div>
+            <h3 id="phone" class="phone" i18n="login"></h3>
+            <p id="info" class="edit-content" i18n="login_to_explore_more"></p>
+        </div>
+        <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right_top"
+             style="position:absolute;top:90px;right:0;">
+    </div>
+
+
+    <div id="isEmail" onclick="fnClickLogin()">
+        <div class="is-email">
+            <img class="is-email-header" onerror="this.src='../../../res/img/me_icon_select@3x.png'" src="../../../res/img/me_icon_select@3x.png"/>
+            <div class="is-email-wrap">
+                <div class="is-email-box">
+                    <h1 class="is-email-text"></h1>
+                    <div class="is-email-tips">
+                        <img src="../../../res/img/wran@3x.png"/>
+                        <span i18n="unverified">unverified</span>
+                    </div>
+                </div>
+                <img src="../../../res/img/icon_more_right@3x.png" class="is-email-arrow">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 收藏、历史 -->
+    <div style="width:auto;height:88px;clear:both;background-color:#ffffff;margin-top:10px;font-size:14px">
+            <span class="collect" onclick="fnClickFavorite()">
+              <img class="collect-icon" src="../../../res/img/me_icon_collect@3x.png" alt="collect">
+            <p i18n="collect"></p>
+
+            </span>
+        <span class="history" onclick="fnClickHistory()">
+              <img class="collect-icon" src="../../../res/img/me_icon_history@3x.png" alt="history">
+            <p i18n="history"></p>
+            </span>
+        <span style="position:absolute;left:50%;margin-top:20px;background-color:#b4b3b3;height:46px;width:0.5px;"></span>
+    </div>
+    <!-- Airdrop -->
+     <div class="list-line airdrop" onclick="fnAirdrop()">
+        <img class="icon" src="../../../res/img/icon_airdrop.png" alt="">
+        <span class="text red-dot" i18n="Airdrop">Airdrop</span>
+        <span class="right">
+              <span id="cache-size">0</span>&nbsp;DTT <i id="redRound" style="display:none"></i>
+        <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </span>
+     </div>
+     <div class="share_banner" onclick="fnAirdropShare(0)">
+       <img src="" />
+     </div>
+
+    <div style="background-color:#fff">
+        <!--货币切换-->
+        <div class="list-line" style="display:block" onclick="fnClickPrice()">
+            <img class="icon" src="../../../res/img/currency_exchange@3x.png" alt="">
+            <span class="text" i18n="Currency settings">price</span>
+            <span class="arrow-right-text price-text"></span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </div>
+        <div class="divider"></div>
+        <!-- 操作界面语言 -->
+        <div class="list-line" style="margin-top:0px;display:block" onclick="fnClickLanguage()">
+            <img class="icon" src="../../../res/img/me_icon_position@3x.png" alt="">
+            <span class="text" i18n="language"></span>
+              <span class="arrow-right-text language-text">price</span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </div>
+        <div class="divider"></div>
+        <!-- 国家和地区 -->
+        <div class="list-line" style="margin-top:0px;display:block" onclick="fnClickCountry()">
+            <img class="icon" src="../../../res/img/ic_me_location@3x.png" alt="">
+            <span class="text" i18n="position"></span>
+              <span class="arrow-right-text position-text">price</span>
+            <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+        </div>
+        <!-- <div class="divider"></div> -->
+    </div>
+
+
+  <div style="background-color:#fff">
+    <!-- 意见反馈 -->
+    <div class="list-line" style="margin-top:10px;display:block" onclick="fnClickFeedback()">
+        <img class="icon" src="../../../res/img/me_icon_feedback@3x.png" alt="">
+        <span class="text" i18n="feedback"></span>
+        <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+    </div>
+      <div class="divider"></div>
+    <!-- 分享 -->
+      <div class="list-line" style="margin-top:0px;" onclick="fnAirdropShare(1)">
+          <img class="icon" src="../../../res/img/me_icon_sharetofriends@3x.png" alt="">
+          <span class="text" i18n="share_to_friends"></span>
+          <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+      </div>
+      <div class="divider"></div>
+      <!-- 评分 -->
+      <div class="list-line" style="margin-top:0px;" onclick="fnClickRate()">
+          <img class="icon" src="../../../res/img/me_icon_rateus@3x.png" alt="">
+          <span class="text" i18n="rate_us"></span>
+          <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+      </div>
+      <!-- <div class="divider"></div> -->
+
+      <!-- <div class="divider"></div> -->
+
+  </div>
+<!-- 设置 -->
+   <div class="list-line" style="margin-top:10px;margin-bottom:10px;" onclick="fnSettings()">
+      <img class="icon" src="../../../res/img/me_icon_setting@3x.png" alt="">
+      <span class="text" i18n="settings"></span>
+      <span class="right">
+            <!-- <span id="cache-size"></span> -->
+      <img src="../../../res/img/icon_more_right@3x.png" class="arrow_right">
+      </span>
+   </div>
+
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

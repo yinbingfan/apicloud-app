@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<style>
+  .title-bar .title{
+
+  }
+</style>
+<body>
+    <div class="title-bar">
+        <!-- 标题栏 -->
+        <div class="title-bar" style="position:fixed;width:100%;z-index:9999">
+          <div style="position: absolute; top:0;left:0" onclick="api.closeWin()">
+              <img class="back" src="../../../res/img/back@3x.png"  tapmode>
+          </div>
+            <p id="title" class="title" i18n="Location">default · default / default</p>
+            <div id="confirm" class="right" onclick="fnCollect()">
+                <div id="collect" class="right-icon" ></div>
+            </div>
+        </div>
+    </div>
+    <!-- 货币 -->
+    <div style="padding:2rem 1.8rem;padding-bottom:5.5rem;color:rgba(255,255,255,0.7);font-size:1.6rem;line-height:1.9rem;background:url(../../../res/img/coin_detail_bg@3x.png);background-size:100% 17.7rem;background-repeat:no-repeat;">
+        <div style="float:left;left:0">
+            <img id="coin_icon"src="" style="width:2.5reml;height:2.5rem;margin-right:0.6rem;"><p id="coinName" style="display:inline-block;margin-top:0.5rem;">default</p>
+            <p  id="price" style="margin-top:0.5rem;font-size: 3rem;line-height:3.6rem;color: #8CE26A;">default</p>
+            <!-- <img src="../../../res/img/iconfont_btc.svg"></img> -->
+            <img id="btcIcon"src="../../../res/img/iconfont_btc.svg" style="display:inline;width:2rem;height:2rem;margin-top:0.5rem;" alt=""> <p id="price1" style="margin-left:-0.8rem;margin-right:1rem;margin-top:0.5rem;display:inline-block">default</p>  <p id="price2" style="margin-top:0.5rem;display:inline-block">default</p>
+        </div>
+        <div style="right:0;text-align:right">
+            <p  id="time" style="font-size: 1.0rem;line-height:1.9rem;">default</p>
+            <div style="margin-top:1rem;width:100%;">
+                <div  id="changes" class="coin-detail-up">default</div>
+            </div>
+            <p  id="volume" style="margin-top:0.5rem;">Volume default</p>
+        </div>
+        <div style="padding:2rem 0;margin-top:2.5rem;background-color:#fff;box-shadow: 0 0 0.6rem 0 rgba(83,85,87,0.10);border-radius: 0.2rem;color:#333;top:13.4rem;background:f00">
+            <p  id="high" style="text-align:center;width:48%;display:inline-block">default</p>
+            <p  id="low" style="text-align:center;width:48%;display:inline-block">default</p>
+            <p class="coin-detail-info-highlow" i18n="high">High</p>
+            <p class="coin-detail-info-highlow" i18n="low">Low</p>
+
+        </div>
+        <p  id="info" class="coin-detail-info-text" >
+            default比特币（Bitcoin)的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件及建构其上的P2P网络。比特币是一种P2P形式的数字货币。点对点的传输意味着...
+        </p>
+        <div  id="show_more" class="coin-detail-text-arrow" onclick="showOrHideText()"></div>
+    </div>
+
+    <p class="coin-detail-list-title" i18n="Currency Info"></p>
+    <ul style="padding:0 1.8rem">
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left" i18n="rank"></p><p  id="rank" class="coin-detail-info-right">default</p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left" i18n="Exchanges number"></p><p  id="exchangeCount" class="coin-detail-info-right">default</p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left" i18n="Max supply"></p><p  id="issueCount" class="coin-detail-info-right">default</p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left" i18n="Current supply">Current supply</p><p  id="circulationVolume" class="coin-detail-info-right">default</p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left"i18n="Release Date">Release Date</p><p  id="issueTime" class="coin-detail-info-right">default</p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left"i18n="Website">Website</p><p  id="website" class="coin-detail-info-right" style="line-height:1.8rem;padding:1.1rem 0;"></p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left"i18n="White paper">White paper</p><p  id="whitePaper" class="coin-detail-info-right" style="line-height:1.8rem;padding:1.1rem 0;"><a href="http://www.baidu.com">www.baidu.com</a></br><a href="http://www.baidu.com">www.baidu.com</a></br><a href="http://www.baidu.com">www.baidu.com</a></p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left"i18n="Block query">Block query</p><p  id="blockQuery" class="coin-detail-info-right" style="line-height:1.8rem;padding:1.1rem 0;"><a href="http://www.baidu.com">www.baidu.com</a></br><a href="http://www.baidu.com">www.baidu.com</a></br><a href="http://www.baidu.com">www.baidu.com</a></p>
+        </li>
+        <li class="coin-detail-info-li">
+            <p class="coin-detail-info-left"i18n="Related concepts">Related concepts</p><p  id="relConcept" class="coin-detail-info-right">default</p>
+        </li>
+    </ul>
+
+    <p class="coin-detail-list-title"i18n="Time line"></p>
+    <ul id="list-events" class="coin-detail-event-ul">
+      <!-- <li class="coin-detail-event-li">
+        <span class="coin-detail-event-time">2017-10-24</span>
+        <img class="coin-detail-event-img" src="../../../res/img/coin_detail_event_mark1.png"/>
+        <p  class="coin-detail-event-text" >比特币黄金（BTG）的硬分叉代表了数字货币即将迎来分叉热潮</p>
+      </li>
+      <li class="coin-detail-event-li">
+        <span class="coin-detail-event-time">2017-11-23</span>
+        <img class="coin-detail-event-img" src="../../../res/img/coin_detail_event_mark.png"/>
+        <p  class="coin-detail-event-text" >BCD分叉倒计时</p>
+      </li> -->
+
+    </ul>
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

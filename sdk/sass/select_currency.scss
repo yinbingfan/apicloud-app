@@ -1,0 +1,114 @@
+@charset "utf-8";
+//底层样式框架
+@import "basic/variables";
+@import "basic/mixins";
+@import "basic/default";
+
+.top-nav-bar {
+  background: #fff;
+  width: 375*2px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+  .top-nav {
+    height: 44*2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16*2px;
+    img {
+      display: block;
+      width: 12.5*2px;
+      height: 21*2px;
+    }
+    span {
+      color: #202020;
+      &:first-of-type {
+        font-size: 16*2px;
+      }
+      &:last-of-type {
+        font-size: 13*2px;
+      }
+    }
+  }
+}
+
+.top-nav-placeholder {
+  width: 375*2px;
+  height: 44*2px;
+}
+
+.select-wrap {
+  overflow: hidden;
+  .select-list {
+    width: 133%;
+    transform: translateX(0px);
+    margin-left: 50px;
+    border-bottom: 1px solid #e8e8e8;
+    &:last-child {
+      border-bottom: none;
+    }
+    label {
+      display: flex;
+      align-items: center;
+
+      justify-content: space-between;
+      height: 50*2px;
+      list-style: none;
+      .select-left-wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 364*2px;
+        align-items: center;
+        .select-left-title {
+          font-size: 15*2px;
+          color: #202020;
+        }
+        .select-line {
+          display: flex;
+          input {
+            display: none;
+          }
+          img {
+            margin-right: 22*2px;
+            display: block;
+            width: 20*2px;
+            height: 14*2px;
+          }
+        }
+      }
+      .select-right-wrap {
+        display: flex;
+        div {
+          color: #fff;
+          font-size: 15*2px;
+          text-align: center;
+          height: 50*2px;
+          line-height: 52*2px;
+          &:first-of-type {
+            background: #C7C7CC;
+            width: 65*2px;
+          }
+          &:last-of-type {
+            background: #FF3A30;
+            width: 85*2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-add {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 16*2px;
+  color: #B4B3B3;
+  span {
+    &:last-of-type {
+      margin-left: 5*2px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/wiki_search.css" rel="stylesheet">
+</head>
+<style>
+.search-header .search-header-content .search-header-find div {
+  width: 440px;
+  width: 5.86667rem;
+  border: none;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center; }
+  .search-header .search-header-content .search-header-find div input {
+    width: 440px;
+    width: 5.86667rem;
+    border: none;
+    color: #202020;
+    font-size: 26px;
+    font-size: 0.34667rem;
+    padding-left: 0;
+    background: none; }
+    .search-header .search-header-content .search-header-find div input::-webkit-input-placeholder {
+      color: #B4B3B3; }
+      [v-cloak] {
+        display: none; }
+</style>
+<body>
+<div id='app' v-cloak>
+    <div class="search-header" style="position: fixed">
+        <div class="search-header-content">
+            <div  class="search-header-find">
+                <img  class="searchBtn" src="./../../../res/img/wiki_icon_search@3x.png">
+                <div  >
+                    <input id="searchBtn" v-focus="true"  value=""   @keyup.13="searchBtn" autocapitalize="off" autocorrect="off"  v-model="searchWiki" i18n="search" placeholder="搜索" type="search" maxlength="35"/>
+                </div>
+                <img @click="clearText" src="./../../../res/img/wiki_icon_close@3x.png" alt="">
+            </div>
+            <div  @click="cancelInputValue" i18n="Cancel" class="search-header-btn"></div>
+        </div>
+    </div>
+    <!-- <div class="top-nav-placeholder"></div> -->
+    <!--搜索列表-->
+    <div v-show="defaultBlank" class="default-blank"></div>
+    <!--搜索结果为空-->
+    <div class="no-results" v-show="NoResults">
+        <div class="center">
+            <img src="./../../../res/img/wiki_image_search_empty@3x.png" alt="">
+            <div class="search-keyword">"<span class="changeRed">{{searchWiki}}</span>"<span i18n="no result"></span></div>
+        </div>
+    </div>
+    <div id="domwiki" class="wiki-content" style="padding-top:1.3rem" v-show="wikiNewsSearchResult">
+        <div class="wiki-news">
+            <div  class="wiki-news-lists">
+                <div id="view-lists" class="wiki-news-ul" @click="storeUrl(item.storeUrl,item.id,item.adFlag,item.isFavorite)"  v-for="(item,index) in wikiSearchLists">
+                    <div class="wiki-news-search-title">
+                        <div class="wiki-news-search-item-topic" v-html="item.title"></div>
+                        <span v-show="item.sub" class="wiki-news-search-time-topic">{{item.conermarkTitle}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style= " padding: 0;margin: 0; display:flex;justify-content: center;align-content: center; width:100%;height:.8rem;color:#999;">
+            <p v-show="loading" id="loading"  style="padding: 0;margin: 0; line-height:.8rem;text-align:center" i18n="no_more"></p>
+            <img v-show="loadingAnim" id="loading-anim" src="../../../res/img/loading.svg" class="loading-anim" style=" width: 80px;"/>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+
+</html>

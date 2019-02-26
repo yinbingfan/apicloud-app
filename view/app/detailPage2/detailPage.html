@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>P</title>
+    <link rel="stylesheet" type="text/css" href="api.css" />
+        <link rel="stylesheet" type="text/css" href="aui.css" />
+	<style>
+      html,body{
+        background-color: rgba(0,0,0,0)
+      }
+	</style>
+</head>
+<body>
+
+
+</body>
+<!-- <script type="text/javascript" src="../script/api.js"></script> -->
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js" data-script="share"> </script>
+
+
+<script type="text/javascript">
+  var mobSharePlus;
+  var mParam;
+  var url;
+  var title;
+  var text;
+  var imgUrl=[];
+
+
+
+
+  apiready = function(){
+    //监听详情页侧边栏右滑事件，执行返回操作
+      api.addEventListener({
+          name: 'swiperight'
+      }, function(ret, err){
+          if( ret ){
+              api.execScript({
+                  name: 'detail',
+                  script: 'clickBack();'
+              });
+
+          }else{
+            api.execScript({
+                name: 'detail',
+                script: 'clickBack();'
+            });
+          }
+      });
+
+
+  }
+
+
+
+</script>
+</html>

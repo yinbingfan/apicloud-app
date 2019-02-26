@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body class="flex-col" style="background:#eef1f6">
+    <!-- 标题栏 -->
+    <div class="title-bar" style="position:relative">
+        <img id="back" class="back" src="../../../res/img/back@3x.png" tapmode onclick="api.closeWin();">
+        <p class="title" i18n="history" style="width:16rem;display:inline-block;position:absolute;left:50%;margin-left:-8rem">
+        </p>
+        <div class="title-bar-right" style="position:absolute;right:10px;display:inline-block;height:44px;display:visible" onclick="fnClear()">
+            <img src="../../../res/img/icon_clear@3x.png" style="width:1.6rem;height:1.6rem;margin-top:1.6rem;display:inline-block" alt=" ">
+            <!--<span i18n="clear" class="clear"></span>-->
+        </div>
+    </div>
+    <div class="flex-1 flex-col scroll_cont">
+        <div id="controlList">
+            <!-- 可操作列表 -->
+        </div>
+        <div style="width:auto;text-align:center;height:5rem;color:#999;overflow:hidden">
+            <p id="loading" style="line-height:5rem;"></p>
+            <img id="loading-anim" src="../../../res/img/loading.svg" style="height:4rem;margin-top:0rem;display:none"></img>
+        </div>
+    </div>
+    <div class="page-hint">
+        <img class="page-hint-img" src="../../../res/img/popup_no_history@3x.png" alt="">
+        <p class="page-hint-p" i18n="no_history"></p>
+    </div>
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- <script src="http://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script> -->
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .coin_item {
+            width: 20%;
+            text-align: center;
+            padding: 2rem 0;
+            display: inline-block;
+            /*background: #f00;*/
+        }
+
+        .icon {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .name {
+            color: #fff;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            text-align: center;
+            margin-top: 0.5rem
+        }
+
+        .container {
+            background-color: #1f2123;
+            padding: 1rem 4%;
+        }
+    </style>
+</head>
+
+<body style="padding:0 0;margin:0 0;background-color:rgba(18,18,18,0.3);font-size: 0;" >
+  <div style="position:fixed;width:100%;height:100%;z-index:1" onclick="clickBlack()" tapmode></div>
+    <div id="container" class="container" style="position:fixed;width:96%;z-index:9999">
+        <!-- <span class="coin_item">
+            <img src="../../../res/img/LOGO@3x.png"class="icon" alt="">
+            <p class="name">BTC</p>
+        </span> -->
+    </div>
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var coinArray;
+    var container;
+    var num=1;
+    apiready = function() {
+        var pageParam = api.pageParam
+        console.log(JSON.stringify(pageParam));
+        coinArray = pageParam.coinArray
+        loadCoin()
+        $(".coin_item").on("click",function(){
+          console.log("click");
+          api.execScript({
+              name: 'index',
+              frameName: 'market',
+              // name: 'market',
+              script: 'clickTab('+$(this).attr("index")+');'
+          });
+
+          // api.closeFrame();
+
+        })
+    }
+
+    function loadCoin() {
+        container = $('#container')[0];
+        coinArray.forEach(function(item,index) {
+          if(index==0){
+            return
+          }
+            console.log(JSON.stringify(item));
+
+            var span = document.createElement("span");
+            $(span).addClass("coin_item")
+            $(span).attr("index",index)
+
+            var icon = document.createElement("img")
+            $(icon).attr("src", "../../../res/img/LOGO@3x.png")
+            $(icon).attr("src", "../../../res/img/coiniconhd/"+item.name+".png")     //bug475,原因：本地缺少对应图片
+              // $(icon).attr("src", item.logo)
+            // $(icon).attr("src", item.logo)
+            $(icon).addClass("icon")
+            span.appendChild(icon)
+
+            var name = document.createElement("p")
+            $(name).text(item.name)
+            $(name).addClass("name")
+            span.appendChild(name)
+
+            container.appendChild(span)
+        })
+    }
+
+    function clickBlack(){
+      console.log("clickBlack");
+
+        api.execScript({
+            frameName: 'market',
+            script: 'resetButton();',
+        });
+
+        api.closeFrame();
+    }
+</script>
+
+</html>

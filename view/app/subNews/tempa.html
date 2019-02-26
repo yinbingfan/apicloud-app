@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<style>
+</style>
+<body class="flex-col" style="background-color:#fff">
+<!-- <div style="width:100%;height:44px;background-color:#fff;border-bottom:1px solid #f4f6f9">
+  <div id="logo" style="background-color:#fff;">
+      <img style="width:44px;height:44px;margin-left:7px;margin-right:10px;margin-top:0px;margin-bottom:0px;background-color:#fff" src="../../../res/img/LOGO@3x.png" alt="">
+  </div>
+</div> -->
+
+    <div class="flex-col" id="subNew">
+
+    </div>
+    <span id="invisible" style="font-size:18px;position:fixed;width:auto;color:rgba(0,0,0,0);display:inline-block">1111</span>
+    <div id="tophint" style="margin-top:45px;line-height:33px;color:#B4B3B3;font-size:1.3rem;text-align:center;background-color:#ffffff"></div>
+    <div id="noNet" style="margin-top:45px;line-height:33px;color:#FDB438;font-size:1.4rem;text-align:center;background-color:#FFF7E2;display:none" i18n="network_error"></div>
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

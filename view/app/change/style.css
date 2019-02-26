@@ -1,0 +1,26 @@
+.font-size {
+    width: 32%;
+    font-size: 1.3rem;
+    margin: 0rem 0rem;
+    line-height: 3rem;
+    color: #202020;
+    letter-spacing: 0.26px;
+    display: inline-block;
+    text-align: center;
+    background: #F7F6E6;
+    border-radius: 2px;
+}
+
+.selected {
+    width: 32%;
+    font-size: 1.3rem;
+    margin: 0rem 0rem;
+    display: inline-block;
+    line-height: 3rem;
+    color: #202020;
+    letter-spacing: 0.26px;
+    text-align: center;
+    background: #FEC930;
+    border-radius: 2px;
+    color: #fff;
+}

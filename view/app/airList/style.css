@@ -1,0 +1,182 @@
+@charset "UTF-8";
+[v-cloak] {
+  display: none;
+}
+html,body{
+  margin:0
+}
+p{
+  margin:0
+}
+.driver{
+  width:100%;
+  height:1px;
+  opacity: 0.48;
+  background: #E4E7F0;
+}
+.au-list{
+  padding:18px 15px 0px;
+  position: relative;
+  overflow: hidden
+}
+.au-l{
+  width:230px;
+  float:left
+}
+.au-r{
+
+
+}
+.au-l p{
+  font-family: Helvetica;
+  font-size: 16px;
+  color: #202020;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+.au-l span{
+  display: inline-block;
+  opacity: 0.45;
+  font-family: Helvetica;
+  font-size: 13px;
+  color: #202020;
+  letter-spacing: 0.13px;
+  text-align: left;
+  line-height: 14px;
+  height:38px;
+}
+.btn{
+  border-radius: 3px;
+  background: #FF9825;
+  font-family: Helvetica;
+  font-size: 13px;
+  color: #FFFFFF;
+  text-align: right;
+  line-height: 27px;
+  height:27px;
+  position: absolute;
+  top:50%;
+  margin-top:-14px;
+  bottom:0;
+  right:15px;
+  width:90px;
+  text-align: center;
+}
+.register-right .hasRegist{
+  background: #D8D8D8;
+  color: #000000;
+  opacity: 0.3;
+}
+.register-right .tanhao{
+  display: inline-block;
+  position: absolute;
+  right:108px;
+  top:50%;
+  margin-top:-8px;
+  width:16px;
+  height:16px;
+  /*background:url(../../../res/img/icon_tanhao.png) no-repeat;*/
+  /*background-sise:16px 16px;*/
+}
+.detail .detail-title{
+  opacity: 1;
+  font-family: Helvetica;
+  font-size: 10px;
+  color: #4594FF;
+  letter-spacing: 0.36px;
+  height:10px;
+}
+.detail i{
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #FF3A30;
+  border-radius: 50%;
+  position: absolute;
+  right:-6px;
+  top:0;
+}
+.detail .mark{
+  width:12px;
+  height:12px;
+  position: absolute;
+  right:-12px;
+  top:-18px;
+}
+.w-l{
+  width:240px;
+  float:left
+}
+
+.w-l p{
+  margin-bottom: 4px;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #202020;
+  line-height: 18px;
+  display: inline-block;
+}
+.w-l span{
+  display: block;
+  letter-spacing: 0.13px;
+  text-align: left;
+  opacity: 0.45;
+  font-family: Helvetica;
+  font-size: 13px;
+  color: #202020;
+  line-height: 18px;
+}
+.use-right{
+  display: inline-block;
+  float:right
+}
+.do-text{
+  font-family: Helvetica;
+  font-size: 13px;
+  color: #FF720B;
+  text-align: center;
+  width:68px;
+}
+.do-line{
+  line-height: 6px;
+  text-align: center;
+}
+.do-line i{
+  display: inline-block;
+  width: 16px;
+  height:3px;
+  background: #FF720B;
+  opacity: 0.17;
+}
+ #type1  .line-1{
+    opacity: 1
+}
+#type2  .line-1, #type2 .line-2{
+   opacity: 1
+}
+.finish{
+  opacity: 0.45;
+  font-family: Helvetica;
+  font-size: 13px;
+  color: #202020;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: center;
+  width:68px;
+}
+.list-wrapper{
+  margin-top:2px;
+  padding-bottom:45px;
+}
+.list-wrapper .au-list{
+   padding-top:16px;
+   padding-bottom:0px;
+}
+.arrows{
+  width:13px;
+  height:7px;
+  float:right;
+  margin-top:15px;
+  transform:rotate(0deg);
+  transition: all 0.3s ease-out;
+}

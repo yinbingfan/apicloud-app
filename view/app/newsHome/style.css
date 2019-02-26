@@ -1,0 +1,43 @@
+.top-nav {
+    height: 4.4rem;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #fff
+}
+
+.top-nav, .top-nav .top-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.top-nav .top-bar .top-bar-item {
+    width: 7.6rem;
+    height: 2.9rem;
+    line-height: 3.1rem;
+    border: .1rem solid #fdb438;
+    text-align: center;
+    color: #fdb438;
+    font-size: 1.3rem
+}
+
+.top-nav .top-bar .top-bar-item:first-child {
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem
+}
+
+.top-nav .top-bar .top-bar-item:last-child {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    border-left: none
+}
+
+.top-nav .top-bar .active {
+    color: #fff;
+    background: #fdb438
+}

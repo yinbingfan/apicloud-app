@@ -1,0 +1,185 @@
+ul {
+    height: 100%;
+    /*margin-top: 0rem;*/
+    /*overflow: scroll;*/
+    webkit-overflow-scrolling: scroll;
+    /*background: #f00*/
+}
+
+li {
+    position: relative;
+    height: 3.6rem;
+    /*width: 100%;*/
+    overflow-y: hidden;
+    /*overflow-x: scroll;*/
+    /*overflow-x: hidden;*/
+    border-bottom: 0.05rem solid #ECECEC;
+    padding: 1.7rem 1.8rem;
+}
+
+li>p {
+    position: absolute;
+}
+
+li>div {
+    position: absolute;
+}
+
+.stick {
+    left: 100%;
+    width: 6.5rem;
+    line-height: 7.2rem;
+    height: 7.2rem;
+    margin-top: -1.7rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+    background: #c7c7c7;
+}
+
+.delete {
+    left: 100%;
+    margin-left: 6.5rem;
+    color: #fff;
+    margin-top: -1.7rem;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 7.5rem;
+    line-height: 7.2rem;
+    background: #FF3A30;
+}
+
+.second-column {
+    right: 12rem;
+}
+
+.name {
+    font-size: 1.6rem;
+    color: #202020;
+    letter-spacing: 0;
+    text-align: center;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.currency {
+    font-size: 1.1rem;
+    color: #B4B3B3;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 1.9rem;
+}
+
+.latest {
+    font-size: 1.6rem;
+    color: #202020;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.latest2 {
+    bottom: 1.6rem;
+    font-size: 1.1rem;
+    color: #B4B3B3;
+    letter-spacing: 0;
+    text-align: center;
+}
+.btcIcon {
+    display: inline;
+    width: 1.6rem;
+    height: 1.6rem;
+    /*margin-top: 0.5rem;*/
+    /*padding-right: -0.4rem;*/
+}
+.btcPrice{
+  display: inline;
+}
+
+.volume {
+    bottom: 1.6rem;
+    font-size: 1.1rem;
+    color: #B4B3B3;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.filter {
+    background-color: #eef1f6;
+    padding: 0 0;
+    text-align: right;
+    top: 0;
+    position: relative;
+    width: 100vw;
+    z-index: 999;
+}
+
+.text {
+    font-size: 1.3rem;
+    line-height: 4rem;
+    color: #B4B3B3;
+    /*text-align: center;*/
+}
+
+.exchange {
+    position: absolute;
+    left: 1.8rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.sort-latest {
+    width: 10rem;
+    display: inline-block;
+    margin-right: 1.7rem;
+}
+
+.sort-changes {
+    width: 8.5rem;
+    display: inline-block;
+    margin-right: 1.8rem;
+}
+
+.sort {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.8rem;
+    background-image: url('../../../res/img/sort_no.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.up {
+    background-image: url('../../../res/img/sort_up.png');
+}
+
+.down {
+    background-image: url('../../../res/img/sort_down.png');
+}
+
+
+/*行情相关*/
+
+.change-up {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5rem;
+    right: 1.8rem;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    width: 6.4rem;
+    line-height: 3rem;
+    background: #8CE26A;
+    border-radius: 0.2rem;
+}
+
+.change-no {
+    background: #BEBEBE;
+}
+
+.change-down {
+    background: #F86464;
+}

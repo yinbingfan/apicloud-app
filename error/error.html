@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+  </head>
+  <body class="flex-col">
+    <div class="flex-1" id="view">
+      <div class="listPlaceholder">
+      	<div class="_container">
+      		<div class="_icon">
+      			<i class="ion">
+      			<!-- if: ${icon} -->
+      			<!-- ${icon|raw} -->
+      			<!-- else -->
+      			&#xe60d;
+      			<!-- /if -->
+      			</i>
+      		</div>
+      		<p class="_text">
+            
+      		</p>
+      		<div class="btn btn-block btn-danger" id="goBack" onclick="" >
+
+              </div>
+      	</div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../sdk/jquery-3.3.1.min.js"></script>
+  <script src="../sdk/jquery.i18n.properties-1.0.9.js"></script>
+  <script src="../config.js"></script>
+  <script src="../sdk/core.js" id="seajsnode" ></script>
+  <script>
+  seajs.use('./script');
+  </script>
+</html>

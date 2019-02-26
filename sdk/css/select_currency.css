@@ -1,0 +1,166 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.top-nav-bar {
+  background: #fff;
+  width: 750px;
+  width: 10rem;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 0.01333rem solid rgba(0, 0, 0, 0.3); }
+  .top-nav-bar .top-nav {
+    height: 88px;
+    height: 1.17333rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 0.42667rem; }
+    .top-nav-bar .top-nav img {
+      display: block;
+      width: 25px;
+      width: 0.33333rem;
+      height: 42px;
+      height: 0.56rem; }
+    .top-nav-bar .top-nav span {
+      color: #202020; }
+      .top-nav-bar .top-nav span:first-of-type {
+        font-size: 32px;
+        font-size: 0.42667rem; }
+      .top-nav-bar .top-nav span:last-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem; }
+
+.top-nav-placeholder {
+  width: 750px;
+  width: 10rem;
+  height: 88px;
+  height: 1.17333rem; }
+
+.select-wrap {
+  overflow: hidden; }
+  .select-wrap .select-list {
+    width: 133%;
+    -webkit-transform: translateX(0px);
+    -webkit-transform: translateX(0);
+    transform: translateX(0px);
+    transform: translateX(0);
+    margin-left: 50px;
+    margin-left: 0.66667rem;
+    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 0.01333rem solid #e8e8e8; }
+    .select-wrap .select-list:last-child {
+      border-bottom: none; }
+    .select-wrap .select-list label {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      height: 100px;
+      height: 1.33333rem;
+      list-style: none; }
+      .select-wrap .select-list label .select-left-wrap {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 728px;
+        width: 9.70667rem;
+        -webkit-box-align: center;
+        align-items: center; }
+        .select-wrap .select-list label .select-left-wrap .select-left-title {
+          font-size: 30px;
+          font-size: 0.4rem;
+          color: #202020; }
+        .select-wrap .select-list label .select-left-wrap .select-line {
+          display: -webkit-box;
+          display: flex; }
+          .select-wrap .select-list label .select-left-wrap .select-line input {
+            display: none; }
+          .select-wrap .select-list label .select-left-wrap .select-line img {
+            margin-right: 44px;
+            margin-right: 0.58667rem;
+            display: block;
+            width: 40px;
+            width: 0.53333rem;
+            height: 28px;
+            height: 0.37333rem; }
+      .select-wrap .select-list label .select-right-wrap {
+        display: -webkit-box;
+        display: flex; }
+        .select-wrap .select-list label .select-right-wrap div {
+          color: #fff;
+          font-size: 30px;
+          font-size: 0.4rem;
+          text-align: center;
+          height: 100px;
+          height: 1.33333rem;
+          line-height: 104px;
+          line-height: 1.38667rem; }
+          .select-wrap .select-list label .select-right-wrap div:first-of-type {
+            background: #C7C7CC;
+            width: 130px;
+            width: 1.73333rem; }
+          .select-wrap .select-list label .select-right-wrap div:last-of-type {
+            background: #FF3A30;
+            width: 170px;
+            width: 2.26667rem; }
+
+.card-add {
+  margin-top: 40px;
+  margin-top: 0.53333rem;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-size: 0.42667rem;
+  color: #B4B3B3; }
+  .card-add span:last-of-type {
+    margin-left: 10px;
+    margin-left: 0.13333rem; }

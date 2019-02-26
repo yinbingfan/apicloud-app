@@ -1,0 +1,10 @@
+/bin
+/doc.json
+/_docs
+/_component
+/public
+/node_modules
+/view/x
+/config.json
+.DS_Store
+/.idea

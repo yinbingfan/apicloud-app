@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/airdrop_info.css" rel="stylesheet">
+</head>
+<body>
+<div id='app'  @click="aridop_close" v-cloak>
+    <div id="main">
+       <div class="rule-award">
+            <h3 i18n="Reward rule" >Rule of award</h3>
+            <div class="rule-cont"  v-for="(lists,index) in ruleAward" :key="index">
+                <p>
+                    <span v-if="lists.newFlag==1" i18n="NEW">new</span>
+                    {{index+1}}.
+                    {{lists.content}}
+                </p>
+            </div>
+        </div>
+
+       <div class="aridop_close" @click="aridop_close">
+           <img class="back" src="../../../res/img/aridop_close.png" alt="" >
+       </div>
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

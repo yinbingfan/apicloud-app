@@ -1,0 +1,50 @@
+/* 默认隐藏按钮 */
+.member-set{display: none;}
+
+.member-head .member-set{display: inline-block;}
+
+/*.footer{
+  background-color: #202020;
+}*/
+.foot {
+    position: relative;
+    background-color: #202020;
+    overflow: hidden;
+    z-index: 9;
+    font-size: .9em
+}
+.tabs {
+    overflow: visible;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+}
+
+.tabs .tab-item {
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    color: inherit;
+    color: rgb(146, 146, 146);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    box-sizing: border-box;
+    padding: 1.4rem 0 0.9rem 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: hidden
+}
+
+.tabs .tab-item.cur {
+    color: rgb(254, 201, 48)
+}
+
+.tabs .tab-item .icon {
+    height: 2.4rem;
+    margin-bottom: 0.6rem
+}

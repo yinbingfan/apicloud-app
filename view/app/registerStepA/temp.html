@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 标题栏 -->
+    <div class="title-bar">
+        <img class="back" src="../../../res/img/back@3x.png" onclick="api.closeWin();" tapmode>
+        <p class="title" i18n="register"></title>
+    </div>
+    <div class="content">
+        <!-- 昵称 -->
+        <input id="nickname" class="line" placeholder="NickName" i18n="nickname" oninput="check(event)" onporpertychange="check(event)" autofocus></input>
+        <!-- 性别 -->
+        <div id="gender" class="line-hint" onclick="fnClickGender()" i18n="gender"></div>
+        <!-- 生日 -->
+        <div id="birthday" class="line-hint" placeholder="Birthday" onclick="fnClickBirthday()" i18n="birthday"></div>
+        <!-- Email -->
+        <input id="email" class="line" placeholder="Email(optional)" oninput="check(event)" type="email" i18n="email(optional)" onporpertychange="check(event)"></input>
+        <!-- 手机号 -->
+        <!-- <div class="line">
+            <span class="phone-code" id="phone-code" onclick="fnClickPhoneCode()">+86</span>
+            <input id="phone" class="phone" placeholder="Phone Number" type="number" oninput="check(event)" onporpertychange="check(event)"></input>
+        </div> -->
+        <!-- 验证码 -->
+        <!-- <div class="line">
+            <input id="sms-code" class="phone" placeholder="SMS Captcha" type="number" oninput="check(event)" onporpertychange="check(event)"></input>
+            <span class="request-code" id="request-code" onclick="fnClickRequest()">request</span>
+        </div> -->
+        <!-- 完成按钮 -->
+        <button id="complete" class="button" onclick="fnClickComplete()" tapmode i18n="next"></button>
+        <p class="goto-login" id="goto-login" onclick="fnClickLogin()" tapmode i18n="login_with_Captcha"></p>
+    </div>
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

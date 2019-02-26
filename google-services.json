@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1030014658938",
+    "firebase_url": "https://dbit-cf9a6.firebaseio.com",
+    "project_id": "dbit-cf9a6",
+    "storage_bucket": "dbit-cf9a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030014658938:android:86928d41df7fab81",
+        "android_client_info": {
+          "package_name": "com.dbit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030014658938-515qj9tsi0fa4lk259g4g4l49ell3jft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dbit",
+            "certificate_hash": "e4dfb55606d01de58028cd68edf410504a7f74cc"
+          }
+        },
+        {
+          "client_id": "1030014658938-o3kmagktrt15h8791bh56khkehblugmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7BVBzCSqFFbLjlDZXQ60zk7jCaY-oNWM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030014658938-o3kmagktrt15h8791bh56khkehblugmu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1030014658938-5k0d05jr3paegscc6vsmv7crjrnc5hvi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dbit"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

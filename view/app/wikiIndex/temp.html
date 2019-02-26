@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/wiki_index.css" rel="stylesheet">
+</head>
+<style>
+
+
+</style>
+<body>
+<div id='app' v-cloak>
+    <!-- <transition name="fade"> -->
+    <div  style="width:100%">
+        <div class="title-bar" >
+            <p class="title" i18n="wiki">Wiki</p>
+        </div >
+        <div class="search-header">
+            <div class="search-header-content" @click="clickSearchWikiInput">
+                <div class="search-header-find" >
+                    <img  class="searchBtn" src="./../../../res/img/wiki_icon_search@3x.png">
+                    <span i18n="search">搜索</span>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div id="noNet" style=";line-height:33px;color:#FDB438;font-size:14px;text-align:center;background-color:#FFF7E2;display:none" i18n="network_error"></div>
+    <!-- <div class="top-nav-placeholder"></div> -->
+    <!--默认列表-->
+    <div class="wiki-content">
+        <div id="view-lists" class="wiki-news"  v-for="(lists,index) in newsIndexLists">
+            <div class="wiki-news-title">
+                <div class="wiki-news-title-left">{{lists.channelName}}<span>  （{{lists.count}}）</span> </div>
+                <div class="wiki-news-title-more" @click="moreNews(lists.channelName,lists.channelId) ">
+                    <!--<span i18n="more"></span>-->
+                    <img src="./../../../res/img/wiki_more.png" alt="">
+                </div>
+            </div>
+            <div id="view-list" @click="storeUrl(list.storeUrl,list.id,list.adFlag,list.isFavorite)" class="wiki-news-lists" data-url="list.storeUrl" data-id="list.channelId" v-for="(list,index) in lists.list">
+                <div  class="wiki-news-ul" :style="{borderTopColor:list.BorderColor}">
+                    <p class="wiki-news-content-p">
+                        {{list.title}}
+                    </p>
+                    <div class="wiki-news-content-bottom">
+                        <div class="wiki-news-content-bottom-topic" v-show="list.sub">{{list.conermarkTitle}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style= "display:flex;justify-content: center;align-content: center; width:100%;height:1.5rem;color:#999;overflow:hidden;">
+            <p id="loading" v-show="loading"  i18n="no_more" style="line-height:1.5rem;text-align:center"></p>
+            <p id="loadings" v-show="loadings"  i18n="more" style="line-height:1.5rem;text-align:center"></p>
+            <img id="loading-anim" v-show="loadingAnim" src="../../../res/img/loading.svg" class="loading-anim" style="width: 80px;"/>
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+
+</html>

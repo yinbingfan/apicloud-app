@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="filter">
+        <div class="text exchange" id="titleExchanges" i18n="Exchanges"></div>
+        <div class="text sort-latest" onclick="sortLatest()">
+            <span i18n="Latest"></span>
+            <span id="sortLatest" class="sort">
+		</div>
+		<div class="text sort-changes" onclick="sortChanges()">
+			<span i18n="Changes"></span>
+            <span id="sortChanges" class="sort">
+		</div>
+	</div>
+<!-- <div style="margin-top:4rem;width:auto;text-align:center;height:5rem;color:#999;overflow:hidden;">
+    <div id="bottom-loading" style="display:block;">
+        <p id="loading" style="line-height:5rem;">loading</p>
+        <img id="loading-anim" src="../../../res/img/loading.svg" style="height:4rem;margin-top:0rem;display:inline-block"></img>
+    </div>
+</div> -->
+    <!-- 交易所列表 -->
+    <ul id="list" >
+        <!-- <li>
+            <p class="name">Bitfinex<span class="currency"> · USD</span></p>
+            <p class="latest second-column">¥6,847.5555</p>
+            <p class="volume">Volume 218,810</p>
+            <p class="latest2 second-column">$42,842.81</p>
+            <p class="change-up">+1.38%</p>
+            <div class="delete">Delete</div>
+            <div class="stick">Stick</div>
+            </li> -->
+    </ul>
+    <img id="add" onclick="clickAdd()" style="display:none;opacity:1;position:fixed;width:5rem;height:5rem;right:3rem;bottom:4rem" src="../../../res/img/market_add.png" tapmode/>
+    <div id="add_big" onclick="clickAdd()" style="display:none;position:fixed;width:16rem;height:9rem;left:50%;top:50%;margin-left:-8rem;margin-top:-6rem;text-align:center" tapmode>
+        <img src="../../../res/img/ic_addcoin_big@3x.png" style="width:9rem;height:9rem;" alt="">
+        <p i18n="Add to watchlist" style="margin-top:2rem;font-size: 1.6rem;color: #B4B3B3;letter-spacing: 0;line-height: 1.8rem;"></p>
+    </div>
+    <div style="width:auto;text-align:center;height:5rem;color:#999;overflow:hidden;position:fixed;left:45%">
+        <div id="bottom-loading" style="display:none">
+            <p id="loading" style="line-height:5rem;"></p>
+            <img id="loading-anim" src="../../../res/img/loading.svg" style="height:4rem;margin-top:0rem;display:inline-block"></img>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

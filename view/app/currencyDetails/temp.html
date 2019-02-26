@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/currency_details.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+
+    <div class="top-nav-bar" style="border-bottom: none">
+        <div class="top-nav">
+            <img src="./../../../res/img/back@3x.png" @click="close()">
+            <span>{{this.page_param.currencyName}}({{this.page_param.currencyCode}})</span>
+            <span @click="del_all()" i18n="Delete">Delete</span>
+        </div>
+    </div>
+    <div class="top-nav-placeholder"></div>
+
+    <div class="amount-currency-content">
+        <div class="currency-content">
+            <div class="currency-title">
+                <div class="currency-amount-left">
+                    <img :src="this.page_param.logo"/>
+                    <span>{{this.page_param.amount}}{{this.page_param.currencyCode}}</span>
+                </div>
+                <div class="currency-amount-right">
+                    <span>{{this.pie.assetRatio}}%</span>
+                    <div class="currency-pie">
+                        <svg viewBox="0 0 32 32">
+                            <circle r="16" cx="16" cy="16" :style="{'stroke-dasharray': this.pie.percentage}"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="currency-amount">
+                <span>≈</span>
+                <span>{{gold}}{{this.page_param.value | money}}</span>
+                <template v-if="this.page_param.totalColor">
+                    <span :class="[this.page_param.totalColor? 'card-text-green':'card-text-red']">+{{this.page_param.totalIncrease}}%</span>
+                </template>
+                <template v-else>
+                    <span :class="[this.page_param.totalColor? 'card-text-green':'card-text-red']">{{this.page_param.totalIncrease}}%</span>
+                </template>
+            </div>
+            <div class="currency-proportion">
+                <span i18n="Profit&Loss">Profit&Loss</span>
+                <span>{{this.page_param.totalProfitAndCostRatio}}%</span>
+            </div>
+
+            <div class="currency-earnings-wrap">
+                <div class="currency-earnings-content">
+                    <div class="currency-cost">
+                        <dl>
+                            <dt  i18n="Cost">Cost</dt>
+                            <dd>{{gold}}{{this.page_param.cost | money}}</dd>
+                        </dl>
+                    </div>
+                    <div class="currency-loss">
+                        <dl>
+                            <dt i18n="Profit&Loss">Profit&Loss</dt>
+                            <dd>{{gold}}{{this.page_param.totalProfit | money}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <section class="currency-earnings-progress">
+                    <div
+                            :style="{ width: this.page_param.progress_minus }"
+                            class="currency-type-default"
+                    ></div>
+                    <div
+                            :style="{ width: this.page_param.progress_plus }"
+                            :class="[this.page_param.card_box_type?'currency-type-dark':'currency-type-light']"
+                    ></div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="currency-details-wrap" v-for="(item,index) in card_data">
+        <div class="currency-details-list" :style="{height: item.height}">
+            <div class="currency-details-content">
+                <div class="currency-details-msg">
+                    <section class="currency-details-title">
+                        <div class="currency-details-title-left">{{item.storedType == 1?WalletName:ExchangeName}}:{{item.storedType == 1?item.walletUrl:item.exchangeCode}}</div>
+                        <div class="currency-details-title-right">
+                            <span @click="jump_edit(card_data,index)" i18n="Edit">Edit</span>
+                            <img src="./../../../res/img/icon_more_right@3x.png"/>
+                        </div>
+                    </section>
+                    <section class="currency-details-money">
+                        <span>{{item.amount}}{{item.currencyCode}}</span>
+                        <span>≈</span>
+                        <span>{{gold}}{{item.value | money}}</span>
+                    </section>
+                    <section class="currency-details-msg-list">
+                        <dl>
+                            <dt i18n="Current Price">Current Price</dt>
+                            <dd>{{gold}}{{item.currentPrice | money}}</dd>
+                        </dl>
+                        <dl>
+                            <dt i18n="Buy Price">Buy Price</dt>
+                            <dd>{{gold}}{{item.buyPrice | money}}</dd>
+                        </dl>
+                        <dl>
+                            <dt i18n="Period Profit">Period Profit</dt>
+                            <dd>{{gold}}{{item.periodProfit | money}}</dd>
+                        </dl>
+                        <dl>
+                            <dt i18n="Total Profit" >Total Profit</dt>
+                            <dd>{{gold}}{{item.totalProfit | money}}</dd>
+                        </dl>
+                        <dl>
+                            <dt i18n="Bount on">Bount on</dt>
+                            <dd>{{item.bountOn}}</dd>
+                        </dl>
+                        <dl>
+                            <dt i18n="Note">Note</dt>
+                            <dd class="currency-details-note">{{item.note}}</dd>
+                        </dl>
+                    </section>
+                </div>
+            </div>
+            <div class="currency-details-btn" @click="del_item(item,index)">
+                <div i18n="Delete"></div>
+            </div>
+        </div>
+    </div>
+
+    <img src="../../../res/img/market_add.png" @click="addMarket()" class="add-btn">
+</div>
+
+</body>
+
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

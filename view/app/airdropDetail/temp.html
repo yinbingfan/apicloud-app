@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/airdrop_detail.css" rel="stylesheet">
+</head>
+<body style="background-color:white">
+<div id='app' v-cloak >
+    <div class="title-bar">
+        <div style="position: absolute; top:0;left:0;" onclick="api.closeWin()">
+            <img class="back" src="../../../res/img/back@3x.png" alt="" >
+        </div>
+        <p class="title" i18n="Sharing rewards">Share award</p>
+    </div>
+    <!--内容-->
+    <div class="content-wrapper" style="background-image: url('../../../res/img/airdrop_background.png')">
+        <div class="obtained-dbit-content">
+            <p class="airdrop_detail" i18n="Reward received through sharing">
+
+            </p>
+            <div class="dbit-num">
+               <span v-if="shareDtt.count">
+                   {{shareDtt.count}}
+               </span>
+                <span v-else>0</span>
+                <span>DTT</span>
+            </div>
+        </div>
+        <div class="content-wrapper-share">
+
+            <div class="level-friends">
+                <div class="level first-level">
+                    <div class="first-level-num"  v-if="shareDtt.levelFirst">
+                        {{shareDtt.levelFirst}}
+                    </div>
+                    <div class="first-level-num"  v-else>
+                        0
+                    </div>
+                    <div class="first-level-people">
+                        ( <span v-if="shareDtt.firstNumber">{{shareDtt.firstNumber}}</span>
+                        <span v-else>0</span>
+                        <span i18n="people"></span>)
+                    </div>
+                    <div class="first-level-des" i18n="First-level friends bring rewards">
+
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="first-level-num" v-if="shareDtt.levelSecond">{{shareDtt.levelSecond}}</div>
+                    <div class="first-level-num" v-else>0</div>
+                    <div class="first-level-people">
+                        ( <span v-if="shareDtt.secondNumber">{{shareDtt.secondNumber}}</span>
+                        <span v-else>0</span>
+                        <span i18n="people"></span>)
+                    </div>
+                    <div class="first-level-des" i18n="Second-level friends bring rewards"></div>
+                </div>
+            </div>
+            <div class="rule-award">
+                <h3 i18n="Reward rule">Rule of award</h3>
+                <div class="rule-cont"  v-for="(lists,index) in ruleAward" :key="index">
+                    <p>
+                        <span v-if="lists.newFlag==1" i18n="NEW">new</span>
+                        {{index+1}}.
+                        {{lists.content}}
+                    </p>
+                </div>
+            </div>
+            <div class="share-button" i18n='Share to friends' @click="share_button"></div>
+            <div class="share-button-bottom">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+ <script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

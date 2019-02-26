@@ -1,0 +1,53 @@
+@charset "utf-8";
+// sass 基础依赖
+@import "variables.scss";
+@import "mixins.scss";
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  //background-color: #f8f8f8 !important;
+  font-family:'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*[contenteditable] {
+  -webkit-user-select: auto !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+}
+input[type=text] {
+  background-color:transparent;
+  filter:alpha(opacity=0) ;
+  appearance:none;  /*下拉框去掉右侧图标*/
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+
+[v-cloak] {
+  display: none;
+}

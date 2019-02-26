@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak>
+  <div style="margin-top:11px"  v-if="show">
+    <div v-for="list in lists">
+      <!-- //分享给好友 -->
+      <div class="list" v-if="list.behaviorType == 8 || list.behaviorType == 10">
+      <!-- <div class="list" v-if="type"> -->
+        <div class="left">
+            <div class="left-title">
+              <span i18n="Invited">Invitation</span>
+              <span v-if="list.phoneNumber">{{list.phoneNumber|editPhone}}</span>
+              <span v-if="list.email">{{list.email|editEmail}}</span>
+              <span i18n='registered'>Registration</span>
+            </div>
+            <div class="left-time">{{list.createTime|setTime}}</div>
+        </div>
+        <div class="right">
+            <span style="margin-right:2px">+</span><span>{{list.number}}</span>
+        </div>
+      </div>
+      <!-- 其他 -->
+      <div class="list" v-else>
+          <div class="left">
+              <div class="left-title" > {{list.behaviorType|typeToText}}</div>
+              <div class="left-time">{{list.createTime|setTime}}</div>
+          </div>
+          <div class="right">
+              <span style="margin-right:2px">+</span><span>{{list.number}}</span>
+          </div>
+      </div>
+      <!-- <div class="list">
+          <div class="left">
+              <div class="left-title" i18n="Sign in">Sign in</div>
+              <div class="left-time">2018-11-20  18:30:05</div>
+          </div>
+          <div class="right">
+              <span style="margin-right:2px">+</span><span>333</span>
+          </div>
+      </div>
+      <div class="list">
+          <div class="left">
+              <div class="left-title" i18n='Register' >Register</div>
+              <div class="left-time">2018-11-20  18:30:05</div>
+          </div>
+          <div class="right">
+              <span style="margin-right:2px">+</span><span>55</span>
+          </div>
+      </div>  -->
+    </div>
+
+  </div>
+  <div class="no-info" v-else>
+    <img src="../../../res/img/Group.png" alt="">
+    <p i18n='No data'>No history details</p>
+  </div>
+  <div style= "display:flex;justify-content: center;align-content: center; width:100%;height:1.5rem;color:#999;overflow:hidden;">
+      <p id="loading" v-show="loading"  i18n="no_more" style="line-height:1.5rem;text-align:center"></p>
+      <!-- <p id="loadings" v-show="loadings"  i18n="more" style="line-height:1.5rem;text-align:center"></p> -->
+      <img id="loading-anim" v-show="loadingAnim" src="../../../res/img/loading.svg" class="loading-anim" style="width: 80px;"/>
+  </div>
+
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

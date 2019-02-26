@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-col" style="background:url('../../../res/img/about_me_bg.png');background-size:contain;background-repeat:no-repeat;background-position:0 4.4rem;background-color:#fff;font-size:1.3rem">
+    <div class="title-bar">
+      <div style="position: absolute; top:0;left:0" onclick="api.closeWin()">
+          <img class="back" src="../../../res/img/back@3x.png"  tapmode>
+      </div>
+        <p class="title" i18n="About_Us" style="">About Us</p>
+    </div>
+
+    <img src="../../../res/img/LOGO@3x.png" style="width:8rem;margin:2rem auto -1.2rem auto;border-radius:1rem"onclick="fnClick()" tapmode >
+    <div id="name"class="name" style="width:100%;text-align:center;display:inline-block">Dbit</div>
+    <div id="version" style="width:100%;text-align:center;display:inline-block;font-size:1.3rem;color:#B4B3B3;margin-top:0.5rem"></div>
+
+    <div id="info_top"style="margin-top:6rem;display:none">——————————INFO——————————</div>
+    <div id="info" style="text-align:left;padding:0 2rem;display:none" onclick="copy()"></div>
+
+    <div id="infos_top"style="" i18n="contact_us">Contact us</div>
+    <div id="infos" style="text-align:center;padding:0 1.5rem;word-wrap:break-word;word-break:break-all" >
+      <div><span class="info_title" i18n="market_cooperation">Market cooperation</span><i>:&nbsp;&nbsp;</i><a style="color:blue;text-decoration:underline"   href="mailto:marketing@thedbit.com">marketing@thedbit.com</a></div>
+      <div><span class="info_title" i18n="media_cooperation">Media cooperation</span><i>:&nbsp;&nbsp;</i><a style="color:blue;text-decoration:underline"  href="mailto:media@thedbit.com">media@thedbit.com</a></div>
+      <div><span class="info_title" i18n="advertising_cooperation">Advertising cooperation</span><i>:&nbsp;&nbsp;</i><a style="color:blue;text-decoration:underline"  href="mailto:advertising@thedbit.com">advertising@thedbit.com</a></div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

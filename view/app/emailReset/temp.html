@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/email.css" rel="stylesheet">
+</head>
+<style>
+html,body{
+  background-color: #fff;
+}
+</style>
+<body>
+<div id='app' v-cloak>
+
+    <div class="top-nav-bar" style="border: none; background: transparent">
+        <div class="top-nav">
+            <img src='./../../../res/img/back@3x.png' @click="api.closeWin();">
+            <span i18n="Reset">Reset</span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="top-nav-placeholder"></div>
+
+    <div class="email-input-wrap">
+        <div class="email-input-item">
+            <input type="text" placeholder="Email" i18n="email" maxlength="30" autocapitalize="off" autocorrect="off" v-model.trim="is_email"/>
+        </div>
+        <div class="email-tips">
+            <span i18n="Please enter email address to reset password">Please enter email address to reset password</span>
+        </div>
+
+        <div class="email-msg">
+            <div v-if="is_btn">
+                <div v-if="is_show_button" class="email-msg-default-btn" @click="submit()" i18n="Reset">Reset</div>
+                <div v-else class="email-msg-gray-btn">{{this.time}}s</div>
+            </div>
+            <div v-else>
+                <div class="email-msg-gray-btn" i18n="Reset">Reset</div>
+            </div>
+        </div>
+    </div>
+
+    <transition>
+        <div class="modal-alert" v-if="visible">
+            <div class="modal-alert-bg" @click="close()"/>
+            <div class="modal-alert-modal">
+                <div class="email-modal">
+                    <img src="./../../../res/img/letter3x.png" class="email-modal-img"/>
+                    <p class="email-modal-text">
+                        <i18n i18n="A confirmation email has been sent to your email">
+                        A confirmation email has been sent to your email
+                        </i18n>
+                        ({{this.is_email}})
+                        <i18n i18n=".Please confirm.it">
+                            .Please confirm it.
+                        </i18n>
+                    </p>
+                    <div class="email-modal-btn" @click="confirm()">
+                        <span i18n="confirm">Confirm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

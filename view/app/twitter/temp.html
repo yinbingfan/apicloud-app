@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-col scroll_cont list" style="background-color:#eef1f6">
+    <div id="tophint" style="line-height:33px;color:#B4B3B3;font-size:1.3rem;text-align:center;background-color:#ffffff;">
+    </div>
+    <div id="view-list">
+        <textarea style="display:none" template>
+        <!-- for: ${data} as ${item} -->
+            <div class="twitter_container">
+              <div class="avatar_container" >
+                <img class="twitter_avatar" src="${item.avatar}" onerror="this.src='../../../res/img/ic_twitter_default@3x.png'">
+              </div>
+                <p onclick="twitterHref('${item.twitterId}')" class="twitter_name"><span>${item.name}</span> <img src="../../../res/img/twitter_02@3x.png" alt=""></p>
+                <p class="twitter_time">${item.time}</p>
+                <!-- <div class="twitter_tag_container">
+                    <span style="display:${item.markDisplay}" class="twitter_tag">${item.tag1}</span>
+                    <span style="display:${item.markDisplay1}" class="twitter_tag">${item.tag2}</span>
+                </div> -->
+                <div  class="twitter_text">${item.text}</div>
+                <div class="twitter_img_container" style="display:${item.imgDisplay}">
+                    <!-- <img class="twitter_img" src="../../../res/img/img_twitter_default@3x.png" style="top:0"></img> -->
+                    <img onclick="twitterImg('${item.img}')" class="twitter_img" src="${item.img}" style="top:0" onerror="this.src='../../../res/img/img_twitter_error@3x.png'"></img>
+                </div>
+
+            </div>
+        <!-- /for -->
+        </textarea>
+    </div>
+    <div style="width:auto;text-align:center;height:5rem;color:#999;overflow:hidden">
+        <p id="loading" style="line-height:5rem;"></p>
+        <img id="loading-anim" src="../../../res/img/loading.svg" class="loading-anim" style="display:inline-block"></img>
+    </div>
+
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

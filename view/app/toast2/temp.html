@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body,html{
+            text-align: center;
+            background-color: transparent;
+        }
+        .toast{
+          margin:0 auto;
+          padding:4px;
+          display: inline-block;
+          min-width: 112px;
+          background: #FDB438;
+          text-align: center;
+          box-shadow: 0 6px 13px 0 rgba(253,180,56,0.42);
+          border-radius: 7px;
+          font-family: Helvetica;
+          font-size: 15px;
+          color: #FFFFFF;
+          letter-spacing: 0;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="toast">
+      <div class="title" style="margin-top:11px">  </div>
+      <div class="number">  + <span class="text"></span> DTT</div>
+    </div>
+
+
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+apiready = function(){
+   var title = api.pageParam.title;
+   var text = api.pageParam.text;
+   $(".title").text(title);
+   $(".text").text(text);
+};
+</script>
+
+</html>

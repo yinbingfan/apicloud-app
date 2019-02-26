@@ -1,0 +1,362 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.card-wrap {
+  margin-top: 40px;
+  margin-top: 0.53333rem;
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-bottom: 0.53333rem; }
+  .card-wrap .card-content {
+    width: 630px;
+    width: 8.4rem;
+    height: 300px;
+    height: 4rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -4px 8px 0 rgba(239, 239, 239, 0.1);
+    box-shadow: 0 -0.05333rem 0.10667rem 0 rgba(239, 239, 239, 0.1);
+    padding: 40px;
+    padding: 0.53333rem; }
+    .card-wrap .card-content .card-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .card-wrap .card-content .card-title p {
+        font-size: 30px;
+        font-size: 0.4rem;
+        line-height: 0; }
+      .card-wrap .card-content .card-title img {
+        display: block;
+        width: 40px;
+        width: 0.53333rem;
+        height: 40px;
+        height: 0.53333rem; }
+    .card-wrap .card-content .card-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem;
+      -webkit-box-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: flex; }
+      .card-wrap .card-content .card-amount span {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        line-height: 1; }
+        .card-wrap .card-content .card-amount span:first-child {
+          font-family: PingFangSC-Regular;
+          color: #202020; }
+      .card-wrap .card-content .card-amount b {
+        margin-left: 20px;
+        margin-left: 0.26667rem;
+        margin-right: 37.4px;
+        margin-right: 0.49867rem;
+        font-size: 44px;
+        font-size: 0.58667rem;
+        color: #202020; }
+    .card-wrap .card-content .card-proportion {
+      margin-top: 30px;
+      margin-top: 0.4rem; }
+      .card-wrap .card-content .card-proportion span {
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #B4B3B3; }
+        .card-wrap .card-content .card-proportion span:last-of-type {
+          margin-left: 20px;
+          margin-left: 0.26667rem; }
+    .card-wrap .card-content .card-earnings-wrap {
+      position: relative; }
+      .card-wrap .card-content .card-earnings-wrap .card-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 16px;
+        margin-top: 0.21333rem;
+        display: -webkit-box;
+        display: flex; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl {
+          margin: 0;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          color: #FFFFFF; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dt, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dt {
+            margin-bottom: 4px;
+            margin-bottom: 0.05333rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-content .rep dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost dl dd, .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss dl dd {
+            margin-left: 0; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-cost {
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-content .card-loss {
+          text-align: right;
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-default {
+        background: #6082A5; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-light {
+        background: #D0DFEF; }
+      .card-wrap .card-content .card-earnings-wrap .card-type-dark {
+        background: #1C4873; }
+      .card-wrap .card-content .card-earnings-wrap .card-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        width: 100%; }
+        .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div {
+          height: 95px;
+          height: 1.26667rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div:first-child {
+            border-top-left-radius: 10px;
+            border-top-left-radius: 0.13333rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-left-radius: 0.13333rem; }
+          .card-wrap .card-content .card-earnings-wrap .card-earnings-progress div:last-child {
+            border-top-right-radius: 10px;
+            border-top-right-radius: 0.13333rem;
+            border-bottom-right-radius: 10px;
+            border-bottom-right-radius: 0.13333rem; }
+
+.card-head-title {
+  margin-left: 36px;
+  margin-left: 0.48rem;
+  font-size: 26px;
+  font-size: 0.34667rem;
+  color: #B4B3B3; }
+
+.currency-wrap {
+  width: 750px;
+  width: 10rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+  .currency-wrap .currency-content {
+    margin-top: 20px;
+    margin-top: 0.26667rem;
+    width: 630px;
+    width: 8.4rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 -4px 8px 0 rgba(239, 239, 239, 0.1);
+    box-shadow: 0 -0.05333rem 0.10667rem 0 rgba(239, 239, 239, 0.1);
+    padding: 40px;
+    padding: 0.53333rem; }
+    .currency-wrap .currency-content .currency-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .currency-wrap .currency-content .currency-title .currency-amount-left {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .currency-wrap .currency-content .currency-title .currency-amount-left img {
+          display: block;
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          margin-right: 8px;
+          margin-right: 0.10667rem; }
+        .currency-wrap .currency-content .currency-title .currency-amount-left span {
+          line-height: 1; }
+          .currency-wrap .currency-content .currency-title .currency-amount-left span:first-of-type, .currency-wrap .currency-content .currency-title .currency-amount-left span:last-of-type {
+            color: #B4B3B3;
+            font-size: 26px;
+            font-size: 0.34667rem; }
+          .currency-wrap .currency-content .currency-title .currency-amount-left span:nth-of-type(2) {
+            font-size: 8px;
+            font-size: 0.10667rem;
+            color: #FDB438;
+            margin: 0 10px;
+            margin: 0 0.13333rem; }
+      .currency-wrap .currency-content .currency-title .currency-amount-right {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right span {
+          color: #B4B3B3;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          margin-right: 12px;
+          margin-right: 0.16rem; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right .currency-pie svg {
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          background: #8FABC8;
+          border-radius: 50%; }
+        .currency-wrap .currency-content .currency-title .currency-amount-right .currency-pie circle {
+          fill: #8FABC8;
+          stroke: #FFB538;
+          stroke-width: 32; }
+    .currency-wrap .currency-content .currency-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem; }
+      .currency-wrap .currency-content .currency-amount span:first-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #202020; }
+      .currency-wrap .currency-content .currency-amount span:nth-of-type(2) {
+        margin-left: 6px;
+        margin-left: 0.08rem;
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #202020; }
+      .currency-wrap .currency-content .currency-amount span:last-of-type {
+        margin-left: 16px;
+        margin-left: 0.21333rem;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #E76D42; }
+    .currency-wrap .currency-content .currency-earnings-wrap {
+      position: relative; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 26px;
+        margin-top: 0.34667rem;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between; }
+        .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content .currency-gross-amount {
+          height: 48px;
+          height: 0.64rem;
+          display: -webkit-box;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-content .currency-gross-amount span {
+            color: #fff;
+            font-size: 26px;
+            font-size: 0.34667rem;
+            line-height: 1;
+            padding: 0 20px;
+            padding: 0 0.26667rem; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-type-dark {
+        background: #1C4873; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-type-default {
+        background: #6082A5; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-type-light {
+        background: #D0DFEF; }
+      .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        width: 100%; }
+        .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div {
+          height: 45px;
+          height: 0.6rem; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div:first-child {
+            border-top-left-radius: 10px;
+            border-top-left-radius: 0.13333rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-left-radius: 0.13333rem; }
+          .currency-wrap .currency-content .currency-earnings-wrap .currency-earnings-progress div:last-child {
+            border-top-right-radius: 10px;
+            border-top-right-radius: 0.13333rem;
+            border-bottom-right-radius: 10px;
+            border-bottom-right-radius: 0.13333rem; }
+
+.card-add {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-size: 0.42667rem;
+  color: #B4B3B3; }
+  .card-add span:last-of-type {
+    margin-left: 10px;
+    margin-left: 0.13333rem; }
+
+.add-btn {
+  position: fixed;
+  z-index: 9999;
+  bottom: 140px;
+  bottom: 1.86667rem;
+  right: 36px;
+  right: 0.48rem;
+  display: block;
+  width: 90px;
+  width: 1.2rem;
+  height: 90px;
+  height: 1.2rem; }
+
+.card-text-red {
+  color: #E76D42 !important; }
+
+.card-text-green {
+  color: #0f990f !important; }
+
+.card-bottom {
+  height: 100px;
+  height: 1.33333rem; }

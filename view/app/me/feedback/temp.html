@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-1 scroll_cont">
+    <div class="title-bar">
+      <div style="position: absolute; top:0;left:0" onclick="api.closeWin()">
+          <img class="back" src="../../../../res/img/back@3x.png"  tapmode>
+      </div>
+        <p class="title" i18n="Feedback">
+            </title>
+    </div>
+
+    <div class="card">
+        <p style="font-size: 1.6rem;color: #202020;line-height:1.9rem;" i18n="How was your experience?"></p>
+        <div style="margin-top:1.5rem">
+          <input type="radio" index="0" class="emoji smile" name="emoji" value="" checked="checked" tapmode>
+          <input type="radio" index="1" class="emoji normal" name="emoji" value="" tapmode >
+          <input type="radio" index="2" class="emoji cry" name="emoji" value="" tapmode>
+        </div>
+       <!-- <textarea id="text" class="feedbacktext" maxlength="200" i18n="Describe your experience here…" placeholder="Describe your experience here…">
+
+        </textarea>-->
+        <div class="textarea-text">
+            <!--<textarea id="text" class="feedbacktext" maxlength="200" placeholder="Describe your experience here…"  >-->
+
+            <!--</textarea>-->
+            <textarea type="text" id="text" class="feedbacktext" maxlength="200" placeholder="Describe your experience here…"></textarea>
+            <div class="remaining-title">
+                <input type="number" id="remaining" value="200">
+                <span>/</span>
+                <span>200</span>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem;position:relative">
+            <div class="checkbox1">
+                <input id="suggestion" index="0" type="radio" name="feedback" value="" checked="checked" tapmode><label for="suggestion" i18n="Suggestion" tapmode></label>
+            </div>
+            <div class="checkbox1"  style="text-align:center">
+                <input id="Crash" index="1" type="radio" name="feedback" value="" tapmode><label for="Crash" i18n="Crash" tapmode></label>
+            </div>
+            <div class="checkbox1"  style="text-align:right">
+                <input id="Network" index="2" type="radio" name="feedback" value="" tapmode><label for="Network" i18n="Network" tapmode></label>
+            </div>
+            <div class="checkbox1" style="margin-top:2rem">
+                <input id="Copyright" index="3" type="radio" name="feedback" value="" tapmode><label for="Copyright" i18n="Copyright" tapmode></label>
+            </div>
+            <div class="checkbox1" style="text-align:center">
+                <input id="Other" index="4" type="radio" name="feedback" value="" tapmode><label for="Other" i18n="Other" tapmode></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="padding-bottom:1.7rem;">
+        <p class="Contacting" i18n="Contacting you"></p>
+        <input id="Email" class="Email"type="text" name="" value=""  placeholder="Email address (optional)">
+    </div>
+
+    <div i18n="Submit" class="submit" onclick="submit()"></div>
+
+
+</body>
+
+<script type="text/javascript" src="../../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body style="background-color:white">
+<div id='app' v-cloak>
+    <div class="title-bar">
+        <div style="position: absolute; top:0;left:0;" onclick="api.closeWin()">
+            <img class="back" src="../../../res/img/back@3x.png" alt="" >
+        </div>
+        <p class="title" i18n="Airdrop">Airdrop</p>
+    </div>
+    <div class="top-nav-placeholder"></div>
+    <!--内容-->
+    <div class="content-wrapper">
+        <div class="wrapper-title">
+          <p class="title-info" >0</p>
+          <p class="title-number"><span class="title-number-text" i18n="Total reward (DTT)">Total rewards</span></p>
+        </div>
+        <!-- //////////////////一期隐藏  /////////////// -->
+        <!-- <div class="divider"></div>
+        <div class="wrapper-info">
+          <div class="info-box">
+            <span class="info-l">900</span>
+            <span class="left-in">Mission rewards</span>
+          </div>
+          <div class="info-box">
+            <span class="info-r">300</span>
+            <span class="right-in">Share rewards</span>
+          </div>
+        </div> -->
+          <div class="top-nav-placeholder" style="height:4px"></div>
+        <div class="wrapper-tab">
+            <div class="wrapper-tab-change">
+                <div class="get active" id="get" tapmode @click="fnGetList(0)"><span i18n="Get DTT">Get DTT</span><div class="round" v-if="show"></div><i></i></div>
+                <div class="history" id="history" tapmode  @click="fnGetList(1)"><span i18n="History">history details</span><i></i></div>
+            </div>
+        </div>
+        <div class="divider" style="margin-bottom:2px"></div>
+        <div class="wrapper-list" style="height:100%;" id="view">
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

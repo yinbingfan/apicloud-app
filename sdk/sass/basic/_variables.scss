@@ -1,0 +1,43 @@
+//path
+// -----------------------------------------------------------------------------
+$bg-path: "../images/" !default;
+
+// =============================================================================
+// Component:		  Variables
+//
+// Description:		Define all variables
+//
+// =============================================================================
+
+$ns:  unquote("dz-") !default;
+
+// Black - White - Gray
+// -----------------------------------------------------------------------------
+$black:           #000 !default;
+$white:           #fff !default;
+$yellow:          #FFE227 !default;
+$yellow-pressed:  #FFCB00 !default;
+$green:           #16C56F !default;
+$green-pressed:   #04AA58 !default;
+$gray:            #E9EAEC !default;
+$gray-pressed:    #D9D9D9 !default;
+$opacity:         rgba($black,.5) !default;
+$bg-color:        #f5f7fa !default;
+$active:          #EEF1F5 !default;
+$blue:            #ff4612 !default;
+$blue-pressed:    #E63807 !default;
+$default-color:            #ff73a9 !default;
+$default-color-pressed:    #ff5186 !default;
+
+$gray-darker:     lighten($black, 13.5%); // #222
+$gray-dark:       lighten($black, 20%);   // #333
+$gray:            lighten($black, 33.5%); // #555
+$gray-light:      lighten($black, 60%);   // #999
+$gray-lighter:    lighten($black, 93.5%); // #eee
+
+$global-primary: 	    #0e90d2; // #157EFB; //#428bca !default;
+$global-secondary:    lighten($global-primary, 15%) !default;
+$global-success: 	    #5eb95e; // #53D76A; //#5cb85c !default;
+$global-warning: 	    #F37B1D; // #FD9426; // #f0ad4e !default;
+$global-danger: 		  #dd514c; // #FC3159; //#da314b !default;
+

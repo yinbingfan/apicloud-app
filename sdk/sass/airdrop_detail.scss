@@ -1,0 +1,198 @@
+@charset "utf-8";
+//底层样式框架
+//@import "basic/normalize";
+@import "basic/variables";
+@import "basic/mixins";
+@import "basic/default";
+
+.title-bar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 94px;
+  background: #ffffff;
+  z-index: 30;
+  top: 0;
+  .back {
+    padding-top: 0.327rem;
+    padding-right:0.5rem;
+    width: 25px;
+    height: 42px;
+    margin-left: 31px;
+  }
+ .title {
+    font-size: 34px;
+    color: #202020;
+    letter-spacing: 0.17px;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+}
+.top-nav-placeholder {
+  width: 100%;
+  height: 108px;
+}
+.content-wrapper{
+  width:100%;
+  height: 2080px;
+  position: relative;
+  background: #fefade;
+  .obtained-dbit-content{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:140px;
+    left: 0;
+    right: 0;
+    .airdrop_detail{
+      width: 90%;
+      margin: 0 5%;
+      font-size: 40px;
+      font-family: Helvetica;
+      color: #692C12;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 50px;
+    }
+    .dbit-num{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dbit-num span:nth-of-type(1){
+      font-family: DINMittelschrift;
+      font-weight: bold;
+      font-size: 80px;
+      color: #5F2810;
+      letter-spacing: 0;
+      text-align: center;
+      margin-right: 6px;
+    }
+    .dbit-num span:nth-of-type(2){
+      font-family: DINMittelschrift;
+      font-weight: bold;
+      font-size: 50px;
+      color: #672B10;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+  .content-wrapper-share{
+    position: absolute;
+    top:800px;
+    left: 0;
+    right: 0;
+  }
+  .level-friends{
+    width: 88%;
+    margin: 0 6% ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .first-level{
+      border-right: 2px solid rgba(255,255,255,.1);
+    }
+    .level{
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .first-level-num{
+        font-family: Helvetica;
+        font-size: 52px;
+        color: #FEFADE;
+        letter-spacing: 0;
+        text-align: center;
+      }
+      .first-level-people{
+        opacity: 0.75;
+        font-family: Helvetica;
+        font-size: 22px;
+        color: #FEFADE;
+        letter-spacing: 0.5px;
+        text-align: center;
+        line-height: 42px;
+      }
+      .first-level-des{
+        width: 85%;
+        opacity: 0.4;
+        font-family: Helvetica;
+        font-size: 22px;
+        color: #FEFADE;
+        letter-spacing: 0.17px;
+        text-align: center;
+      }
+    }
+  }
+  .rule-award{
+    margin: 60px 6%;
+    width: 88%;
+    height: 890px;
+    background: #ffffff;
+    border-radius: 7px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    h3{
+      font-family: Helvetica;
+      font-weight: bold;
+      font-size: 30px;
+      color: #333333;
+      line-height: 44px;
+      text-align: center;
+    }
+    .rule-cont {
+      margin: 0 9px 0 16px;
+      p{
+        font-family: Helvetica;
+        font-size: 26px;
+        color: rgba(51,51,51,.5);
+        line-height: 40px;
+        padding-top: 24px;
+        border-top: 2px solid rgba(228,231,240,.4);
+        img{
+          width: 32px;
+          height: 18px;
+        }
+        span{
+          display: inline-block;
+          height: 20px;
+          background: #EA4A43;
+          border-radius: 5px;
+          line-height: 22px;
+          color: rgba(255,255,255,.8);
+          padding: 3px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .share-button{
+    width: 88%;
+    height: 80px;
+    margin: 0 6%;
+    border-radius: 7px;
+    background: rgb(253,180,50);
+    font-family: Helvetica;
+    font-size: 34px;
+    color: #FFFFFF;
+    line-height: 80px;
+    text-align: center;
+  }
+  .share-button-bottom{
+    width: 100%;
+    height: 150px;
+    background: #ea4a43;
+  }
+}

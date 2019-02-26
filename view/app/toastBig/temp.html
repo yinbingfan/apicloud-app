@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <link href="../../../sdk/normalize.css" rel="stylesheet">
+    <link href="../../../sdk/css/toast-big.css" rel="stylesheet">
+</head>
+<body>
+<div id='app' v-cloak @click="aridop_close">
+    <div class="toast_big_bg" style="background: url('../../../res/img/toast_big_bg.png')">
+    </div>
+    <div id="main">
+        <div class="aridop_close">
+            <img class="back" src="../../../res/img/toast_big.png" alt="" >
+            <p i18n="CONGRATULATION">
+                Airdrop reward notice
+            </p>
+        </div>
+        <div class="rule-award">
+            <div class="rule-cont" i18n="The Dbit points system is online">
+
+            </div>
+        </div>
+        <div class="got_button" i18n="Got it" @click="aridop_close">
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../sdk/loader.js"></script>
+</html>

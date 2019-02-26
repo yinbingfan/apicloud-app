@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="api.css" />
+        <link rel="stylesheet" type="text/css" href="aui.css" />
+	<style>
+  html,body{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0)
+  }
+		#con{
+			margin: 10px;
+			font-size: 24px;
+		}
+		ul{
+			margin-bottom: 10px;
+		}
+		ul li{
+			margin: 5px 10px;
+			padding: 5px;
+			color: #000;
+			word-wrap: break-word;
+		}
+    #sys-info{
+      width:100%;
+      background-color:white;
+      position: absolute;
+      bottom:0;
+      left:0;
+    }
+    .title{
+      height:39px;
+      line-height: 39px;
+      text-align: center;
+      opacity: 0.5;
+    border-bottom: 1px solid #B4B3B3;;
+    }
+    .aui-grid .aui-iconfont{
+      width:40px;
+      height:40px;
+      display: inline-block;
+    }
+    .home{
+      background: url("icon_facebook@2x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .gear{
+      background: url("twitter@2x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .map{
+      background: url("more@2x.png") no-repeat;
+      background-size: 40px 40px;
+    }
+    .aui-grid .aui-grid-label{
+      margin-top:0
+    }
+    .aui-iconfont{
+      border-radius: 50%
+    }
+	</style>
+</head>
+<body>
+        <div id='sys-info'>
+          <div class="title"  i18n="share"></div>
+          <div>
+            <section class="aui-grid">
+            <div class="aui-row">
+                <div class="aui-col-xs-4" tapmode  onclick="share('facebook')">
+                    <i class="aui-iconfont home"></i>
+                    <div class="aui-grid-label">facebook</div>
+                </div>
+                <div class="aui-col-xs-4" tapmode onclick="share('twitter')">
+                    <i class="aui-iconfont gear" ></i>
+                    <div class="aui-grid-label">twitter</div>
+                </div>
+                <div class="aui-col-xs-4" tapmode onclick="share('more')">
+                    <i class="aui-iconfont map" ></i>
+                    <div class="aui-grid-label">More</div>
+                </div>
+            </div>
+        </section>
+      </div>
+    </div>
+
+</body>
+<!-- <script type="text/javascript" src="../script/api.js"></script> -->
+<script type="text/javascript" src="../../../../sdk/jquery-3.3.1.min.js"></script>
+<script src="../../../../sdk/jquery.i18n.properties-1.0.9.js"></script>
+<script src="../../../../sdk/loader.js" > </script>
+
+
+<script type="text/javascript">
+  var mobSharePlus;
+  var mParam;
+  var url;
+  var title;
+  var text;
+  var imgUrl=[];
+
+
+
+
+
+
+
+
+</script>
+</html>

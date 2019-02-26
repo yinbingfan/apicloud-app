@@ -1,0 +1,126 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+html, body, #app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+.toast_big_bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 35%; }
+
+#main {
+  width: 86%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  border-radius: 0.10667rem;
+  margin: auto;
+  z-index: 900; }
+  #main .rule-award {
+    height: 480px;
+    height: 6.4rem;
+    overflow-y: scroll;
+    z-index: 800;
+    -webkit-overflow-scrolling: touch; }
+    #main .rule-award .rule-cont {
+      margin: 92px 32px 68px;
+      margin: 1.22667rem 0.42667rem 0.90667rem;
+      opacity: 0.5;
+      font-family: Helvetica;
+      font-size: 26px;
+      font-size: 0.34667rem;
+      color: #333333;
+      line-height: 40px;
+      line-height: 0.53333rem; }
+  #main .aridop_close {
+    width: 480px;
+    width: 6.4rem;
+    height: 312px;
+    height: 4.16rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -55%;
+    opacity: .8;
+    margin: auto;
+    z-index: 900; }
+    #main .aridop_close img {
+      width: 100%; }
+    #main .aridop_close p {
+      position: absolute;
+      bottom: 16%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: #ffffff;
+      font-size: 30px;
+      font-size: 0.4rem;
+      text-align: center; }
+  #main .got_button {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 368px;
+    width: 4.90667rem;
+    height: 108px;
+    height: 1.44rem;
+    background: #FDB438;
+    border-radius: 60px;
+    border-radius: 0.8rem;
+    text-align: center;
+    line-height: 108px;
+    line-height: 1.44rem;
+    font-family: Helvetica;
+    font-size: 34px;
+    font-size: 0.45333rem;
+    color: #FFFFFF; }

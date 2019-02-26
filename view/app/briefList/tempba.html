@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../../sdk/ui.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="flex-col scroll_cont list">
+    <div ltime class="list-time-fix" style="  display: none;"></div>
+    <!-- <p class="top-time" >${item.day}</p> -->
+    <div id="tophint" style="line-height:33px;color:#B4B3B3;font-size:1.3rem;text-align:center;background-color:#ffffff;">
+    </div>
+    <div id="view-list" style="background-color:#fff">
+
+        <textarea style="display: none" template>
+      <!-- for: ${data} as ${item} -->
+
+      <div class="row" index="${item.index}" style="width:auto;background:#eef1f6;padding-left:2.2%;padding-right:2.2%;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        box-shadow: 0 0.06rem 0.075rem 0.05rem #f1f1f1;">
+          <div ltime class="list-time">${item.day}</div>
+          <div style="background:#ffffff;padding:1.2rem 2rem 1rem 2rem;font-size:1rem">
+              <published-at>${item.time}</published-at>
+              <rate-img-container style="display:${item.displayStar}">
+                <img class="rate-star" src="${item.star1}">
+                <img class="rate-star" src="${item.star2}">
+                <img class="rate-star" src="${item.star3}">
+                <img class="rate-star" src="${item.star4}">
+                <img class="rate-star" src="${item.star5}">
+              </rate-img-container>
+              <div style="margin-top:0.3rem">
+                  <brief-text>${item.text}</brief-text>
+                  <brief-text style="color: #EEB100">${item.goldenText}</brief-text>
+                  <read-more style="color:#999999" data-guid="${item.guid}" data-flag="${item.linkFlag}" >${item.urlTitle}</read-more>
+              </div>
+              <div style="margin-top:1.6rem;margin-bottom:1.44rem;display:visible">
+                  <div id="good" style="" class="${item.goodClass}" data-good="${item.id}" data-index="${item.index}">
+                    <img style="height:1.6rem" id="goodPic" src="${item.goodPic}" alt="">
+                    <span i18n="good">${item.goodStr}</span><span id="goodNumber">${item.goodNumber}</span>
+                  </div>
+                      <div  id="bad" style="margin-left:0.8rem" class="${item.badClass}" data-bad="${item.id}" data-index="${item.index}">
+                    <img style="height:1.6rem" id="badPic" src="${item.badPic}" alt="">
+                    <span i18n="bad">${item.badStr}</span><span id="badNumber">${item.badNumber}</span>
+                  </div>
+                  <div id="share" class="share" data-id="${item.id}" data-time="${item.time1}" data-goldenText="${item.goldenText}" data-text="${item.text}" onclick= "openShare(${item.index})">
+                    <img  data-id="${item.id}" data-index="${item.index}" src="../../../res/img/brief_share.png" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- /for -->
+    </textarea>
+    </div>
+    <div style="width:auto;text-align:center;height:5rem;color:#999;overflow:hidden">
+        <p id="loading" style="line-height:5rem;"></p>
+        <img id="loading-anim" src="../../../res/img/loading.svg" class="loading-anim"></img>
+    </div>
+
+</body>
+<script type="text/javascript" src="../../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script type="text/javascript">
+    var headNode = document.getElementsByTagName('head')[0];
+    var confNode = document.createElement('script');
+    var coreNode = document.createElement('script');
+    var selfPath = window.location.href;
+    var widgetPath = "widget://";
+    var pathMatch = selfPath.match(/\/view(.+)$/);
+    if (pathMatch[1]) {
+        selfPath = pathMatch[1];
+        var index = -1;
+        var pathDeep = 0;
+        do {
+            index = selfPath.indexOf("/", index + 1);
+            if (index != -1) {
+                pathDeep++;
+            }
+        } while (index != -1);
+        if (pathDeep) {
+            widgetPath = "";
+            for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+                widgetPath += "../";
+            }
+        }
+    }
+
+    confNode.type = "text/javascript";
+    confNode.src = widgetPath + "config.js";
+    coreNode.type = "text/javascript";
+
+    if (coreNode.addEventListener) {
+        coreNode.addEventListener("load", scriptOnload, false);
+    } else if (coreNode.readyState) {
+        coreNode.onreadystatechange = function() {
+            if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+                coreNode.onreadystatechange = null;
+                scriptOnload();
+            }
+        };
+    } else {
+        coreNode.onload = scriptOnload;
+    }
+    coreNode.src = widgetPath + "sdk/core.js";
+    coreNode.onerror = function(e) {
+        console.log(JSON.stringify(e));
+    };
+    apiready = function() {
+        headNode.appendChild(confNode);
+        headNode.appendChild(coreNode);
+    };
+
+    function scriptOnload() {
+        seajs.use("./script");
+    }
+</script>
+
+</html>

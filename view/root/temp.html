@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link href="../../sdk/ui.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body class="oh">
+	<div id="network-error" style="text-align:center;margin-top:10rem;display:none">
+		<img src="../../res/img/networkerror@3x.png" style="width:16.7rem;height:15rem" alt="">
+		<p i18n="network_error" style="font-family: Helvetica;font-size: 16px;margin-top:3.8rem;color: #020202;letter-spacing: 0.13px;text-align: center;"></p>
+		<p i18n="retry" style="width:19rem;left:0;right:0;margin:auto;margin-top:10rem;line-height:5rem;border: 1px solid #FEC930;font-family: Helvetica;font-size: 16px;color: #FEC930;letter-spacing: 0.13px;text-align: center;border-radius: 28px;" onclick="checkNetworkAndNext()">retry</p>
+	</div>
+
+</body>
+<script type="text/javascript" src="../../sdk/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="../../sdk/jquery.i18n.properties-1.0.9.js">
+</script>
+<script src="../config.js"></script>
+<script type="text/javascript">
+	var headNode = document.getElementsByTagName('head')[0];
+	var confNode = document.createElement('script');
+	var coreNode = document.createElement('script');
+	var selfPath = window.location.href;
+	var widgetPath = "widget://";
+	var pathMatch = selfPath.match(/\/view(.+)$/);
+	if (pathMatch[1]) {
+		selfPath = pathMatch[1];
+		var index = -1;
+		var pathDeep = 0;
+		do {
+			index = selfPath.indexOf("/", index + 1);
+			if (index != -1) {
+				pathDeep++;
+			}
+		} while (index != -1);
+		if (pathDeep) {
+			widgetPath = "";
+			for (var deepStart = 0; deepStart < pathDeep; deepStart++) {
+				widgetPath += "../";
+			}
+		}
+	}
+
+	confNode.type = "text/javascript";
+	confNode.src = widgetPath + "config.js";
+	coreNode.type = "text/javascript";
+
+	if (coreNode.addEventListener) {
+		coreNode.addEventListener("load", scriptOnload, false);
+	} else if (coreNode.readyState) {
+		coreNode.onreadystatechange = function() {
+			if (coreNode.readyState == "loaded" || coreNode.readyState == "complete") {
+				coreNode.onreadystatechange = null;
+				scriptOnload();
+			}
+		};
+	} else {
+		coreNode.onload = scriptOnload;
+	}
+	coreNode.src = widgetPath + "sdk/core.js";
+	coreNode.onerror = function(e) {
+		console.log(JSON.stringify(e));
+	};
+	apiready = function() {
+		headNode.appendChild(confNode);
+		headNode.appendChild(coreNode);
+	};
+
+	function scriptOnload() {
+		seajs.use("./script");
+	}
+</script>
+
+</html>

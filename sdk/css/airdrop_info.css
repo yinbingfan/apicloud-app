@@ -1,0 +1,118 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+html, body, #app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+#main {
+  width: 86%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  border-radius: 0.10667rem;
+  margin: auto; }
+  #main .rule-award {
+    height: 900px;
+    height: 12rem;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
+    #main .rule-award h3 {
+      font-family: Helvetica-Bold;
+      font-size: 30px;
+      font-size: 0.4rem;
+      color: #333333;
+      line-height: 44px;
+      line-height: 0.58667rem;
+      text-align: center; }
+    #main .rule-award .rule-cont {
+      margin: 0 9px 0 16px;
+      margin: 0 0.12rem 0 0.21333rem; }
+      #main .rule-award .rule-cont p {
+        font-family: Helvetica;
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: rgba(51, 51, 51, 0.5);
+        line-height: 40px;
+        line-height: 0.53333rem;
+        padding-top: 24px;
+        padding-top: 0.32rem;
+        border-top: 2px solid rgba(228, 231, 240, 0.4);
+        border-top: 0.02667rem solid rgba(228, 231, 240, 0.4); }
+        #main .rule-award .rule-cont p img {
+          width: 32px;
+          width: 0.42667rem;
+          height: 18px;
+          height: 0.24rem; }
+        #main .rule-award .rule-cont p span {
+          display: inline-block;
+          height: 20px;
+          height: 0.26667rem;
+          background: #EA4A43;
+          border-radius: 5px;
+          border-radius: 0.06667rem;
+          line-height: 22px;
+          line-height: 0.29333rem;
+          color: rgba(255, 255, 255, 0.8);
+          padding: 3px;
+          padding: 0.04rem;
+          font-size: 22px;
+          font-size: 0.29333rem; }
+  #main .aridop_close {
+    width: 84px;
+    width: 1.12rem;
+    height: 84px;
+    height: 1.12rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -16%;
+    opacity: .8;
+    margin: auto; }
+    #main .aridop_close img {
+      width: 100%; }

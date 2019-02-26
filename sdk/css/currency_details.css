@@ -1,0 +1,369 @@
+@charset "UTF-8";
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'HiraKakuPro', "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #eee;
+  border-top: 0.01333rem solid #eee;
+  box-sizing: content-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*[contenteditable] {
+  -webkit-user-select: auto !important; }
+
+*:focus {
+  outline: none; }
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none; }
+
+input[type=text] {
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  appearance: none;
+  /*下拉框去掉右侧图标*/
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[v-cloak] {
+  display: none; }
+
+.top-nav-bar {
+  background: #fff;
+  width: 750px;
+  width: 10rem;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 0.01333rem solid rgba(0, 0, 0, 0.3); }
+  .top-nav-bar .top-nav {
+    height: 88px;
+    height: 1.17333rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 0.42667rem; }
+    .top-nav-bar .top-nav img {
+      display: block;
+      width: 25px;
+      width: 0.33333rem;
+      height: 42px;
+      height: 0.56rem; }
+    .top-nav-bar .top-nav span {
+      color: #202020; }
+      .top-nav-bar .top-nav span:first-of-type {
+        font-size: 32px;
+        font-size: 0.42667rem; }
+      .top-nav-bar .top-nav span:last-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem; }
+
+.top-nav-placeholder {
+  width: 750px;
+  width: 10rem;
+  height: 88px;
+  height: 1.17333rem; }
+
+.amount-currency-content {
+  margin-top: 20px;
+  margin-top: 0.26667rem;
+  margin-bottom: 20px;
+  margin-bottom: 0.26667rem;
+  width: 750px;
+  width: 10rem; }
+  .amount-currency-content .currency-content {
+    overflow: hidden;
+    background: #fff;
+    padding: 40px;
+    padding: 0.53333rem; }
+    .amount-currency-content .currency-content .currency-title {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between; }
+      .amount-currency-content .currency-content .currency-title .currency-amount-left {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-left img {
+          display: block;
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          margin-right: 16px;
+          margin-right: 0.21333rem; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-left span {
+          line-height: 1;
+          color: #B4B3B3;
+          font-size: 30px;
+          font-size: 0.4rem; }
+      .amount-currency-content .currency-content .currency-title .currency-amount-right {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right span {
+          color: #B4B3B3;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          margin-right: 12px;
+          margin-right: 0.16rem; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right .currency-pie svg {
+          width: 40px;
+          width: 0.53333rem;
+          height: 40px;
+          height: 0.53333rem;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          background: #8FABC8;
+          border-radius: 50%; }
+        .amount-currency-content .currency-content .currency-title .currency-amount-right .currency-pie circle {
+          fill: #8FABC8;
+          stroke: #FFB538;
+          stroke-width: 32; }
+    .amount-currency-content .currency-content .currency-amount {
+      margin-top: 20px;
+      margin-top: 0.26667rem;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center; }
+      .amount-currency-content .currency-content .currency-amount span:first-of-type {
+        font-size: 26px;
+        font-size: 0.34667rem;
+        color: #202020; }
+      .amount-currency-content .currency-content .currency-amount span:nth-of-type(2) {
+        margin-left: 6px;
+        margin-left: 0.08rem;
+        font-size: 44px;
+        font-size: 0.58667rem;
+        line-height: 1;
+        color: #202020; }
+      .amount-currency-content .currency-content .currency-amount span:last-of-type {
+        margin-left: 16px;
+        margin-left: 0.21333rem;
+        font-size: 26px;
+        font-size: 0.34667rem; }
+    .amount-currency-content .currency-content .currency-proportion {
+      margin-top: 30px;
+      margin-top: 0.4rem; }
+      .amount-currency-content .currency-content .currency-proportion span {
+        font-size: 30px;
+        font-size: 0.4rem;
+        color: #B4B3B3; }
+        .amount-currency-content .currency-content .currency-proportion span:last-of-type {
+          margin-left: 20px;
+          margin-left: 0.26667rem; }
+    .amount-currency-content .currency-content .currency-earnings-wrap {
+      position: relative; }
+      .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 16px;
+        margin-top: 0.21333rem;
+        display: -webkit-box;
+        display: flex; }
+        .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .rep dl, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-cost dl, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-loss dl {
+          margin: 0;
+          font-size: 26px;
+          font-size: 0.34667rem;
+          color: #FFFFFF; }
+          .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .rep dl dt, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-cost dl dt, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-loss dl dt {
+            margin-bottom: 4px;
+            margin-bottom: 0.05333rem; }
+          .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .rep dl dd, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-cost dl dd, .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-loss dl dd {
+            margin-left: 0; }
+        .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-cost {
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+        .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-content .currency-loss {
+          text-align: right;
+          width: 50%;
+          padding: 16px 19px;
+          padding: 0.21333rem 0.25333rem; }
+      .amount-currency-content .currency-content .currency-earnings-wrap .currency-type-default {
+        background: #6082A5; }
+      .amount-currency-content .currency-content .currency-earnings-wrap .currency-type-light {
+        background: #D0DFEF; }
+      .amount-currency-content .currency-content .currency-earnings-wrap .currency-type-dark {
+        background: #1C4873; }
+      .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        width: 100%; }
+        .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-progress div {
+          height: 95px;
+          height: 1.26667rem; }
+          .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-progress div:first-child {
+            border-top-left-radius: 10px;
+            border-top-left-radius: 0.13333rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-left-radius: 0.13333rem; }
+          .amount-currency-content .currency-content .currency-earnings-wrap .currency-earnings-progress div:last-child {
+            border-top-right-radius: 10px;
+            border-top-right-radius: 0.13333rem;
+            border-bottom-right-radius: 10px;
+            border-bottom-right-radius: 0.13333rem; }
+
+.currency-details-wrap {
+  width: 750px;
+  width: 10rem;
+  overflow: hidden;
+  padding-bottom: 2px;
+  padding-bottom: 0.02667rem; }
+  .currency-details-wrap:last-child {
+    padding-bottom: 0; }
+  .currency-details-wrap .currency-details-list {
+    width: 932px;
+    width: 12.42667rem;
+    background: #fff;
+    display: -webkit-box;
+    display: flex; }
+    .currency-details-wrap .currency-details-list .currency-details-content {
+      padding: 40px 36px;
+      padding: 0.53333rem 0.48rem;
+      overflow: hidden;
+      display: -webkit-box;
+      display: flex; }
+      .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg {
+        width: 750px;
+        width: 10rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title {
+          display: -webkit-box;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          justify-content: space-between; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title .currency-details-title-left {
+            color: #B4B3B3;
+            font-size: 30px;
+            font-size: 0.4rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 500px;
+            max-width: 6.66667rem; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title .currency-details-title-right {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title .currency-details-title-right span {
+              color: #B4B3B3;
+              font-size: 26px;
+              font-size: 0.34667rem; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-title .currency-details-title-right img {
+              margin-bottom: 4px;
+              margin-bottom: 0.05333rem;
+              margin-left: 20px;
+              margin-left: 0.26667rem;
+              display: block;
+              width: 12px;
+              width: 0.16rem;
+              height: 22px;
+              height: 0.29333rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money {
+          margin-top: 20px;
+          margin-top: 0.26667rem;
+          color: #202020; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:first-of-type, .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:last-of-type {
+            font-size: 30px;
+            font-size: 0.4rem; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-money span:nth-of-type(2) {
+            margin: 0 20px;
+            margin: 0 0.26667rem;
+            font-size: 26px;
+            font-size: 0.34667rem; }
+        .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list {
+          margin-top: 40px;
+          margin-top: 0.53333rem; }
+          .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-bottom: 0.4rem; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl:last-child {
+              margin-bottom: 0; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl dt {
+              color: #B4B3B3;
+              font-size: 26px;
+              font-size: 0.34667rem; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl dd {
+              color: #202020;
+              font-size: 26px;
+              font-size: 0.34667rem;
+              margin-left: 0; }
+            .currency-details-wrap .currency-details-list .currency-details-content .currency-details-msg .currency-details-msg-list dl .currency-details-note {
+              text-align: right;
+              width: 342px;
+              width: 4.56rem;
+              word-break: break-all;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              line-height: 42px;
+              line-height: 0.56rem; }
+    .currency-details-wrap .currency-details-list .currency-details-btn {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 30px;
+      font-size: 0.4rem;
+      background: #FF3A30;
+      height: 100%;
+      width: 202px;
+      width: 2.69333rem; }
+
+.add-btn {
+  position: fixed;
+  bottom: 140px;
+  bottom: 1.86667rem;
+  right: 36px;
+  right: 0.48rem;
+  display: block;
+  width: 90px;
+  width: 1.2rem;
+  height: 90px;
+  height: 1.2rem; }
+
+.card-text-red {
+  color: #E76D42 !important; }
+
+.card-text-green {
+  color: #0f990f !important; }

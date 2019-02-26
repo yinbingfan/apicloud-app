@@ -1,0 +1,20 @@
+.name {
+    font-family: DINAlternate-Bold;
+    font-size: 2rem;
+    color: #202020;
+    letter-spacing: 0.16px;
+    text-align: center;
+}
+.info_title{
+  color:#B4B3B3;
+}
+#infos_top{
+  font-family: Helvetica-Bold;
+  font-size: 16px;
+  color: #202020;
+  letter-spacing: 0.16px;
+  text-align: center;
+  margin-top:7rem;
+  /*margin-top:6rem*/
+  margin-bottom:5px
+}

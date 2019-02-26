@@ -1,0 +1,149 @@
+html,body{
+  position: relative;
+}
+.list-time {
+    font-size: 1.4rem;
+    line-height: 3rem;
+    color:#707173;
+    padding: 0.5rem;
+    text-align: center;
+    position:relative;
+}
+.list-time-fix{
+  position: fixed;
+  background: #eef1f6;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  height:2.8rem;
+  color:#707173;
+  padding: 0.5rem 0;
+  width:100%;
+  text-align: center;
+  z-index: 10
+}
+
+published-at {
+    font-family: Helvetica;
+    font-size: 1.3rem;
+    color: #908F8F;
+    text-align: left;
+}
+
+rate {
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    color: rgb(242, 152, 0);
+    text-align: left;
+}
+
+rate-img-container {
+    display: inline-block;
+    margin-left: 0.6rem;
+}
+
+.rate-star {
+    height: 1.2rem;
+}
+
+.good {
+    background: rgba(236, 245, 123, 0.12);
+    border: 1px solid #ECAF00;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #ECAF00;
+    letter-spacing: 0.18px;
+    text-align: left;
+}
+
+.good-selected {
+    background: #ECAF00;
+    border: 1px solid #ECAF00;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    letter-spacing: 0.18px;
+    text-align: left;
+}
+
+.bad {
+    background: rgba(104, 170, 233, 0.09);
+    border: 1px solid #6891E9;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #688EE9;
+    letter-spacing: 0.18px;
+    text-align: left;
+}
+
+.bad-selected {
+    background: #6891E9;
+    border: 1px solid #6891E9;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    letter-spacing: 0.18px;
+    text-align: left;
+}
+#share{
+  float:right;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+#share img{
+    display: block;
+   width: 100%;
+}
+brief-text {
+    font-family: Helvetica;
+    font-size: 1.6rem;
+    color: #202020;
+    letter-spacing: 0;
+    line-height: 2.5rem;
+    word-break: break-all;
+}
+
+read-more {
+    font-family: Helvetica;
+    font-size: 1.3rem;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 1.8rem;
+}
+.top-time{
+    background-color: red;
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    vertical-align: middle;
+
+}
